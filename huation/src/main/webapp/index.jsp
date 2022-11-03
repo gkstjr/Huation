@@ -42,7 +42,7 @@
 <!-- 메뉴바 시작 -->
 <div class="container-fluid menuWrap" id="home">
     <header class="header menuBg" style="left:0px;">
-    <div class="menuLine"></div>
+    <div class="menuLine"></div>  
         <nav class="navbar menu-custom" role="navigation">
 
             <div class="container menuArea">
