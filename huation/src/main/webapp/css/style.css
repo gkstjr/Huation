@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+/* layout.css(start) */
+/* 폰트 가져오기 */
+@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+
+.menuWrap {
+    padding: 0px !important;
+}
+
+* {
+    font-family: "Noto Sans KR",sans-serif
+            !important;
+        color: #2d2e38;
+        line-height: 140% !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+        background: #01b0c0;
+        color: #fff;
+        text-shadow: none;
+    }
+
+    #undefined-sticky-wrapper {
+        height: auto !important;
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+        z-index: 998;
+    }
+
+    .menuBg {
+        background-color: #283847;
+    }
+
+    .menuLine {
+        width: 100%;
+        height: 5px;
+        background: #45ba75;
+        background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
+        background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
+        background: linear-gradient(to right, #45ba75 0%, #4eabe0 100%);
+    }
+
+    .header > nav {
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .menu-custom, .navbar-menu
+    .dropdown-menu {
+        background: #fff;
+        padding: 0;
+    }
+
+    .menu-custom {
+        border: 0;
+        border-radius: 0;
+        margin: 0 !important;
+        text-transform: uppercase;
+    }
+
+    .menuArea {
+        padding: 0px;
+    }
+
+    .menu-custom .navbar-toggle {
+        margin-right: 25px;
+    }
+
+    .menu-custom .navbar-brand {
+        display: inline-block;
+        padding: 11px 15px;
+
+    }
+
+    .menu-custom .navbar-brand, 
+    .menu-custom .navbar-nav > li > a {
+        font-size: 13px;
+        letter-spacing: 3px;
+        color: #fff !important;
+        font-weight: bold;
+        letter-spacing: -0.005em;
+    }
+    .navbar a, .form-control {
+        -webkit-transition: all 0.4s ease-in-out 0s;
+        -moz-transition: all 0.4s ease-in-out 0s;
+        -ms-transition: all 0.4s ease-in-out 0s;
+        -o-transition: all 0.4s ease-in-out 0s;
+        transition: all 0.4s ease-in-out 0s;
+    }
+
+    a, .btn {
+        -webkit-transition: all 0.125s ease-in-out 0s;
+        -moz-transition: all 0.125s ease-in-out 0s;
+        -ms-transition: all 0.125s ease-in-out 0s;
+        -o-transition: all 0.125s ease-in-out 0s;
+        transition: all 0.125s ease-in-out 0s;
+    }
+
+    a {
+        color: #E7746F;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    .menu-custom .nav li.active,
+    .menu-custom .nav li a:hover,
+    .menu-custom .nav li a:focus, 
+    .menu-custom .navbar-nav > li.active a {
+        background: none;
+        outline: 0;
+        color: #4eabe0 !important;
+    }
+
+    .menu-custom .nav .open > a,
+    .menu-custom .dropdown-menu > li > a:hover,
+    .menu-custom .dropdown-menu > li > a:focus {
+        background: transparent;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color : #999;
+    }
+
+    .caret {
+        color: #fff !important;
+        margin-left: 4px !important;
+    }
+
+    .menu-custom .dropdown-menu {
+        border: 0;
+        border-top: 3px solid #4eabe0;
+        border-radius: 0;
+    }
+    .menu-custom, .menu-custom 
+    .dropdown-menu {
+        background-color: #fff;
+        padding: 0;
+    }
+
+    .menu-custom .navbar-nav .dropdown-menu > li > a {
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .menu-custom .dropdown-menu > li > a {
+        padding: 10px 20px;
+    }
+    
+    .menu-custom .nav .open > a,
+     .menu-custom .dropdown-menu > li > a:hover,
+      .menu-custom .dropdown-menu > li > a:focus {
+        background: transparent;
+    }
+
+    .menu-custom .dropdown-menu > li > a:hover {
+        background: #4eabe0 !important;
+        color: #fff !important;
+    }
+/* layout.css(end) */
