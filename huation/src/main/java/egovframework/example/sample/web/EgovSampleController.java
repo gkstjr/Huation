@@ -57,17 +57,17 @@
 //@Controller
 //public class EgovSampleController {
 //
-//	/** EgovSampleService */
-////	@Resource(name = "sampleService")
-////	private EgovSampleService sampleService;
-//
-//	/** EgovPropertyService */
-//	@Resource(name = "propertiesService")
-//	protected EgovPropertyService propertiesService;
-//
-//	/** Validator */
-//	@Resource(name = "beanValidator")
-//	protected DefaultBeanValidator beanValidator;
+////	/** EgovSampleService */
+//////	@Resource(name = "sampleService")
+//////	private EgovSampleService sampleService;
+////
+////	/** EgovPropertyService */
+////	@Resource(name = "propertiesService")
+////	protected EgovPropertyService propertiesService;
+////
+////	/** Validator */
+////	@Resource(name = "beanValidator")
+////	protected DefaultBeanValidator beanValidator;
 //
 //	/**
 //	 * 글 목록을 조회한다. (pageing)

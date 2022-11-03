@@ -20,7 +20,6 @@
   
 
     <!--
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/layout.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
 -->
@@ -122,18 +121,19 @@
 <div class="container-fluid mainBannerWrap">
 	<div class="mainBanner">
 		<div class="mainBannerImg" id="mainBannerImg0101">
-			<a class="mainBannerButton" href="../company/company03.jsp"><img src="../img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
 		</div>
 		<div class="mainBannerImg" id="mainBannerImg0102">
-			<a class="mainBannerButton" href="../company/company01.jsp"><img src="../img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
 		</div>
 		<div class="mainBannerImg" id="mainBannerImg0103">
-			<a class="mainBannerButton" href="../recruit/recruit01.jsp"><img src="../img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
 		</div>
 	</div>
 	<div class="mainBannerBtn"></div>
 </div>
-
+	
+	<!-- 슬라이더 slick 라이브러리 이용해서 자바스크립트 사용 -->
 	<script type="text/javascript">
 	$('.mainBanner').slick({
 	  swipe: true,
@@ -148,10 +148,12 @@
 	  arrows: true,
 	  touchMove: true,
 	  appendArrows: $('.mainBannerBtn'),
-	  prevArrow: '<a href="#" class="slick-prev"><img src="../img/main/main_btn01.png" alt="이전" /></a>',
-	  nextArrow: '<a href="#" class="slick-next"><img src="../img/main/main_btn02.png" alt="다음" /></a>',
+	  prevArrow: '<a href="#" class="slick-prev"><img src="img/main/main_btn01.png" alt="이전" /></a>',
+	  nextArrow: '<a href="#" class="slick-next"><img src="img/main/main_btn02.png" alt="다음" /></a>',
 	});
 	</script>
+	<!-- 슬라이더 slick 라이브러리 이용해서 자바스크립트 사용 -->
+	
 <!-- 주요배너 끝 -->
 
 
