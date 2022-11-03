@@ -1,0 +1,79 @@
+/* 사용할 font 선언 */
+@font-face { 
+  font-family: ns-thin;
+  src: url(../font/NotoSansKR-Thin.otf);
+}
+@font-face {
+  font-family: ns-light;
+  src: url(../font/NotoSansKR-Light.otf);
+}
+@font-face {
+  font-family: ns-m;
+  src: url(../font/NotoSansKR-Medium.otf);
+}
+@font-face {
+  font-family: ns-bold;
+  src: url(../font/NotoSansKR-Bold.otf);
+}
+@font-face {
+  font-family: ns-black;
+  src: url(../font/NotoSansKR-Black.otf);
+}
+@font-face {
+  font-family: ns-regular;
+  src: url(../font/NotoSansKR-Regular.otf);
+}
+/* 버튼 디자인 */
+.btn {
+  border: none;
+  padding: 1rem;
+  display: inline-block;
+  box-sizing: border-box;
+  transition-duration: 0.5s;
+  font-size: 16px;
+  font-family: ns-light;
+}
+.c1 {
+  background-color: #7ac142;
+  color: #fff;
+}
+.c2 {
+  background-color: #009ddc;
+  color: #fff;
+}
+.c3 {
+  background-color: #283847;
+  color: #fff;
+}
+.c4 {
+  background-color: #8397f4;
+  color: #fff;
+}
+.c5 {
+  background-color: #b9bbc2;
+  color: #fff;
+}
+.c6 {
+  background-color: #f3f3f3;
+  color: #000;
+}
+.c7 {
+  background-color: #7d93f9;
+  color: #fff;
+}
+.c8 {
+  background-color: #ebebed;
+  color: #000;
+}
+.c9 {
+  background-color: #6771af;
+  color: #fff;
+}
+.c10 {
+  background-color: #f0f9f3;
+  color: #000;
+}
+.c11 {
+  background-color: #4c575e;
+  color: #fff;
+}
