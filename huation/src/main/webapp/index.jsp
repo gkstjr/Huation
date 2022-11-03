@@ -37,6 +37,8 @@
     <script type="text/javascript" src="js/slick.js"></script>
     <script type="text/javascript" src="js/wow.js"></script></head>
 </head>
+
+<body>
 <!-- 메뉴바 시작 -->
 <div class="container-fluid menuWrap" id="home">
     <header class="header menuBg" style="left:0px;">
@@ -115,8 +117,6 @@
 </div>
 <!-- 메뉴바 끝 -->
 
-<body>
    
-
 </body>
 </html>
