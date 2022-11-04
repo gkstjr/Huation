@@ -3,11 +3,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class TestController {
+public class HuationController {
 	
-	@RequestMapping(value = "/hi")
+	@RequestMapping(value = "/hi1")
 	public String home() {
-		return "redirect:http://www.naver.com";
+		return "test";
 
 	} 
 }
