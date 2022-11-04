@@ -4,9 +4,9 @@
 <sqlMap namespace="Sample">
 
 	<typeAlias  alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
-	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	<typeAlias  alias="searchVO" type="huation.home.service.SampleDefaultVO"/>
 
-	<resultMap id="sample" class="egovframework.example.sample.service.SampleVO">
+	<resultMap id="sample" class="huation.home.service.SampleVO">
 		<result property="id" column="id"/>
 		<result property="name" column="name"/>
 		<result property="description" column="description"/>
