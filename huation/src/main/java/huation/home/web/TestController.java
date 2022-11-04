@@ -8,5 +8,5 @@ public class TestController {
 	@RequestMapping(value = "/hi")
 	public String home() {
 		return "redirect:http://www.naver.com";
-	}
+	} 
 }
