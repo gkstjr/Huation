@@ -5,9 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HuationController {
 	
-	@RequestMapping(value = "/hi1")
+	//한석
+	@RequestMapping(value = "/solution/pabx")
 	public String home() {
-		return "test";
+		return "solution/pabx";
 		
 	} 
+
+
+	
+	
+	//신영
+	
 }

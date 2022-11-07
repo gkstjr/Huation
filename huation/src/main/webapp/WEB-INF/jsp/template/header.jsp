@@ -2,22 +2,24 @@
     pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="kor">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[한석 신영] 휴에이션</title>
+    <title>[한석,신영] 휴에이션</title>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" media = "screen" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" media = "screen" href="../css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
-  
-    <!--
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/slick.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
+    
+  
+   
+    <!--
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
 -->
 
@@ -25,20 +27,23 @@
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery.sticky.js"></script>
-    <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-    <script type="text/javascript" src="js/smoothscroll.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
-    <script type="text/javascript" src="js/gnb.js"></script>
-    <script type="text/javascript" src="js/slick.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script></head>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="../js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="../js/smoothscroll.js"></script>
+    <script type="text/javascript" src="../js/custom.js"></script>
+    <script type="text/javascript" src="../js/gnb.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/wow.js"></script>
+</head>
+
 <body>
+    <!-- 메뉴바 시작 -->
     <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
             <nav class="navbar menu-custom" role="navigation">
-
+    
                 <div class="container menuArea">
                         
                         <!-- 메뉴바 로고쪽 div-->
@@ -51,8 +56,8 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <!-- 왜 필요한지 모르겠음 E -->
-
-                            <a class="navbar-brand" href="#"><img src="img/common/gnb_logo.png" alt="휴에이션"></a>
+    
+                            <a class="navbar-brand" href="#"><img src="../img/common/gnb_logo.png" alt="휴에이션"></a>
                         </div>
                         <!-- 상단 메뉴 바 부분-->
                         <div class="collapse navbar-collapse" id="custom-collapse">
@@ -109,6 +114,4 @@
                 </nav>
         </header>
     </div>
-
-<!-- </body>
-</html> -->
+    <!-- 메뉴바 끝 -->
