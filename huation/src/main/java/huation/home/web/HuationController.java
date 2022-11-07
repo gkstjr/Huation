@@ -8,6 +8,6 @@ public class HuationController {
 	@RequestMapping(value = "/hi1")
 	public String home() {
 		return "test";
-
+		
 	} 
 }
