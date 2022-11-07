@@ -1,5 +1,5 @@
 <!--  jsp:forward page="/egovSampleList.do"/>-->
-<%-- <%@ include file = "/WEB-INF/jsp/egovframework/template/header.jsp"%>  --%>
+<%-- <%@ include file = "/WEB-INF/jsp/egovframework/template/header.jsp"%> --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -37,45 +37,7 @@
     <script type="text/javascript" src="js/custom.js"></script>
     <script type="text/javascript" src="js/gnb.js"></script>
     <script type="text/javascript" src="js/slick.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script></head>
-    
-     <!-- 신영님 main style-->
-    <style>
-    	.img-wrap {
-    		width: 100%;
-    	}	
-    	.main-5-wrap{
-    		position: relative;
-    		background: url(../img/main/main_bg02.jpg) center top no-repeat;
-    		background-size: cover;
-    		padding: 100px 0px;
-    	}
-    	.main-5-wrap-sub{
-    		position: absolute;
-    		top: 10%;
-    		left: 10%;
-    		text-align: center;
-    	}
-    	.main-5-icons > ul > li {
-    		display: inline;
-    		background-color: red;
-    	}
-		.main-5-title {
-			margin: 30px auto;
-		}
-		.main-titles {
-			text-align: center;
-		}
-
-        /* <!-- 푸터 스타일--> */
-        a, .container-fluid ul li:nth-child(2) {
-    		color: #fff;
-    	}  	
-    	.footerBack {
-    		padding: 0px;
-    		padding-top:30px;
-    	}
-    </style>
+    <script type="text/javascript" src="js/wow.js"></script>
 </head>
 
 <body>
@@ -280,9 +242,9 @@
 	    
     <section class="main-3-wrap container-fluid">
         <div class="main-titles container">
-            <h2>연구개발 및 기술 중심의 기업</h2>
+            <h2 id="main-3-titles-color">연구개발 및 기술 중심의 기업</h2>
             <img src="img/main/main_img01.png">
-            <p>㈜휴에이션은 고객과 함께 성장하고 고민하는 기업으로서 지속적이고 영속적인 파트너가 될 수 있도록 노력하겠습니다.<br>
+            <p class="msubTit">㈜휴에이션은 고객과 함께 성장하고 고민하는 기업으로서 지속적이고 영속적인 파트너가 될 수 있도록 노력하겠습니다.<br>
                 또한 우리가 만들어내는 제품이 인간의 삶을 더욱 풍요롭고 편리하도록 하고, 지구의 환경을 보호하는 Green IT를 실현할 수 있도록 하겠습니다.</p>
         </div>
         <div class="main-3-content container">
@@ -307,15 +269,15 @@
                 <p>휴에이션의 내부 조직원들은 고객과 함께 진보하고 발전하며, 더 나은 미래 기술과 세상을 꿈 꿉니다</p>
             </div>
         </div>
-        <a href="#"><img id="main-3-closer-btn" src="img/main/main_btn05.png"></a> 
+        <a id="mainAni06" href="#"><img src="img/main/main_btn05.png"></a> 
     </section>
     
     <section class="main-4-wrap container-fluid">
         <div class="main-titles container">
                <h2>주요 고객사</h2>
                <img src="img/main/main_img07.png">
-            <p>2010년 당사 설립 초기부터 현재까지, 휴에이션에서 수행하는 모든 프로젝트를 성공적으로 수행 하였으며,<br>
-            초심을 잃지 않는 대고객 IT 서비스를 통해 고객과 동반(상호) 성장하고 있습니다</p>
+	           <p class="msubTit02">2010년 당사 설립 초기부터 현재까지, 휴에이션에서 수행하는 모든 프로젝트를 성공적으로 수행 하였으며,<br>
+	           초심을 잃지 않는 대고객 IT 서비스를 통해 고객과 동반(상호) 성장하고 있습니다</p>
         </div>
         <div class="container">
             <ul class="main-4-icons">
@@ -341,14 +303,14 @@
                 <li><img src="img/main/main_logo20.png" alt=""></li>				
             </ul>
         </div>
-        <a href="#"><img src="img/main/main_btn06.png"></a>
+       <a id="mainAni07" href="#"><img src="img/main/main_btn06.png"></a>
      </section>
 </div>
     <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="img/common/top_btn.png"></a> 
 
     <!-- 신영님 연구개발 및 기술 중심 기업 끝 -->
 
-    <!-- footer-->
+    <!-- footer 시작-->
     <footer class="container-fluid footerBack">
 	    <div class="container">
 	    	<ul>
@@ -373,11 +335,7 @@
 	    </div>
 	 </footer>
      <!-- footer 끝-->
-
-
-
-
-
+     
 <!-- 애니메이션 스크립트 -->
 <script>
     new WOW().init();
@@ -388,7 +346,7 @@
     $('#mainAni05').addClass('wow fadeInRightBig');
     $('#mainAni06').addClass('wow fadeInUp');
     $('#mainAni07').addClass('wow fadeInUp');
-    </script>
-    <!-- 애니메이션 스크립트 -->
+</script>
+<!-- 애니메이션 스크립트 -->
 </body>
 </html>
