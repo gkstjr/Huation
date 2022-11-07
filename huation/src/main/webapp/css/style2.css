@@ -261,11 +261,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 }
 .main-titles>h2 {
 	font-size: 44px;
-	color: #fff;
+	padding-bottom: 44px;
+    color: #fff;
+    font-size: 44px;
+    font-weight: 100;
+    letter-spacing: -0.075em;
 }
 .main-titles>img {
 	margin: 0 auto;
-	padding-top: 30px;
 	padding-bottom: 35px;
 }
 .main-titles>p {
@@ -284,20 +287,91 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 	color: inherit;
     text-align: center;
 }
-#main-3-closer-btn {
-	margin-top: 50px;
-}
-.main-3-content>.col-sm-3>h3 {
+.main-3-wrap h3 {
     font-size: 22px;
     font-weight: 500;
     margin-top: 30px;
     margin-bottom: 25px;
+    letter-spacing: -0.05em;
     color: #2f3e47;
 }
-.main-3-content>.col-sm-3>p {
+.main-3-wrap .col-sm-3 p {
     color: #a4adb3;
     font-size: 16px;
-    /*line-height: 1.8 !important;*/
+    line-height: 1.8 !important;
+    letter-spacing: -0.05em;
+}
+#main-3-titles-color{
+	color: #2D2E38;
+}
+#mainAni06 {
+	margin-top: 50px;
+	padding-top: 50px;
+}
+.main-3-content {
+	margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+.main-03-wrap a {width:180px;}
+.main-03-wrap h2 {
+    padding-bottom: 44px;
+    margin-bottom: 30px;
+    background: url("../img/main/main_img01.png") center bottom no-repeat;
+    font-weight: 100;
+    letter-spacing: -0.075em;
+    font-size: 24px;
+}
+}
+/*
+.main-4-wrap h2 {
+    padding-bottom: 44px;
+    margin-bottom: 30px;
+    color: #fff !important;
+    font-size: 44px;
+    font-weight: 100;
+    letter-spacing: -0.075em;
+}
+*/
+
+.img-wrap {
+	width: 100%;
+}	
+.main-5-wrap{
+	position: relative;
+	background: url(../img/main/main_bg02.jpg) center top no-repeat;
+	background-size: cover;
+	padding: 100px 0px;
+}
+.main-5-wrap-sub{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	text-align: center;
+}
+.main-5-icons > ul > li {
+	display: inline;
+	background-color: red;
+}
+.main-5-title {
+	margin: 30px auto;
+}
+.main-titles {
+	text-align: center;
+}
+
+/* ---------------------------------------------- /*
+ * footer 스타일 - 신영
+/* ---------------------------------------------- */
+
+.footer>a, .container-fluid ul li:nth-child(2) {
+	color: #fff;
+} 	
+.footerBack {
+	padding: 0px;
+	padding-top:30px;
+}
+#xx{
+	color: #fff;
 }
 /* ---------------------------------------------- /*
  * Scroll to top
