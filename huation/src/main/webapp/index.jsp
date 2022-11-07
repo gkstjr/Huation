@@ -1,4 +1,3 @@
-<!--  jsp:forward page="/egovSampleList.do"/>-->
 <%-- <%@ include file = "/WEB-INF/jsp/egovframework/template/header.jsp"%> --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,7 +20,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style2.css" />
     
   
-
+   
     <!--
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
 -->
@@ -173,6 +172,7 @@
 </section>
 <!-- 회사소개 끝 -->
 
+<!-- 솔루션 소개 시작 -->
 <section class="container-fluid mainSection02">
 	<div class="mainBanner02 container">
 		<div class="mainBannerImg02" id="mainBannerImg0201">
@@ -234,7 +234,7 @@
 	  nextArrow: '<a href="#" class="slick-next"><img src="img/main/main_btn02.png" alt="다음" /></a>',
 	});
 </script>
-<!-- 솔루션 소개 : e -->
+<!-- 솔루션 소개 끝 -->
 
 
     <!-- 신영님 연구개발 및 기술 중심 기업 시작 -->
