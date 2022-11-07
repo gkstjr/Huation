@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HuationController {
 	
 	@RequestMapping(value = "/hi1")
-	public String home() {
+	public String home() { 
 		return "test";
 		
 	} 
