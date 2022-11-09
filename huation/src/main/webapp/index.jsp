@@ -120,6 +120,7 @@
 
    <!-- 주요배너 시작 -->
 <div class="container-fluid mainBannerWrap">
+
    <div class="mainBanner">
       <div class="mainBannerImg" id="mainBannerImg0101">
          <a class="mainBannerButton" href="/company/mission"><img src="img/main/main_btn03.png"></a>
@@ -132,6 +133,7 @@
       </div>
    </div>
    <div class="mainBannerBtn"></div>
+
 </div>
    
    <!-- 슬라이더 slick 라이브러리 이용해서 자바스크립트 사용 -->
@@ -305,6 +307,7 @@
 
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
+
        <div class="container">
           <ul>
                <li class="footer">
@@ -327,6 +330,7 @@
           </div>
        </div>
     </footer>
+
      <!-- footer 끝-->
      
 <!-- 애니메이션 스크립트 -->

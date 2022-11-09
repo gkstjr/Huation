@@ -7,71 +7,72 @@ public class HuationController {
 
 	//한석
 	@RequestMapping(value = "/solution/pabx")
-	public String home() {
+	public String pabx() {
 		return "solution/pabx";
 		
 	} 
+	
+	   //SOLUTION > HUERERS
+	   @RequestMapping(value = "/solution/hueres")
+	   public String hueres() {
+	      return "solution/hueres";      
+	   }
+	   
+	   //SOLUTION > HUEPLUS
+	   @RequestMapping(value = "/solution/hueplus")
+	   public String hueplus() {
+	      return "solution/hueplus";      
+	   }    
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	   //SOLUTION > HUEIC 
+	   @RequestMapping(value = "/solution/hueic")
+	   public String hueic() {
+	      return "solution/hueic";      
+	   } 
+	   
+	   //SOLUTION > HUEBOARD
+	   @RequestMapping(value = "/solution/hueboard")
+	   public String hueboard() {
+	      return "solution/hueboard";      
+	   }
+	   
+	   //SOLUTION > HUEFACTION
+	   @RequestMapping(value = "/solution/huefaction")
+	   public String huefaction() {
+	      return "solution/huefaction";      
+	   }
+	   
+	   //SOLUTION > HUESTA
+	   @RequestMapping(value = "/solution/huesta")
+	   public String huesta() {
+	      return "solution/huesta";      
+	   }   
+	   
+	   //RECRUIT > 인재상
+	   @RequestMapping(value = "/recruit/huationist")
+	   public String huationist() {
+	      return "recruit/huationist";      
+	   }   
+	   
+	   //RECRUIT > 복지제도
+	   @RequestMapping(value = "/recruit/benefits")
+	   public String benefits() {
+	      return "recruit/benefits";      
+	   }
+	   
+	   //RECRUIT > 채용절차
+	   @RequestMapping(value = "/recruit/recruit")
+	   public String recruit() {
+	      return "recruit/recruit";      
+	   }
+	   
+	   //CONTACT > CONTACT
+	   @RequestMapping(value = "/contact/contact")
+	   public String contact() {
+	      return "contact/contact";
+	      
+	   } 
+	   
 	//신영
 	//COMPANY>기업이념
 	@RequestMapping(value = "/company/philoshphy")
@@ -139,3 +140,4 @@ public class HuationController {
 		return "solution/huefax";		
 	} 
 }
+

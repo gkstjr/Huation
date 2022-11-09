@@ -19,50 +19,50 @@ line-height:140% !important;
 }
 
 body {
-	overflow-x: hidden;
+   overflow-x: hidden;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+   max-width: 100%;
+   height: auto;
 }
 
 a {
-	color: #E7746F;
+   color: #E7746F;
 }
 
 a:hover {
-	cursor: pointer;
-	text-decoration: none;
-	color: #999;
+   cursor: pointer;
+   text-decoration: none;
+   color: #999;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Noto Sans KR", sans-serif !important;
-/*	text-transform: uppercase;*/
-	margin: 5px 0 5px;
-	font-weight:bold;
+   font-family: "Noto Sans KR", sans-serif !important;
+/*   text-transform: uppercase;*/
+   margin: 5px 0 5px;
+   font-weight:bold;
 }
 
 h2 {
-	font-size: 48px;
+   font-size: 48px;
 }
 
 h3 {
-	font-size: 13px;
+   font-size: 13px;
 }
 
 h4 {
-	font-size: 12px;
+   font-size: 12px;
 }
 
 h5 {
-	font-size: 12px;
-	font-weight: 400;
+   font-size: 12px;
+   font-weight: 400;
 }
 
 h6 {
-	font-size: 11px;
+   font-size: 11px;
 }
 
 p {font-size:14px;}
@@ -86,10 +86,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 }
 @media (max-width: 480px) {.gnbLine {height:3px;}}
 
-.header {	
-	position: relative;
-	width: 100%;
-	z-index: 998;
+.header {   
+   position: relative;
+   width: 100%;
+   z-index: 998;
 }
 
 .caret {color:#fff !important; margin-left:4px;}
@@ -97,31 +97,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 .header > nav {background-color:transparent; width:100%;}
 
 .navbar-custom {
-	border: 0;
-	border-radius: 0;
-	margin: 0;
-	text-transform: uppercase;
-	font-family: 'NanumGothic','       ','ng','sans-serif';
+   border: 0;
+   border-radius: 0;
+   margin: 0;
+   text-transform: uppercase;
+   font-family: 'NanumGothic','       ','ng','sans-serif';
 }
 
 .navbar-custom,
 .navbar-custom .dropdown-menu {
-	background: #fff;
-	padding: 0;
+   background: #fff;
+   padding: 0;
 }
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a {
-	font-size: 13px;
-	letter-spacing: 3px;
-	color: #fff !important;
-	font-weight: bold;
-	letter-spacing:-0.005em;
+   font-size: 13px;
+   letter-spacing: 3px;
+   color: #fff !important;
+   font-weight: bold;
+   letter-spacing:-0.005em;
 }
 
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
-	font-size: 13px;
-	font-weight: bold;
+   font-size: 13px;
+   font-weight: bold;
 }
 
 
@@ -129,44 +129,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus,
 .navbar-custom .navbar-nav > li.active a {
-	background: none;
-	outline: 0;
-	color: #4eabe0 !important;
+   background: none;
+   outline: 0;
+   color: #4eabe0 !important;
 }
 
 .navbar-custom .navbar-brand {
-	display:inline-block;
-	padding:11px 15px;
+   display:inline-block;
+   padding:11px 15px;
 }
 
 .navbar-custom .dropdown-menu {
-	border: 0;
-	border-top: 3px solid #4eabe0;
-	border-radius: 0;
+   border: 0;
+   border-top: 3px solid #4eabe0;
+   border-radius: 0;
 }
 
 .navbar-custom .dropdown-menu > li > a {
-	padding: 10px 20px;
+   padding: 10px 20px;
 }
 
 .navbar-custom .dropdown-menu > li > a:hover {
-	background:#4eabe0 !important; color:#fff !important;
+   background:#4eabe0 !important; color:#fff !important;
 }
 
 .navbar-custom .nav .open > a,
 .navbar-custom .dropdown-menu > li > a:hover,
 .navbar-custom .dropdown-menu > li > a:focus {
-	background: transparent;
+   background: transparent;
 }
 
 .navbar-custom .dropdown-menu > li > a > span {color:#fff !important;}
 
 .navbar-custom .navbar-toggle {
-	margin-right:25px;
+   margin-right:25px;
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-	background: #222;
+   background: #222;
 }
 
 .icon-bar {background:#fff !important;}
@@ -174,11 +174,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 
 .navbar a,
 .form-control {
-	-webkit-transition: all 0.4s ease-in-out 0s;
-	   -moz-transition: all 0.4s ease-in-out 0s;
-		-ms-transition: all 0.4s ease-in-out 0s;
-		 -o-transition: all 0.4s ease-in-out 0s;
-			transition: all 0.4s ease-in-out 0s;
+   -webkit-transition: all 0.4s ease-in-out 0s;
+      -moz-transition: all 0.4s ease-in-out 0s;
+      -ms-transition: all 0.4s ease-in-out 0s;
+       -o-transition: all 0.4s ease-in-out 0s;
+         transition: all 0.4s ease-in-out 0s;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -188,39 +188,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 
 a,
 .btn {
-	-webkit-transition: all 0.125s ease-in-out 0s;
-	   -moz-transition: all 0.125s ease-in-out 0s;
-		-ms-transition: all 0.125s ease-in-out 0s;
-		 -o-transition: all 0.125s ease-in-out 0s;
-			transition: all 0.125s ease-in-out 0s;
+   -webkit-transition: all 0.125s ease-in-out 0s;
+      -moz-transition: all 0.125s ease-in-out 0s;
+      -ms-transition: all 0.125s ease-in-out 0s;
+       -o-transition: all 0.125s ease-in-out 0s;
+         transition: all 0.125s ease-in-out 0s;
 }
 
 @media screen  and (min-width: 481px) and (max-width: 767px) {
-	h2 {font-size: 24px;}
+   h2 {font-size: 24px;}
 }
 
 @media (max-width: 480px) {
-	h2 {font-size: 24px;}
+   h2 {font-size: 24px;}
 }
 
 @media (max-width: 767px) {
-	
-	.navbar-custom .navbar-brand,
-	.navbar-custom .navbar-nav > li > a {
-	padding-left:30px;
-	}
+   
+   .navbar-custom .navbar-brand,
+   .navbar-custom .navbar-nav > li > a {
+   padding-left:30px;
+   }
 
-	.navbar-custom .navbar-nav .dropdown-menu > li > a {
-		color: #fff !important;
-	}
-	
-	.navbar-custom .navbar-brand {
-	margin-left:15px;
-	}
+   .navbar-custom .navbar-nav .dropdown-menu > li > a {
+      color: #fff !important;
+   }
+   
+   .navbar-custom .navbar-brand {
+   margin-left:15px;
+   }
 
-	.navbar-custom .navbar-nav .dropdown-menu > li > a {
-	padding-left:40px;
-	}
+   .navbar-custom .navbar-nav .dropdown-menu > li > a {
+   padding-left:40px;
+   }
 
 }
 
@@ -252,118 +252,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 .footerLine img {width:80px;}
 
 }
-/* ---------------------------------------------- /*
- * main 화면 css - 신영
-/* ---------------------------------------------- */
-/*
-.main-4-wrap h2 {padding-bottom:44px; margin-bottom:30px; color:#fff !important; background:url("../img/main/main_img07.png") center bottom no-repeat; font-size:44px; font-weight:100;letter-spacing:-0.075em;}
-.main-4-wrap {
-    padding: 50px 0px;
-    text-align: center;
-    background: url("../img/main/main_bg02.jpg") center top no-repeat;
-    background-size: cover;
-}
-.main-4-wrap a {display:inline-block; margin-top:20px;}
-.main-4-icons {display:inline-block;}
-.main-4-wrap li {display:inline-block; float:left; margin-bottom:60px; width:20%; padding:0px 5px;}
-.main-3-wrap {
-    text-align: center;
-    padding: 100px 0px;
-}
-.main-3-wrap>.main-titles>* {
-	color: inherit;
-    text-align: center;
-}
-.main-3-wrap h3 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 30px;
-    margin-bottom: 25px;
-    letter-spacing: -0.05em;
-    color: #2f3e47;
-}
-.main-3-wrap .col-sm-3 p {
-    color: #a4adb3;
-    font-size: 16px;
-    line-height: 1.8 !important;
-    letter-spacing: -0.05em;
-}
-#main-3-titles-color{
-	color: #2D2E38;
-}
-#mainAni06 {
-	margin-top: 50px;
-	padding-top: 50px;
-}
-.main-3-content {
-	margin-bottom: 40px;
-}
-@media (max-width: 767px) {
-.main-03-wrap a {width:180px;}
-.main-03-wrap h2 {
-    padding-bottom: 44px;
-    margin-bottom: 30px;
-    background: url("../img/main/main_img01.png") center bottom no-repeat;
-    font-weight: 100;
-    letter-spacing: -0.075em;
-    font-size: 24px;
-}
-}
-*/
-/*
-.main-4-wrap h2 {
-    padding-bottom: 44px;
-    margin-bottom: 30px;
-    color: #fff !important;
-    font-size: 44px;
-    font-weight: 100;
-    letter-spacing: -0.075em;
-}
 
-.img-wrap {
-	width: 100%;
-}	
-.main-5-wrap{
-	position: relative;
-	background: url(../img/main/main_bg02.jpg) center top no-repeat;
-	background-size: cover;
-	padding: 100px 0px;
-}
-.main-5-wrap-sub{
-	position: absolute;
-	top: 10%;
-	left: 10%;
-	text-align: center;
-}
-.main-5-icons > ul > li {
-	display: inline;
-	background-color: red;
-}
-.main-5-title {
-	margin: 30px auto;
-}
-.main-titles {
-	text-align: center;
-}
-
-.mainSection01 {
-    padding: 50px 0px;
-    text-align: center;
-    background: url("../img/main/main_bg01.jpg") center top no-repeat;
-    background-size: cover;
-}
-
-.main-3-wrap {
-    padding: 50px 0px;
-    text-align: center;
-}
-.main-3-wrap a {
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.main-3-wrap h2 {padding-bottom:44px; margin-bottom:30px; background:url("../img/main/main_img01.png") center bottom no-repeat; font-weight:100; letter-spacing:-0.075em; font-size:44px;}
-*/
 
 /* ---------------------------------------------- /*
  * footer 스타일 - 신영
@@ -372,45 +261,46 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 .footer>a, .footerBack ul li:nth-child(2) {
 	color: #fff;
 } 	
+
 .footerBack {
-	padding: 0px;
-	padding-top:30px;
+   padding: 0px;
+   padding-top:30px;
 }
 #xx{
-	color: #fff;
+   color: #fff;
 }
 /* ---------------------------------------------- /*
  * Scroll to top
 /* ---------------------------------------------- */
 
 .scroll-up {
-	position: fixed;
-	display: none;
-	z-index: 999;
-	bottom: 2em;
-	right: 2em;
+   position: fixed;
+   display: none;
+   z-index: 999;
+   bottom: 2em;
+   right: 2em;
 }
 
 .scroll-up a {
-	background-color: rgba(135, 135, 135, 0.5);
-	display: block;
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	color: #fff;
-	font-size: 15px;
-	line-height: 40px;
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-	border-radius:4px;
+   background-color: rgba(135, 135, 135, 0.5);
+   display: block;
+   width: 40px;
+   height: 40px;
+   text-align: center;
+   color: #fff;
+   font-size: 15px;
+   line-height: 40px;
+   -moz-border-radius:4px;
+   -webkit-border-radius:4px;
+   border-radius:4px;
 }
 
 .scroll-up a span {
-	color: #ddd;
+   color: #ddd;
 }
 
 .scroll-up a:hover,
 .scroll-up a:active {
-	background-color: rgba(135, 135, 135, 1.0);
-	color: #e7746f;
+   background-color: rgba(135, 135, 135, 1.0);
+   color: #e7746f;
 }

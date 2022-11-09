@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,15 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/slick.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
     
-    
-   
-
-
-
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -34,11 +28,79 @@
     <script type="text/javascript" src="../js/gnb.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
+    
+    <script>
+/**
+for mail send.
+*/
+
+var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+
+function mailSend(){
+	// validation
+	var name = $("#user_id").get(0);
+	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus(); return;}
+	var contact = $("#user_contact").get(0);
+	if(contact.value.trim() == "" || contact.value == contact.placeholder) {alert("연락처를 입력하세요."); contact.focus(); return;}
+	var email = $("#user_email").get(0);
+	if(email.value.trim() == "" || email.value == email.placeholder){ alert("이메일주소를 입력하세요."); return;}
+	var subject = $("#user_subject").get(0);
+	if(subject.value.trim() == "" || subject.value == subject.placeholder) {alert("제목을 입력하세요."); subject.focus(); return;}
+	var content = $("#Content").get(0);
+	if(content.value.trim() == "") {alert("문의내용을 입력하세요."); content.focus(); return;}
+	
+	var type = $("#type").get(0);
+	
+	if (!regExp.test(contact.value.trim())) {
+        alert("잘못된 전화번호입니다. 예) 050-XXXX-XXXX");
+        contact.focus();
+        return;
+    }
+	if (!emailRegExp.test(email.value.trim())) {
+		alert("올바른 이메일 주소를 입력 해주세요.");
+		email.focus();
+		return;
+	}
+	
+	var sendUrl = "../mailSend";
+	// submit
+	$(".recruitBtn").bind('click', false);
+	$('#loadingIndicator').show();
+	
+	$.post(sendUrl, {
+		subject: subject.value
+		, name: name.value
+		, contact: contact.value
+		, email: email.value
+		, content: content.value
+		, type: type.value
+	}, function(data, status){
+		if(status == 'success'){
+			alert("메일을 발송하였습니다.");
+		}else{
+			alert("메일발송 중 문제가 발생했습니다.");
+		}
+		$(".recruitBtn").unbind('click', false);
+		$('.loading').hide();
+	})
+}
+
+$(document).ready(function(){
+	$.each($(".solutionFeature03 input[type='text']"), function(i, val){
+		$(val).on('focus', function(e){
+			if(this.placeholder == this.value) this.value = "";
+		});
+	});
+	$("#loadingIndicator").hide();
+});
+
+</script>
 </head>
 
-<body cz-shortcut-listen="true">
+<body cz-shorcut-listen="true">
        <!-- 메뉴바 시작 -->
-    <div class="container-fluid menuWrap" id="home">
+       <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
             <nav class="navbar menu-custom" role="navigation">
@@ -115,67 +177,126 @@
     </div>
     <!-- 메뉴바 끝 -->
 
-    <!-- subName 시작 -->
-        <div class = "container-fluid subName pabx" id = "subName01">
-            <h2>PABX</h2>
-            <p>CTI 미들웨어 솔루션</p>
+     <!-- subName 시작 -->
+     <div class = "container-fluid subName recruit03" id = "subName01">
+        <h2>Recruit</h2>
+        <p>당신이 휴에이션의 성장과 도약에 주인공</p>
+    </div>
+    <!-- subName 끝 -->
+    <!-- subMenu 시작-->
+    <div class = "container-fluid subMenu">
+        <div class = "container">
+            <h3>채용절차</h3>
+            <ul>
+                <li>Home</li>
+                <li>></li>
+                <li>Recruit</li>
+                <li>></li>
+                <li>채용절차</li>
+            </ul>
         </div>
-        <!-- subName 끝 -->
-        <!-- subMenu 시작-->
-        <div class = "container-fluid subMenu">
-            <div class = "container">
-                <h3>교환기</h3>
-                <ul>
-                    <li>Home</li>
-                    <li>></li>
-                    <li>Solution</li>
-                    <li>></li>
-                    <li>교환기</li>
-                </ul>
-            </div>
-        </div>
-        <!-- subMenu 끝 -->
+    </div>
+    <!-- subMenu 끝 -->
 
-        <!-- 제품 소개 시작-->
-        <section class = "container-fluid whiteSection">
-            <div class = "container">
-                <h2 class = "centerTitle">PABX</h2>
-                <p class = "centerTitleP">HUATION 제품은 국내의 삼성, LG  교환기 뿐 아니라
-                     해외 글로벌 기업의 Avaya, CISCO, Alcatel-Lucent 등의 교환기와 연동하여 서비스가 가능합니다.
-                     </p>
-            
-                <div class="hueresMain" style="margin-bottom:60px;" id="pabxAni01">
-                    <img src="../img/solution/solution_img48.png"><h4>Avaya, CISCO, Alcatel-Lucent</h4>			
-                </div>
-            
-                <div class="col-sm-4"><img src="../img/solution/solution_img49.png"  id="pabxAni02"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img50.png"  id="pabxAni03"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img51.png"  id="pabxAni04"></div>
-            
-            </div>
-         </section>
-        <!-- 제품 소개 끝 -->
-        
-        <!-- spec 시작-->
-        <section class="container-fluid graySection">
-            <div class="container">
-                <h3 class="leftTitle">Spec</h3>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani101" class="solutionIcon50">
-                        <h4>Microsoft Windows</h4>
-                        <p>윈도우</p>
-                    </li>
-                </ul>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani102" class="solutionIcon51">
-                        <h4>Linux </h4>
-                        <p>리눅스</p>
-                    </li>
-                </ul>
-        
-            </div>
-        </section>
-        <!-- spec 끝-->
+    <!-- 제품소개 시작 -->
+<section class="container-fluid whiteSection">
+	<div class="container">
+		<h2 class="centerTitle companyLine01">Recruit</h2>
+		<p class="centerTitleP">우리 회사는 신입/경력과 무관하게 정규직 지원자에 대하여 아래와 같은 절차를 거쳐 최종 입사를 결정하게 됩니다.
+<em>경력직의 경우에도 신입과 동일하게 인턴 기간을 유지하고 있습니다.</em></p>
+		
+		<div class="col-sm-3 recruitIntro" id="huationistAni01">
+			<img src="../img/recruit/recruit_img16.png">
+			<h3>경영지원 부문</h3>
+			<ul>
+				<li class="pointPurple">01.  서류전형</li>
+				<li class="pointPurple">02. 인성 및 기업문화 부합성 Interview</li>
+				<li>03. Presentation Skill Test</li>
+				<li>04. Documentation Skill Test</li>
+				<li class="pointPurple">05. 인턴 3개월</li>
+				<li class="pointPurple">06. 완전 채용</li>
+			</ul>
+
+		</div>
+
+		<div class="col-sm-3 recruitIntro" id="huationistAni02">
+			<img src="../img/recruit/recruit_img17.png">
+			<h3>디자인 부문</h3>
+			<ul>
+			<li class="pointPurple">01. 서류전형(포트폴리오 전형 포함)</li>
+			<li class="pointPurple">02. 인성 및 기업문화 부합성 Interview</li>
+			<li>03. Instant Design Skill Test</li>
+			<li>04. Documentation Skill Test</li>
+			<li class="pointPurple">05. 인턴 3개월</li>
+			<li class="pointPurple">06. 완전 채용</li>
+			</ul>
+
+		</div>
+
+		<div class="col-sm-3 recruitIntro" id="huationistAni03">
+			<img src="../img/recruit/recruit_img18.png">
+			<h3>연구개발 부문</h3>
+			<ul>
+			<li class="pointPurple">01. 서류전형	</li>
+			<li class="pointPurple">02. 인성 및 기업문화 부합성 Interview	</li>
+			<li>03. Techinical Skill Interview	</li>
+			<li>04. Programming Skill Instant Test	</li>
+			<li>05. Documentation Skill Test	</li>
+			<li class="pointPurple">06. 인턴 3개월	</li>
+			<li class="pointPurple">07. 완전 채용	</li>
+			</ul>
+	
+
+		</div>
+
+		<div class="col-sm-3 recruitIntro" id="huationistAni04">
+			<img src="../img/recruit/recruit_img19.png">
+			<h3>모든 부문 Leader(관리자) 및 임원</h3>
+			<ul>
+			<li class="pointPurple">01. 서류전형	</li>
+			<li class="pointPurple">02. 인성 및 기업문화 부합성 Interview	</li>
+			<li>03. Leadership Interview	</li>
+			<li>04. 시장 통찰력 Test	</li>
+			<li>05. Presentation Skill Test	</li>
+			<li>06. Documentation Skill Test	</li>
+			<li class="pointPurple">07. 인턴 3개월	</li>
+			<li class="pointPurple">08. 완전 채용	</li>
+			</ul>
+
+		</div>	
+
+		<img class="sectionArrow" src="../img/solution/solution_item02.png" id="sectionArrow">
+	</div>
+</section>
+<!-- 제품소개 끝 -->
+
+<!-- 제품소개 시작 -->
+<section class="container-fluid graySection">
+	<div class="container">
+		<h3 class="leftTitle">채용문의</h3>
+
+		<ul class="solutionFeature03">
+			<li><input type="text" name="user_name" value="이름" id="user_id" placeholder="이름"></li>
+			<li><input type="text" name="user_contact" value="연락처" id="user_contact" placeholder="연락처"></li>
+			<li><input type="text" name="user_email" value="이메일" id="user_email" placeholder="이메일"></li>
+			<li><input type="text" name="user_subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="상담내용을 최대한 상세하게 적어주시면 상담에 더 큰 도움이 됩니다."></textarea></li>		
+			<li class="ajax-response"></li>
+			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li>
+		</ul>
+		<input type="hidden" name="type" id="type" value="3">
+
+		<ul class="solutionFeature02">
+			<li>인턴 기간에도 급여는 100% 지급입니다.</li>
+			<li>보라색으로 표시된 절차는 전 부분 공통입니다.</li>
+			<li>입사문의 : recruit@huation.com</li>
+			<li>대표전화 : 02-2081-6713</li>
+
+		</ul>
+	</div>
+</section>
+<!-- 제품소개 끝 -->
+
     <!-- 탑버튼 -->
    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
    <!--  탑버튼 끝 -->
@@ -183,11 +304,11 @@
     <footer class="container-fluid footerBack">
 	    <div class="container">
 	    	<ul>
-		   		<li class="footer">
-                  <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
-                  <a href="/contact/contact">Contact us</a>
-               </li>
+                <li class="footer">
+                    <a href="/company/philoshphy">회사소개</a> | 
+                    <a href="/sendMail">이메일 문의</a> | 
+                    <a href="/contact/contact">Contact us</a>
+                 </li>
 		   		<li>
 		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
 		   		</li>
@@ -208,15 +329,14 @@
 <!-- 애니메이션 스크립트 -->
 <script>
     new WOW().init();
-    $('#pabxAni01').addClass('wow fadeInUp');
-    $('#pabxAni02').addClass('wow fadeInLeftBig');
-    $('#pabxAni03').addClass('wow fadeInUp');
-    $('#pabxAni04').addClass('wow fadeInRightBig');
-    $('#solution01Ani101').addClass('wow fadeInRight');
-    $('#solution01Ani102').addClass('wow fadeInRight');
-    </script>
-    
+    $('#mainAni01').addClass('wow fadeInUpBig');
+    $('#mainAni02').addClass('wow fadeInLeftBig');
+    $('#mainAni03').addClass('wow fadeInLeft');
+    $('#mainAni04').addClass('wow fadeInRight');
+    $('#mainAni05').addClass('wow fadeInRightBig');
+    $('#mainAni06').addClass('wow fadeInUp');
+    $('#mainAni07').addClass('wow fadeInUp');
+</script>
 <!-- 애니메이션 스크립트 -->
 </body>
 </html>
-
