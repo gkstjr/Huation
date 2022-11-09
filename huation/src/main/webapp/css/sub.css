@@ -1,0 +1,495 @@
+/* ---------------------------
+Basic 
+----------------------------*/
+
+.subName {padding:100px 0px; width:100%; background-size:cover;}
+.subName h2 {text-align:center; color:#fff !important; font-size:60px; line-height:1 !important; font-family:arial !important;}
+.subName p {text-align:center; color:#cdcfe6 !important; letter-spacing:-0.1em;font-size:20px;}
+
+
+/* jaguarkim */
+.company01{background:url("../img/company/company_bg01.jpg") no-repeat top center !important;}
+.company02{background:url("../img/company/company_bg02.jpg") no-repeat top center !important;}
+.company03{background:url("../img/company/company_bg03.jpg") no-repeat top center !important;}
+.company04{background:url("../img/company/company_bg04.jpg") no-repeat top center !important;}
+.company05{background:url("../img/company/company_bg05.jpg") no-repeat top center !important;}
+.company06{background:url("../img/company/company_bg06.jpg") no-repeat top center !important;}
+.contact01{background:url("../img/contact/contact01.jpg") no-repeat top center !important;}
+
+
+
+
+.business01{background:url("../img/business/business_bg01.jpg") no-repeat top center !important;}
+.business02{background:url("../img/business/business_bg02.jpg") no-repeat top center !important;}
+.business03{background:url("../img/business/business_bg03.jpg") no-repeat top center !important;}
+.business04{background:url("../img/business/business_bg04.jpg") no-repeat top center !important;}
+
+.subMenu {width:100%; background-color:#ebebed; height:70px; padding:0px;}
+.subMenu h3 {color:#393939 !important; font-size:18px; margin-top:21px;}
+.subMenu .container {position:relative;}
+.subMenu .container ul {display:inline-block; position:absolute; top:24px; right:10px;}
+.subMenu .container ul li {display:inline-block; float:left; font-size:14px; margin:0px 4px;}
+.subMenu .container ul li:last-child {font-weight:bold; margin-right:0px;}
+.locationArea{width:100%; height:500px;}
+
+@media (max-width: 767px) {
+.subMenu h3 {font-size:15px; margin-top:24px; letter-spacing:-0.05em;}
+.subMenu .container ul {top:28px;}
+.subMenu .container ul li {font-size:12px;  margin:0px 2px; letter-spacing:-0.05em;}
+}
+
+.whiteSection {padding:100px 0px; text-align:center; position:relative;}
+.graySection {padding:130px 0px; text-align:center; position:relative; background-color:#f3f3f3;}
+.centerTitle {padding-bottom:44px; margin-bottom:30px; background:url("../img/solution/solution_item01.png") center bottom no-repeat; font-weight:100; letter-spacing:-0.02em}
+.centerTitleP {margin-bottom:60px; font-size:19px;line-height:1.8 !important; letter-spacing:-0.08em;}
+.centerTitleP em {display:block}
+.sectionArrow {position:absolute; left:50%; bottom:-46px; margin-left:-46px; z-index:200;}
+.leftTitle {font-size:30px; display:inline-block; text-align:left; width:20%; vertical-align:top; font-weight:normal; margin:0px; letter-spacing:-0.075em}
+
+@media (max-width: 767px) {
+.sectionArrow {width:70px; bottom:-35px; margin-left:-35px;}
+.leftTitle {width:100%; text-align:center; margin-bottom:60px; font-size:18px; font-weight:bold;}
+.locationArea{width:100%; height:300px;}
+}
+
+
+
+/* ---------------------------
+Solution 
+----------------------------*/
+
+.solution01{background:url("../img/solution/solution_bg01.jpg") no-repeat top center;}
+.pabx{background:url("../img/solution/solution_bg02.jpg") no-repeat top center;}
+.hueres{background:url("../img/solution/solution_bg03.jpg") no-repeat top center;}
+.hueplus{background:url("../img/solution/solution_bg04.jpg") no-repeat top center;}
+.hueic{background:url("../img/solution/solution_bg05.jpg") no-repeat top center;}
+.hueboard{background:url("../img/solution/solution_bg06.jpg") no-repeat top center;}
+.huefaction{background:url("../img/solution/solution_bg07.jpg") no-repeat top center;}
+.huesta{background:url("../img/solution/solution_bg08.jpg") no-repeat top center;}
+
+
+/* HUEFAX */
+.solutionFeature {display:inline-block; width:36%; vertical-align:top; margin-left:10px;}
+.solutionFeature li {display:block; line-height:200% !important; font-size:16px; width:100%; font-weight:100; text-align:justify; padding-left:30px; background:url("../img/solution/solution_item03.png") left 10px no-repeat; margin-bottom:10px; letter-spacing:-0.075em; color:#5c5c67 !important;text-transform:none;}
+.solutionFeature02 {display:inline-block; width:36%; vertical-align:top; margin-left:10px;}
+.solutionFeature02 li {display:block; line-height:200% !important; font-size:19px; width:100%; font-weight:100; text-align:justify; padding-left:30px; background:url("../img/solution/solution_item03.png") left 10px no-repeat; margin-bottom:10px; letter-spacing:-0.05em; color:#5c5c67 !important;}
+.solutionFeature03 {display:inline-block; width:36%; vertical-align:top; margin-left:10px;}
+.solutionFeature03 li {display:block;font-size:19px; width:100%; font-weight:100; margin-bottom:10px;}
+.solutionFeature03 li.mailType {padding:8px 3px 9px; line-height:0; border:1px solid #ddd; background:#fff; font-size:14px; text-align:left;}
+.solutionFeature03 li input, .solutionFeature03 li textarea {width:100%; border:1px solid #ddd; font-size:14px;padding:8px;}
+.solutionFeature03 li input[type="radio"] {margin:0; padding:0; width:23px; border:none; vertical-align:middle;}
+.solutionFeature03 li.mailType label {cursor:pointer;}
+.recruitBtn {width:100%; display:inline-block; border:none; background:none; padding:0px; display:inline-block; height:auto;}
+.ajax-response {color:#CC3D3D; font-size:14px;}
+
+.footerLink a{color:#fff; display:inline-block}
+
+@media (max-width: 767px) {
+.solutionFeature {width:90%;}
+.solutionFeature02 {width:90%;}
+.solutionFeature03 {width:90%;}
+.centerTitleP em {display:inline}
+}
+
+.solutionFaxList {display:inline-block; width:36%; vertical-align:top; margin-left:10px;}
+.solutionFaxList li {padding:24px 0px 24px 120px !important; margin:10px 0px;}
+.solutionFaxList li h4 {font-size:22px; font-weight:normal; color:#2d2e38 !important; margin:0px; letter-spacing:-0.0em; text-align:left;}
+.solutionFaxList li p {font-size:14px; color:#5c5c67 !important; letter-spacing:-0.1em; text-align:left;}
+
+.solutionIcon01 {background:url("../img/solution/solution_img02.png") left top no-repeat;}
+.solutionIcon02 {background:url("../img/solution/solution_img03.png") left top no-repeat;}
+.solutionIcon03 {background:url("../img/solution/solution_img04.png") left top no-repeat;}
+.solutionIcon04 {background:url("../img/solution/solution_img05.png") left top no-repeat;}
+
+
+.solutionIcon50 {background:url("../img/solution/solution_img101.png") left top no-repeat;}
+.solutionIcon51 {background:url("../img/solution/solution_img102.png") left top no-repeat;}
+
+@media (max-width: 767px) {
+.solutionFaxList {width:90% !important;}
+.solutionFaxList li {padding:28px 0px 28px 120px !important; min-height:124px;}
+.solutionFaxList li h4 {font-size:16px; font-weight:bold;}
+.solutionFaxList li p {letter-spacing:-0.1em;}
+}
+
+.expectation {width:72% !important; display:inline-block; vertical-align:top; margin-left:10px;}
+.expectation li h4 {font-size:21px; text-align:left; letter-spacing:-0.08em;}
+.expectation li {margin-bottom:40px; text-align:left; display:block; letter-spacing:-0.05em; font-size:14px; width:100%; padding-left:30px; background:url("../img/solution/solution_item03.png") left 2px no-repeat;}
+.expectation li:last-child {margin-bottom:0px !important;}
+
+.solutionSpec {width:72%; display:inline-block;}
+.solutionSpec table {width:100%; border:solid 2px #b0b7c0; border-left:none; border-right:none;}
+.solutionSpec table tr {height:82px; width:72%;}
+.solutionSpec table tr:first-child {border-bottom:solid 1px #b0b7c0;}
+.solutionSpec table tr td {vertical-align:middle; font-size:14px; padding:10px 20px;}
+.solutionSpec table tr th {background-color:#f3f3f3; vertical-align:middle; text-align:center;}
+
+@media (max-width: 767px) {
+.solutionSpec {width:100%;}
+.solutionSpec tr td {padding:10px 5px !important;}
+}
+
+
+/* HUERES */
+.hueresImg {position:absolute; left:15px; top:-80px;}
+
+.hueresMain {margin-top:120px;}
+.hueresMain img {vertical-align:middle;}
+.hueresMain h4 {display:inline-block; vertical-align:middle; color:#393a44; margin-left:10px; font-size:22px; letter-spacing:-0.1em}
+.hueresMain p {color:#5c5c67; margin-top:15px; margin-bottom:80px; color:#5c5c67 !important; letter-spacing:-0.08em; font-size:22px;}
+
+.solutionIcon05 {background:url("../img/solution/solution_img19.png") left top no-repeat;}
+.solutionIcon06 {background:url("../img/solution/solution_img20.png") left top no-repeat;}
+.solutionIcon07 {background:url("../img/solution/solution_img21.png") left top no-repeat;}
+.solutionIcon08 {background:url("../img/solution/solution_img22.png") left top no-repeat;}
+.solutionIcon09 {background:url("../img/solution/solution_img23.png") left top no-repeat;}
+
+
+/* HUEPLUS */
+.hueplusImg {padding-top:40px; padding-bottom:70px;}
+.hueplusSkill {display:inline-block; width:72%;}
+.hueplusSkill p {text-align:left; margin-top:60px; font-size:19px; line-height:1.8 !important;; color:#5c5c67 !important;}
+
+@media (max-width: 767px) {
+.hueplusSkill {width:90%;}
+.hueplusSkill p {text-align:center;}
+}
+
+
+/* HUEIC */
+.solutionIcon10 {background:url("../img/solution/solution_img24.png") left top no-repeat;}
+.solutionIcon11 {background:url("../img/solution/solution_img25.png") left top no-repeat;}
+.solutionIcon12 {background:url("../img/solution/solution_img26.png") left top no-repeat;}
+.solutionIcon13 {background:url("../img/solution/solution_img27.png") left top no-repeat;}
+.solutionIcon14 {background:url("../img/solution/solution_img28.png") left top no-repeat;}
+.solutionIcon15 {background:url("../img/solution/solution_img29.png") left top no-repeat;}
+.solutionIcon16 {background:url("../img/solution/solution_img30.png") left top no-repeat;}
+.solutionIcon17 {background:url("../img/solution/solution_img31.png") left top no-repeat;}
+
+
+/* HUEBOARD */
+.hueboardImg {width:100%; display:inline-block;}
+.hueboardImg li {width:50%; float:left; margin-bottom:30px;}
+
+.hueboardSkill {display:inline-block; width:72%;}
+.hueboardModel {display:inline-block; width:100%;}
+.hueboardModel li {width:33%; float:left; display:inline-block; margin-bottom:20px;}
+.hueboardModel li p {font-weight:bold;}
+
+@media (max-width: 767px) {
+
+.hueboardSkill {width:90%;}
+.subTitle h2 {    text-align: center;    color: #fff !important;    font-size: 30px;}
+.subTitle p {    text-align: center;    color: #cdcfe6 !important;    letter-spacing: -0.1em;    font-size: 15px;}
+.centerTitleP {    margin-bottom: 60px;    font-size: 14px;    line-height: 1.8 !important;    letter-spacing: -0.08em;}
+
+
+}
+
+
+/* HUEFACTION */
+.huefactionSkill {display:inline-block; width:72%;}
+.huefactionSkill ul {display:inline-block;}
+.huefactionSkill ul li {width:14%; float:left; padding:0px 10px; display:inline-block;}
+.huefactionSkill ul li p {margin-top:5px;}
+
+@media (max-width: 767px) {
+.huefactionSkill {width:90%; text-align:center;}
+.huefactionSkill ul li {width:33.3%; margin-bottom:20px;}
+.huefactionSkill ul li p {letter-spacing:-0.025em;}
+}
+
+
+/* HUESTA */
+.solutionIcon17 {background:url("../img/solution/solution_img54.png") left top no-repeat;}
+.solutionIcon18 {background:url("../img/solution/solution_img55.png") left top no-repeat;}
+.solutionIcon19 {background:url("../img/solution/solution_img56.png") left top no-repeat;}
+.solutionIcon20 {background:url("../img/solution/solution_img57.png") left top no-repeat;}
+.solutionIcon21 {background:url("../img/solution/solution_img58.png") left top no-repeat;}
+
+
+/* ---------------------------
+Company 
+----------------------------*/
+
+
+/* 기념이념 */
+.companyLine01 {background:url("../img/company/company_img01.png") center bottom no-repeat !important;}
+.companyLine02 {background:url("../img/company/company_img06.png") center bottom no-repeat !important;}
+
+.companyIntro {margin-bottom:10px;}
+.companyIntro h3 {font-size:18px; font-weight:bold; margin-top:20px; margin-bottom:20px; color:#505050;text-transform: uppercase;letter-spacing:-0.05em;}
+.companyIntro p {font-size:15px; color:#7f878d !important;line-height:1.8 !important; letter-spacing:-0.02em;}
+
+
+/* CI소개 */
+.companyCi {position:relative;}
+.companyCiDown { position:absolute; bottom:0px; right:0px;}
+.companyCiDown ul {display:inline-block; position:absolute; top:0px; left:0px; padding:6px 0px 6px 72px;}
+.companyCiDown ul li {display:inline-block; float:left;}
+.companyCiDown ul li:first-child {margin-right:2px;}
+.companyCiDown ul li a {display:inline-block;}
+.companyCiInfo {margin-top:36px;}
+
+.logoConcept {display:inline-block; width:36%; vertical-align:top; margin-left:10px;}
+.logoConcept li {display:block; line-height:200% !important; font-size:19px; width:100%; font-weight:100; text-align:justify; padding-left:30px; background:url("../img/solution/solution_item03.png") left 10px no-repeat; margin-bottom:10px; letter-spacing:-0.08em; color:#5c5c67 !important;text-transform: uppercase;}
+
+@media (max-width: 767px) {
+.companyCiDown {display:none;}
+.logoConcept {width:90%;}
+}
+
+
+/* MISSION */
+.missionBg {margin-top:100px; width:100%; padding:90px 10px; background:url("../img/company/company_img12.png") center bottom no-repeat; background-size:cover;}
+.missionBg h3 {color:#fff !important; font-style:italic; font-size:22px;}
+
+@media (max-width: 767px) {
+.missionBg {margin-top:60px; padding:60px 10px;}
+.missionBg h3 {font-size:16px;}
+}
+
+
+/* 조직구성 */
+.companyTeam {display:inline-block; width:24%; vertical-align:top; margin-left:10px;}
+.companyTeam li {display:block; letter-spacing:-0.05em; font-size:14px; width:100%; text-align:left; padding-left:30px; background:url("../img/solution/solution_item03.png") left top no-repeat; margin-bottom:10px;}
+.companyTeam h4 {text-align:left; font-size:16px; margin-bottom:10px;}
+.companyTeam h4 span {color:#7d93f9 !important; font-size:18px;}
+
+@media (max-width: 767px) {
+.companyTeam {width:90%;}
+}
+
+.teamAbb {display:inline-block; width:72%; text-align:left; margin-top:60px;}
+.teamAbb img {vertical-align:top; margin-bottom:15px;}
+.teamAbb table {margin-left:20px; display:inline-block; letter-spacing:-0.05em;}
+.teamAbb table tr th {font-weight:bold;}
+.teamAbb table tr td {padding-left:20px;}
+.teamAbb table tr td span {display:none;}
+
+@media (max-width: 767px) {
+.teamAbb {width:90%;}
+.teamAbb table {margin-left:0px;}
+}
+
+
+/* 회사연혁 */
+.historyTable {}
+.historyTable .historyLine {display:inline-block; width:100%; height:1px; background-color:#bfbfbf; margin:30px 0px;}
+.historyTable table {width:100%; display:inline-block; text-align:left; font-size:13px;}
+.historyTable table tr {}
+.historyTable table tr th {color:#4dde89 !important; font-weight:bold;}
+.historyTable table tr td {padding-left:5%; width:100%}
+.historyTable table tr td ul li {margin-bottom:10px; letter-spacing:-0.05em;color:#959fa4 !important}
+.historyTable table tr td ul li:last-child {margin-bottom:0px;}
+
+.certification {width:78%; display:inline-block; vertical-align:top; text-align:left;}
+.certification p {margin-bottom:30px; font-size:17px; letter-spacing:-0.075em}
+
+.certificationImg {display:inline-block; width:100%; margin-bottom:60px;}
+.certificationImg li {display:inline-block; width:25%; float:left; padding:0px 15px;}
+
+@media (max-width: 767px) {
+.certification {width:90%;}
+.certificationImg {margin-bottom:0px;}
+.certificationImg li {width:50%; margin-bottom:30px;}
+
+}
+
+
+/* 고객사 */
+.businessPartner {padding:30px; border:solid 1px #dddddd; background-color:#f2f3f5; margin-bottom:60px; text-align:left;}
+.businessPartner img {vertical-align:middle;}
+.partnerInfo {display:inline-block; vertical-align:middle; text-align:left; margin-left:20px;}
+.partnerInfo a {display:inline-block; margin-top:10px;}
+
+@media (max-width: 610px) {
+.businessPartner {text-align:center;}
+.partnerInfo {margin-left:0px; margin-top:10px; text-align:center; width:100%;}
+.partnerInfo a {margin-top:10px;}
+}
+
+.businessPartnerLogo {border:solid 1px #dddddd; margin-bottom:60px; display:inline-block;}
+
+
+
+/* ---------------------------
+Business 
+----------------------------*/
+
+
+.businessOverview {position:absolute; top:1160px; left:20px; width:400px;}
+.businessOverview h3 {font-size:24px; text-align:justify; padding-left:10px; font-weight:100;}
+.businessOverview p {font-size:16px; text-align:justify; padding-left:10px; margin-bottom:20px;}
+.businessLi {display:inline-block; width:100%; vertical-align:top; margin-left:10px;}
+.businessLi li{display:block; line-height:180% !important; font-size:16px; width:100%; font-weight:100; text-align:justify; padding-left:30px; background:url("../img/solution/solution_item03.png") left 10px no-repeat; margin-bottom:10px; letter-spacing:-0.05em; color:#5c5c67 !important;}
+
+@media (max-width: 1199px) {
+.businessOverview {position:static; margin-top:80px; width:100%;}
+.businessOverview h3 {text-align:center;}
+.businessOverview p {text-align:center; margin-top:15px;}
+.businessLi {width:auto !important; margin-top:20px;}
+}
+
+.ucBusinessImg {margin:80px 0px;}
+.ucBusinessTitle {font-size:36px; font-weight:100; margin-bottom:100px;}
+.ucBusinessInfo {margin-bottom:40px;}
+.ucBusinessInfo h4 {margin:14px 0px;color:#2d2e38 !important;font-weight:500;letter-spacing:-0.075em; font-size:21px;}
+.ucBusinessInfo p {color:#5c5c67 !important;font-weight:normal;font-size:17px;}
+
+/* ---------------------------
+Company 
+----------------------------*/
+
+
+.huationist{background:url("../img/recruit/recruit_bg01.jpg") no-repeat top center;}
+.benefits{background:url("../img/recruit/recruit_bg02.jpg") no-repeat top center;}
+
+
+/* 인재상 */
+.huationistImg {position:absolute; top:300px; left:0px; z-index:888;}
+.huationistList {padding-left:300px; text-align:left;}
+.huationistList li {background:url("../img/recruit/recruit_img01.png") left 5px no-repeat; margin-bottom:20px; padding-left:30px;}
+.huationistList li h4 {color:#283847 !important; font-size:20px; letter-spacing:-0.075em; font-weight:500 !important;}
+.huationistList li p {color:#62717f !important; font-size:15px; letter-spacing:-0.075em;}
+
+
+@media (max-width: 767px) {
+.huationistImg {display:none;}
+.huationistList {padding-left:0px;} 
+}
+
+
+/* 복지제도 */
+.benefitList {padding-top:15px; padding-bottom:15px; text-align:left;}
+.benefitList img{vertical-align:middle;}
+.benefitList p {vertical-align:middle; display:inline-block; text-align:left; color:#2d2e38 !important; font-weight:bold; margin-left:20px; max-width:155px; letter-spacing:-0.05em;}
+.benefitList span {color:#5c5c67 !important; font-weight:normal;}
+
+.lastBenefit {max-width:420px !important;}
+
+
+.businessList {padding-top:15px; padding-bottom:15px; text-align:left;}
+.businessList img{vertical-align:middle;}
+.businessList p {vertical-align:middle; display:inline-block; text-align:left; color:#2d2e38 !important; font-weight:500; margin-left:20px; max-width:485px; letter-spacing:-0.075em; font-size:21px}
+.businessList span {color:#5c5c67 !important; font-weight:normal; font-size:17px}
+
+
+
+@media (max-width: 767px) {
+.lastBenefit {margin-left:0px !important; display:block !important; margin-top:20px;}
+.lastBenefit span {line-height:170% !important;}
+.logoConcept li { font-size:16px !important;}
+
+.certification p {
+    margin-bottom: 30px;
+    font-size: 15px;
+    letter-spacing: -0.075em;
+	
+}
+.mainSection01 {
+    padding: 50px 0px;
+    text-align: center;
+    background: url("../img/main/main_bg01.jpg") center top no-repeat;
+    background-size: cover;
+}
+
+.mainSection03 {
+    padding: 50px 0px;
+    text-align: center;
+}
+.mainSection03 a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+
+
+.mainSection04 h2 {
+    padding-bottom: 44px;
+    margin-bottom: 30px;
+    color: #fff !important;
+    background: url("../img/main/main_img07.png") center bottom no-repeat;
+    font-size: 24px;
+    font-weight: 100;
+    letter-spacing: -0.075em;
+}
+
+
+.mainSection04 {
+    padding: 50px 0px;
+    text-align: center;
+    background: url("../img/main/main_bg02.jpg") center top no-repeat;
+    background-size: cover;
+}
+
+
+.whiteSection {
+    padding: 50px 0px;
+    text-align: center;
+    position: relative;
+}
+
+.graySection {
+    padding: 60px 0px;
+    text-align: center;
+    position: relative;
+    background-color: #f3f3f3;
+}
+
+
+.huationistList li h4 {
+    color: #283847 !important;
+    font-size: 17px;
+    letter-spacing: -0.075em;
+    font-weight: 500 !important;
+}
+.huationistList li p {
+    color: #62717f !important;
+    font-size: 13px;
+    letter-spacing: -0.075em;
+}
+
+
+
+
+.webDisplay{display:none !important;}
+
+
+.ucBusinessTitle {font-size:24px; font-weight:100; margin-bottom:50px;}
+
+
+.businessList {padding-top:15px; padding-bottom:15px; text-align:center;}
+.businessList img{vertical-align:middle;}
+.businessList p {vertical-align:middle; display:block; text-align:center; color:#2d2e38 !important; font-weight:500; margin-left:0px; max-width:485px; letter-spacing:-0.075em; font-size:21px}
+.businessList span {color:#5c5c67 !important; font-weight:normal; font-size:17px}
+}
+
+
+.recruit03{background:url("../img/recruit/recruit_bg03.jpg") no-repeat top center;}
+
+.recruitIntro {margin-bottom:10px;}
+.recruitIntro h3 {font-size:17px; font-weight:bold; margin-top:20px; margin-bottom:20px; color:#505050;text-transform: uppercase;letter-spacing:-0.05em;}
+.recruitIntro ul li  {font-size:15px; color:#7f878d ;line-height:2 !important; text-align:left !important;}
+.pointPurple {color:#7d93f9 !important;}
+
+@media (min-width: 1200px){
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+	    width: 1200px;
+}
+
+}
+
+/* ---------------------------
+Contact
+----------------------------*/
+
+
+/* Contact */
+.loading {position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;}
+.loading .cont {position:fixed; left:50%; top:50%; margin-top:-70px; margin-left:-115px; padding:20px 0; width:230px; border:1px solid #000; background:#fff; text-align:center;}
+.loading .cont .txt {font-size:16px;}
