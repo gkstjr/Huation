@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,15 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/slick.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
     
-    
-   
-
-
-
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -36,9 +30,9 @@
     <script type="text/javascript" src="../js/wow.js"></script>
 </head>
 
-<body cz-shortcut-listen="true">
+<body cz-shorcut-listen="true">
        <!-- 메뉴바 시작 -->
-    <div class="container-fluid menuWrap" id="home">
+       <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
             <nav class="navbar menu-custom" role="navigation">
@@ -115,67 +109,108 @@
     </div>
     <!-- 메뉴바 끝 -->
 
-    <!-- subName 시작 -->
-        <div class = "container-fluid subName pabx" id = "subName01">
-            <h2>PABX</h2>
-            <p>CTI 미들웨어 솔루션</p>
+     <!-- subName 시작 -->
+     <div class = "container-fluid subName hueplus" id = "subName01">
+        <h2>HUEPLUS</h2>
+        <p>자동응답 솔루션</p>
+    </div>
+    <!-- subName 끝 -->
+    <!-- subMenu 시작-->
+    <div class = "container-fluid subMenu">
+        <div class = "container">
+            <h3>IVR(ARS)</h3>
+            <ul>
+                <li>Home</li>
+                <li>></li>
+                <li>Solution</li>
+                <li>></li>
+                <li>IVR(ARS)</li>
+            </ul>
         </div>
-        <!-- subName 끝 -->
-        <!-- subMenu 시작-->
-        <div class = "container-fluid subMenu">
-            <div class = "container">
-                <h3>교환기</h3>
-                <ul>
-                    <li>Home</li>
-                    <li>></li>
-                    <li>Solution</li>
-                    <li>></li>
-                    <li>교환기</li>
-                </ul>
-            </div>
-        </div>
-        <!-- subMenu 끝 -->
+    </div>
+    <!-- subMenu 끝 -->
 
-        <!-- 제품 소개 시작-->
-        <section class = "container-fluid whiteSection">
-            <div class = "container">
-                <h2 class = "centerTitle">PABX</h2>
-                <p class = "centerTitleP">HUATION 제품은 국내의 삼성, LG  교환기 뿐 아니라
-                     해외 글로벌 기업의 Avaya, CISCO, Alcatel-Lucent 등의 교환기와 연동하여 서비스가 가능합니다.
-                     </p>
-            
-                <div class="hueresMain" style="margin-bottom:60px;" id="pabxAni01">
-                    <img src="../img/solution/solution_img48.png"><h4>Avaya, CISCO, Alcatel-Lucent</h4>			
-                </div>
-            
-                <div class="col-sm-4"><img src="../img/solution/solution_img49.png"  id="pabxAni02"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img50.png"  id="pabxAni03"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img51.png"  id="pabxAni04"></div>
-            
+    <!-- 제품 소개 시작-->
+    <section class="container-fluid whiteSection">
+        <div class="container" style="position:relative;">
+            <img class="hueresImg" src="../img/solution/solution_img11.png">
+            <h2 class="centerTitle">HUEPLUS</h2>
+            <p class="centerTitleP">휴플러스는 GUI 기반의 RAD Tool을 제공하는 IVR(Interactive Voice Response)솔루션입니다. Scenario Designer를 통하여 IVR Call Flow을 디자인 한 후 서버에 설치하게 되면 휴플러스의 IVR 엔진이 이를 해석하여 자동 음성안내와 같은 Self Service를 제공합니다.</p>
+    
+            <div class="hueplusImg" id="hueplusAni01"><img src="../img/solution/solution_img12.png"></div>
+    
+        </div>
+        <img class="sectionArrow" src="../img/solution/solution_item02.png" id="sectionArrow">
+    </section>
+    
+
+    <!-- 제품 소개 끝-->
+
+    <!-- 기능및특징 시작 -->
+<section class="container-fluid graySection">
+	<div class="container">
+		<h3 class="leftTitle">기능 및 특징</h3>
+		<ul class="solutionFeature">
+			<li>Windows/Linux 지원</li>
+			<li>Dialogic 및 서울통신기술 NetCTI 지원</li>
+			<li>IP-IVR 지원 (H.323, SIP Protocol)</li>
+			<li>CTMP, SCPlus, Avaya CTI Adapter 지원</li>
+			<li>독립 채널 구조로 설계되어 안정성 확보</li>
+			<li>IVR Scenario 디자인 툴 제공</li>
+			<li>Voiceware, CoreVoice, HCILab TTS 연동 모듈 제공</li>
+			<li>ASR(음성인식) 연동 모듈 제공</li>
+			<li>시나리오 오류 검증 및 검색 기능</li>
+			<li>서비스 무중단 Realtime Deploy </li>
+		</ul>
+		<ul class="solutionFeature">
+			<li>다양한 모니터링 화면 제공</li>
+			<li>Undo/Redo 기능</li>
+			<li>회선별 이중 서비스 지원</li>
+			<li>TDM 기반 IVR에서 다양한 Protocol 지원<br/>
+				-E1R2, Analog, T1, FXS, ISDN-PRI 등</li>
+			<li>바이너리 파일 형식의 빠른 입출력/해석</li>
+			<li>자체 Script 언어 구현</li>
+			<li>Scenario Template 재사용</li>
+			<li>User Defined Function 적용<br/>
+				-TCP/IP, DB입출력, 파일 입출력, Play, Recording 등</li>
+		</ul>
+	</div>
+</section>
+<!-- 기능및특징 끝-->
+
+    <!-- 구성요소 시작 -->
+    <section class="container-fluid whiteSection">
+        <div class="container">
+            <h3 class="leftTitle">연관 보유 기술</h3>
+            <div class="hueplusSkill">
+                <img src="../img/solution/solution_img13.png" id="hueplusAni02">
+                <p>Avaya EP(Experience Portal)는 소프트웨어 Only 솔루션으로 Web Service 및 VoiceXML, CCXML과 같은 웹 커뮤니케이션 표준에 기반하고 있습니다. 이를 통해 적은 비용으로 간편하게 어플리케이션의 개발 및 연동이 가능합니다.  뛰어난 확장성, 유연한 설치방식, 우수한 신뢰성과 일원화된 어플리케이션 및 시스템 관리기능을 제공합니다.</p>
             </div>
-         </section>
-        <!-- 제품 소개 끝 -->
-        
-        <!-- spec 시작-->
-        <section class="container-fluid graySection">
-            <div class="container">
-                <h3 class="leftTitle">Spec</h3>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani101" class="solutionIcon50">
-                        <h4>Microsoft Windows</h4>
-                        <p>윈도우</p>
-                    </li>
-                </ul>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani102" class="solutionIcon51">
-                        <h4>Linux </h4>
-                        <p>리눅스</p>
-                    </li>
-                </ul>
-        
-            </div>
-        </section>
-        <!-- spec 끝-->
+        </div>
+    </section>
+<!-- 구성요소 끝-->
+
+  <!-- spec 시작-->
+  <section class="container-fluid graySection">
+    <div class="container">
+        <h3 class="leftTitle">Spec</h3>
+        <ul class="solutionFaxList">
+            <li id="solution01Ani101" class="solutionIcon50">
+                <h4>Microsoft Windows</h4>
+                <p>윈도우</p>
+            </li>
+        </ul>
+        <ul class="solutionFaxList">
+            <li id="solution01Ani102" class="solutionIcon51">
+                <h4>Linux </h4>
+                <p>리눅스</p>
+            </li>
+        </ul>
+
+    </div>
+</section>
+<!-- spec 끝-->
+
     <!-- 탑버튼 -->
    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
    <!--  탑버튼 끝 -->
@@ -183,11 +218,11 @@
     <footer class="container-fluid footerBack">
 	    <div class="container">
 	    	<ul>
-		   		<li class="footer">
-                  <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
-                  <a href="/contact/contact">Contact us</a>
-               </li>
+                <li class="footer">
+                    <a href="/company/philoshphy">회사소개</a> | 
+                    <a href="/sendMail">이메일 문의</a> | 
+                    <a href="/contact/contact">Contact us</a>
+                 </li>
 		   		<li>
 		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
 		   		</li>
@@ -207,16 +242,15 @@
      
 <!-- 애니메이션 스크립트 -->
 <script>
+   
     new WOW().init();
-    $('#pabxAni01').addClass('wow fadeInUp');
-    $('#pabxAni02').addClass('wow fadeInLeftBig');
-    $('#pabxAni03').addClass('wow fadeInUp');
-    $('#pabxAni04').addClass('wow fadeInRightBig');
+    $('#sectionArrow').addClass('wow fadeInDown');
+    $('#hueplusAni01').addClass('wow fadeInUp');
+    $('#hueplusAni02').addClass('wow fadeInUpBig');
     $('#solution01Ani101').addClass('wow fadeInRight');
     $('#solution01Ani102').addClass('wow fadeInRight');
-    </script>
-    
+
+</script>
 <!-- 애니메이션 스크립트 -->
 </body>
 </html>
-

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,15 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/slick.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
     
-    
-   
-
-
-
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -36,9 +30,9 @@
     <script type="text/javascript" src="../js/wow.js"></script>
 </head>
 
-<body cz-shortcut-listen="true">
+<body cz-shorcut-listen="true">
        <!-- 메뉴바 시작 -->
-    <div class="container-fluid menuWrap" id="home">
+       <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
             <nav class="navbar menu-custom" role="navigation">
@@ -115,48 +109,87 @@
     </div>
     <!-- 메뉴바 끝 -->
 
-    <!-- subName 시작 -->
-        <div class = "container-fluid subName pabx" id = "subName01">
-            <h2>PABX</h2>
-            <p>CTI 미들웨어 솔루션</p>
+     <!-- subName 시작 -->
+     <div class = "container-fluid subName huefaction" id = "subName01">
+        <h2>HUEFACTION</h2>
+        <p>상담 어플리케이션</p>
+    </div>
+    <!-- subName 끝 -->
+    <!-- subMenu 시작-->
+    <div class = "container-fluid subMenu">
+        <div class = "container">
+            <h3>상담App.</h3>
+            <ul>
+                <li>Home</li>
+                <li>></li>
+                <li>Solution</li>
+                <li>></li>
+                <li>상담App.</li>
+            </ul>
         </div>
-        <!-- subName 끝 -->
-        <!-- subMenu 시작-->
-        <div class = "container-fluid subMenu">
-            <div class = "container">
-                <h3>교환기</h3>
-                <ul>
-                    <li>Home</li>
-                    <li>></li>
-                    <li>Solution</li>
-                    <li>></li>
-                    <li>교환기</li>
-                </ul>
-            </div>
-        </div>
-        <!-- subMenu 끝 -->
+    </div>
+    <!-- subMenu 끝 -->
 
-        <!-- 제품 소개 시작-->
-        <section class = "container-fluid whiteSection">
-            <div class = "container">
-                <h2 class = "centerTitle">PABX</h2>
-                <p class = "centerTitleP">HUATION 제품은 국내의 삼성, LG  교환기 뿐 아니라
-                     해외 글로벌 기업의 Avaya, CISCO, Alcatel-Lucent 등의 교환기와 연동하여 서비스가 가능합니다.
-                     </p>
-            
-                <div class="hueresMain" style="margin-bottom:60px;" id="pabxAni01">
-                    <img src="../img/solution/solution_img48.png"><h4>Avaya, CISCO, Alcatel-Lucent</h4>			
-                </div>
-            
-                <div class="col-sm-4"><img src="../img/solution/solution_img49.png"  id="pabxAni02"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img50.png"  id="pabxAni03"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img51.png"  id="pabxAni04"></div>
-            
-            </div>
-         </section>
-        <!-- 제품 소개 끝 -->
-        
-        <!-- spec 시작-->
+    <!-- 제품소개 시작  -->
+<section class="container-fluid whiteSection">
+	<div class="container" style="position:relative;">
+		<img class="hueresImg" src="../img/solution/solution_img59.png">
+		<h2 class="centerTitle">HUEFACTION</h2>
+		<p class="centerTitleP">Web 기반의 상담 Application인 휴팩션은 보험/금융, 증권, 통신/텔레콤, 엔터테인먼트(게임), 공공, 제조/서비스, 국방 등 모든 Business의 고객들과 산업군에서 고객 응대가 가능한 범용 어플리케이션이며, Inbound와 Outbound 센터 모두를 아우르는 Framework을 제공합니다.</p>
+
+		<div class="hueresMain" id="huefactionAni01">
+			<img src="../img/solution/solution_img60.png"><h4>HUEFACTION™  Framework</h4>
+			<p><!--교환기의 DSP 보드 또는 IP 전화기 연결 네트워크 포트 미러링을 통한 전수 혹은 선택 녹취 (일반적 구성)--></p>
+		</div>
+		<img src="../img/solution/solution_img61.png" id="huefactionAni02">
+		
+	</div>
+	<img class="sectionArrow" src="../img/solution/solution_item02.png" id="sectionArrow">
+</section>
+<!-- 제품소개 끝 -->
+
+<!-- 기능및특징 시작 -->
+<section class="container-fluid graySection">
+	<div class="container">
+		<h3 class="leftTitle">적용가능 산업군</h3>
+		
+		<div class="huefactionSkill">
+			<ul>
+				<li>
+					<img src="../img/solution/solution_img62.png" id="huefactionAni03">
+					<p>보험/금융</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img63.png" id="huefactionAni04">
+					<p>통신</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img64.png" id="huefactionAni05">
+					<p>증권</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img65.png" id="huefactionAni06">
+					<p>엔터테인먼트</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img66.png" id="huefactionAni07">
+					<p>게임포털</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img67.png" id="huefactionAni08">
+					<p>공공서비스</p>
+				</li>
+				<li>
+					<img src="../img/solution/solution_img68.png" id="huefactionAni09">
+					<p>제조서비스</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- 기능및특징 끝-->
+
+ <!-- spec 시작-->
         <section class="container-fluid graySection">
             <div class="container">
                 <h3 class="leftTitle">Spec</h3>
@@ -176,6 +209,7 @@
             </div>
         </section>
         <!-- spec 끝-->
+
     <!-- 탑버튼 -->
    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
    <!--  탑버튼 끝 -->
@@ -183,11 +217,11 @@
     <footer class="container-fluid footerBack">
 	    <div class="container">
 	    	<ul>
-		   		<li class="footer">
-                  <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
-                  <a href="/contact/contact">Contact us</a>
-               </li>
+                <li class="footer">
+                    <a href="/company/philoshphy">회사소개</a> | 
+                    <a href="/sendMail">이메일 문의</a> | 
+                    <a href="/contact/contact">Contact us</a>
+                 </li>
 		   		<li>
 		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
 		   		</li>
@@ -207,16 +241,22 @@
      
 <!-- 애니메이션 스크립트 -->
 <script>
-    new WOW().init();
-    $('#pabxAni01').addClass('wow fadeInUp');
-    $('#pabxAni02').addClass('wow fadeInLeftBig');
-    $('#pabxAni03').addClass('wow fadeInUp');
-    $('#pabxAni04').addClass('wow fadeInRightBig');
-    $('#solution01Ani101').addClass('wow fadeInRight');
-    $('#solution01Ani102').addClass('wow fadeInRight');
-    </script>
-    
+
+new WOW().init();
+$('#sectionArrow').addClass('wow fadeInDown');
+$('#huefactionAni01').addClass('wow fadeInUp');
+$('#huefactionAni02').addClass('wow fadeInUpBig');
+$('#huefactionAni03').addClass('wow rotateIn');
+$('#huefactionAni04').addClass('wow rotateIn');
+$('#huefactionAni05').addClass('wow rotateIn');
+$('#huefactionAni06').addClass('wow rotateIn');
+$('#huefactionAni07').addClass('wow rotateIn');
+$('#huefactionAni08').addClass('wow rotateIn');
+$('#huefactionAni09').addClass('wow rotateIn');
+$('#solution01Ani101').addClass('wow fadeInRight');
+$('#solution01Ani102').addClass('wow fadeInRight');
+
+</script>
 <!-- 애니메이션 스크립트 -->
 </body>
 </html>
-

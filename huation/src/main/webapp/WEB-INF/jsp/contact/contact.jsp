@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,15 +13,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/slick.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
     
-    
-   
-
-
-
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -34,11 +28,80 @@
     <script type="text/javascript" src="../js/gnb.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
+
+<script>
+/**
+for mail send.
+*/
+var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+
+function mailSend(){
+	// validation
+	var mailType = $("input[name='mailType']:checked").get(0);
+	var name = $("#user_id").get(0);
+	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus(); return;}
+	var contact = $("#user_contact").get(0);
+	if(contact.value.trim() == "" || contact.value == contact.placeholder) {alert("연락처를 입력하세요."); contact.focus(); return;}
+	var email = $("#user_email").get(0);
+	if(email.value.trim() == "" || email.value == email.placeholder){ alert("이메일주소를 입력하세요."); return;}
+	var subject = $("#user_subject").get(0);
+	if(subject.value.trim() == "" || subject.value == subject.placeholder) {alert("제목을 입력하세요."); subject.focus(); return;}
+	var content = $("#Content").get(0);
+	if(content.value.trim() == "") {alert("문의내용을 입력하세요."); content.focus(); return;}
+	
+	if (!regExp.test(contact.value.trim())) {
+        alert("잘못된 전화번호입니다. 예) 050-XXXX-XXXX");
+        contact.focus();
+        return;
+    }
+	if (!emailRegExp.test(email.value.trim())) {
+		alert("올바른 이메일 주소를 입력 해주세요.");
+		email.focus();
+		return;
+	}
+// 	var type = $("#type").get(0);
+	
+	var sendUrl = "../mailSend";
+	
+	// submit
+	$(".recruitBtn").bind('click', false);
+	$('#loadingIndicator').show();
+	
+	$.post(sendUrl ,{
+		subject: subject.value
+		, name: name.value
+		, contact: contact.value
+		, email: email.value
+		, content: content.value
+// 		, type: type.value
+		, type: mailType.value
+	}, function(data, status){
+		if(status == 'success'){
+			alert("메일을 발송하였습니다.");
+		}else{
+			alert("메일발송 중 문제가 발생했습니다.");
+		}
+		$(".recruitBtn").unbind('click', false);
+		$('.loading').hide();
+	});
+}
+
+$(document).ready(function(){
+	$.each($(".solutionFeature03 input[type='text']"), function(i, val){
+		$(val).on('focus', function(e){
+			if(this.placeholder == this.value) this.value = "";
+		})
+	});
+	
+	$("#loadingIndicator").hide();
+});
+</script>
 </head>
 
-<body cz-shortcut-listen="true">
+<body cz-shorcut-listen="true">
        <!-- 메뉴바 시작 -->
-    <div class="container-fluid menuWrap" id="home">
+       <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
             <nav class="navbar menu-custom" role="navigation">
@@ -115,67 +178,55 @@
     </div>
     <!-- 메뉴바 끝 -->
 
-    <!-- subName 시작 -->
-        <div class = "container-fluid subName pabx" id = "subName01">
-            <h2>PABX</h2>
-            <p>CTI 미들웨어 솔루션</p>
+     <!-- subName 시작 -->
+     <div class = "container-fluid subName contact01" id = "subName01">
+        <h2>Contact</h2>
+        <p>궁금하신 부분을 언제나 친절하고 신속하게 답변드리겠습니다.</p>
+    </div>
+    <!-- subName 끝 -->
+    <!-- subMenu 시작-->
+    <div class = "container-fluid subMenu">
+        <div class = "container">
+            <h3>오시는길</h3>
+            
         </div>
-        <!-- subName 끝 -->
-        <!-- subMenu 시작-->
-        <div class = "container-fluid subMenu">
-            <div class = "container">
-                <h3>교환기</h3>
-                <ul>
-                    <li>Home</li>
-                    <li>></li>
-                    <li>Solution</li>
-                    <li>></li>
-                    <li>교환기</li>
-                </ul>
-            </div>
-        </div>
-        <!-- subMenu 끝 -->
+    </div>
+    <!-- subMenu 끝 -->
 
-        <!-- 제품 소개 시작-->
-        <section class = "container-fluid whiteSection">
-            <div class = "container">
-                <h2 class = "centerTitle">PABX</h2>
-                <p class = "centerTitleP">HUATION 제품은 국내의 삼성, LG  교환기 뿐 아니라
-                     해외 글로벌 기업의 Avaya, CISCO, Alcatel-Lucent 등의 교환기와 연동하여 서비스가 가능합니다.
-                     </p>
-            
-                <div class="hueresMain" style="margin-bottom:60px;" id="pabxAni01">
-                    <img src="../img/solution/solution_img48.png"><h4>Avaya, CISCO, Alcatel-Lucent</h4>			
-                </div>
-            
-                <div class="col-sm-4"><img src="../img/solution/solution_img49.png"  id="pabxAni02"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img50.png"  id="pabxAni03"></div>
-                <div class="col-sm-4"><img src="../img/solution/solution_img51.png"  id="pabxAni04"></div>
-            
-            </div>
-         </section>
-        <!-- 제품 소개 끝 -->
-        
-        <!-- spec 시작-->
-        <section class="container-fluid graySection">
-            <div class="container">
-                <h3 class="leftTitle">Spec</h3>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani101" class="solutionIcon50">
-                        <h4>Microsoft Windows</h4>
-                        <p>윈도우</p>
-                    </li>
-                </ul>
-                <ul class="solutionFaxList">
-                    <li id="solution01Ani102" class="solutionIcon51">
-                        <h4>Linux </h4>
-                        <p>리눅스</p>
-                    </li>
-                </ul>
-        
-            </div>
-        </section>
-        <!-- spec 끝-->
+    <section class="container-fluid whiteSection">
+	<div class="container">
+		<h2 class="centerTitle companyLine01">Contact</h2>
+		<p class="centerTitleP">서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션</em></p>
+	<iframe class="locationArea" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3166.207184471594!2d126.8853199151932!3d37.47943693686942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9e1fd746c589%3A0x837c52ba7092ef9e!2z6rCR7J2E6re466CI7J207Yq467C466as!5e0!3m2!1sko!2skr!4v1465026377890" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<img class="sectionArrow" src="../img/solution/solution_item02.png" id="sectionArrow">
+		</div>
+	</section>
+
+<!-- 제품소개 시작 -->
+<section class="container-fluid graySection">
+	<div class="container">
+		<h3 class="leftTitle">문의하기</h3>
+		<ul class="solutionFeature03">
+			<li class="mailType"><input type="radio" name="mailType" id="sales" value="2" checked /><label for="sales">제품문의</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="mailType" id="recruit" value="3"/><label for="recruit">입사문의</label></li>
+			<li><input type="text" name="user_name" value="이름" id="user_id" placeholder="이름"></li>
+			<li><input type="text" name="user_contact" value="연락처" id="user_contact" placeholder="연락처"></li>
+			<li><input type="text" name="user_email" value="이메일" id="user_email" placeholder="이메일"></li>
+			<li><input type="text" name="user_subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="내용을 최대한 상세하게 적어주시면 답변에 더 큰 도움이 됩니다."></textarea></li>
+			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li>
+		</ul>
+		<ul class="solutionFeature02">
+			<li>서울특별시 금천구 디지털로9길 32, A동 1701호(가산동)</li>
+			<li>대표전화 : 02-2081-6713</li>
+			<li>대표팩스 : 02-6269-4804</li>
+			<li>제품문의 : sales@huation.com</li>
+			<li>입사문의 : recruit@huation.com</li>
+		</ul>
+		<input type="hidden" name="type" id="type" value="2">
+	</div>
+</section>
+<!-- 제품소개 끝 -->
+
     <!-- 탑버튼 -->
    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
    <!--  탑버튼 끝 -->
@@ -183,11 +234,11 @@
     <footer class="container-fluid footerBack">
 	    <div class="container">
 	    	<ul>
-		   		<li class="footer">
-                  <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
-                  <a href="/contact/contact">Contact us</a>
-               </li>
+                <li class="footer">
+                    <a href="/company/philoshphy">회사소개</a> | 
+                    <a href="/sendMail">이메일 문의</a> | 
+                    <a href="/contact/contact">Contact us</a>
+                 </li>
 		   		<li>
 		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
 		   		</li>
@@ -207,16 +258,15 @@
      
 <!-- 애니메이션 스크립트 -->
 <script>
-    new WOW().init();
-    $('#pabxAni01').addClass('wow fadeInUp');
-    $('#pabxAni02').addClass('wow fadeInLeftBig');
-    $('#pabxAni03').addClass('wow fadeInUp');
-    $('#pabxAni04').addClass('wow fadeInRightBig');
-    $('#solution01Ani101').addClass('wow fadeInRight');
-    $('#solution01Ani102').addClass('wow fadeInRight');
-    </script>
-    
+new WOW().init();
+$('#sectionArrow').addClass('wow fadeInDown');
+</script>
 <!-- 애니메이션 스크립트 -->
+
+<!-- 로딩레이어:s -->
+<div id="loadingIndicator" class="loading">
+	<div class="cont"><img src="../img/contact/loading.gif"></a><br><span class="txt">메일 전송중입니다.</span></div>
+</div>
+<!-- 로딩레이어:e -->
 </body>
 </html>
-
