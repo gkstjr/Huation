@@ -255,27 +255,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 /* ---------------------------------------------- /*
  * main 화면 css - 신영
 /* ---------------------------------------------- */
-.main-titles {
-	margin: 30px auto;
-	text-align: center;
+/*
+.main-4-wrap h2 {padding-bottom:44px; margin-bottom:30px; color:#fff !important; background:url("../img/main/main_img07.png") center bottom no-repeat; font-size:44px; font-weight:100;letter-spacing:-0.075em;}
+.main-4-wrap {
+    padding: 50px 0px;
+    text-align: center;
+    background: url("../img/main/main_bg02.jpg") center top no-repeat;
+    background-size: cover;
 }
-.main-titles>h2 {
-	font-size: 44px;
-	padding-bottom: 44px;
-    color: #fff;
-    font-size: 44px;
-    font-weight: 100;
-    letter-spacing: -0.075em;
-}
-.main-titles>img {
-	margin: 0 auto;
-	padding-bottom: 35px;
-}
-.main-titles>p {
-	margin-bottom: 60px;
-	color: #fff;
-}
-.main-4-wrap {padding:100px 0px; text-align:center; background:url("../img/main/main_bg02.jpg") center top no-repeat; background-size:cover;}
 .main-4-wrap a {display:inline-block; margin-top:20px;}
 .main-4-icons {display:inline-block;}
 .main-4-wrap li {display:inline-block; float:left; margin-bottom:60px; width:20%; padding:0px 5px;}
@@ -322,6 +309,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
     font-size: 24px;
 }
 }
+*/
 /*
 .main-4-wrap h2 {
     padding-bottom: 44px;
@@ -331,7 +319,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
     font-weight: 100;
     letter-spacing: -0.075em;
 }
-*/
 
 .img-wrap {
 	width: 100%;
@@ -359,11 +346,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 	text-align: center;
 }
 
+.mainSection01 {
+    padding: 50px 0px;
+    text-align: center;
+    background: url("../img/main/main_bg01.jpg") center top no-repeat;
+    background-size: cover;
+}
+
+.main-3-wrap {
+    padding: 50px 0px;
+    text-align: center;
+}
+.main-3-wrap a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.main-3-wrap h2 {padding-bottom:44px; margin-bottom:30px; background:url("../img/main/main_img01.png") center bottom no-repeat; font-weight:100; letter-spacing:-0.075em; font-size:44px;}
+*/
+
 /* ---------------------------------------------- /*
  * footer 스타일 - 신영
 /* ---------------------------------------------- */
 
-.footer>a, .container-fluid ul li:nth-child(2) {
+.footer>a, .footerBack ul li:nth-child(2) {
 	color: #fff;
 } 	
 .footerBack {

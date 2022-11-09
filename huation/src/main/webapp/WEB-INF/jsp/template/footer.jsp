@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  
+ <!-- 탑버튼 -->
+   <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
+ <!--  탑버튼 끝 -->
  <!-- footer 시작-->
     <footer class="container-fluid footerBack">
 	    <div class="container">
