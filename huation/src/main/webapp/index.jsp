@@ -59,55 +59,55 @@
                             </button>
                             <!-- 왜 필요한지 모르겠음 E -->
     
-                            <a class="navbar-brand" href="#"><img src="img/common/gnb_logo.png" alt="휴에이션"></a>
+                            <a class="navbar-brand" href="/"><img src="img/common/gnb_logo.png" alt="휴에이션"></a>
                         </div>
                         <!-- 상단 메뉴 바 부분-->
                         <div class="collapse navbar-collapse" id="custom-collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Company<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                       <!-- 11-03 여기부터 할 차례 -->
-                                        <li><a href="#">기업이념</a></li>
-                                        <li><a href="#">Mission</a></li>
-                                        <li><a href="#">조직구성</a></li>
-                                        <li><a href="#">회사연혁</a></li>
-                                        <li><a href="#">고객사</a></li>
-                                        <li><a href="#">CI소개</a></li>
+                                        <li><a href="/company/philoshphy">기업이념</a></li>
+                                        <li><a href="/company/mission">Mission</a></li>
+                                        <li><a href="/company/organization">조직구성</a></li>
+                                        <li><a href="/company/history">회사연혁</a></li>
+                                        <li><a href="/company/client">고객사</a></li>
+                                        <li><a href="/company/ci">CI소개</a></li>
                                     </ul>
                                 </li>
     
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Business<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">사업개요</a></li>
-                                        <li><a href="#">ECM 사업</a></li>
-                                        <li><a href="#">CRM 사업</a></li>
-                                        <li><a href="#">UC 사업</a></li>
+                                        <li><a href="/business/overview">사업개요</a></li>
+                                        <li><a href="/business/ecm">ECM 사업</a></li>
+                                        <li><a href="/business/crm">CRM 사업</a></li>
+                                        <li><a href="/business/uc">UC 사업</a></li>
                                     </ul>
                                 </li>
     
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Solution<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">HUEFAX(전자팩스)</a></li>
-                                        <li><a href="#">PABX(교환기)</a></li>
-                                        <li><a href="#">HUERES(녹취)</a></li>
-                                        <li><a href="#">HUEPLUS(IVR/ARS)</a></li>
-                                        <li><a href="#">HUEIC(CTI)</a></li>
-                                        <li><a href="#">HUEBOARD(전광판)</a></li>
-                                        <li><a href="#">HUEFACTION(상담APP)</a></li>
-                                        <li><a href="#">HUESTA(통합통계)</a></li>
+                                        <li><a href="/solution/huefax">HUEFAX(전자팩스)</a></li>
+                                        <li><a href="/solution/pabx">PABX(교환기)</a></li>
+                                        <li><a href="/solution/hueres">HUERES(녹취)</a></li>
+                                        <li><a href="/solution/hueplus">HUEPLUS(IVR/ARS)</a></li>
+                                        <li><a href="/solution/hueic">HUEIC(CTI)</a></li>
+                                        <li><a href="/solution/hueboard">HUEBOARD(전광판)</a></li>
+                                        <li><a href="/solution/huefaction">HUEFACTION(상담APP)</a></li>
+                                        <li><a href="/solution/huesta">HUESTA(통합통계)</a></li>
                                     </ul>
                                 </li>
     
                                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Recruit<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">인재상</a></li>
-                                        <li><a href="#">복지제도</a></li>
-                                        <li><a href="#">채용절차</a></li>
+                                        <li><a href="/recruit/huationist">인재상</a></li>
+                                        <li><a href="/recruit/benefits">복지제도</a></li>
+                                        <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="/contact/contact">Contact</a></li>
                             </ul>
                         </div>
     
@@ -122,13 +122,13 @@
 <div class="container-fluid mainBannerWrap">
 	<div class="mainBanner">
 		<div class="mainBannerImg" id="mainBannerImg0101">
-			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="/company/mission"><img src="img/main/main_btn03.png"></a>
 		</div>
 		<div class="mainBannerImg" id="mainBannerImg0102">
-			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="/company/philoshphy"><img src="img/main/main_btn03.png"></a>
 		</div>
 		<div class="mainBannerImg" id="mainBannerImg0103">
-			<a class="mainBannerButton" href="#"><img src="img/main/main_btn03.png"></a>
+			<a class="mainBannerButton" href="/recruit/huationist"><img src="img/main/main_btn03.png"></a>
 		</div>
 	</div>
 	<div class="mainBannerBtn"></div>
@@ -315,10 +315,10 @@
 	    <div class="container">
 	    	<ul>
 		   		<li class="footer">
-		   			<a href="#">회사소개</a> | 
-		   			<a href="#">이메일 문의</a> | 
-		   			<a href="#">Contact us</a>
-		   		</li> 
+                  <a href="/company/philoshphy">회사소개</a> | 
+                  <a href="/sendMail">이메일 문의</a> | 
+                  <a href="/contact/contact">Contact us</a>
+               </li>
 		   		<li>
 		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
 		   		</li>
