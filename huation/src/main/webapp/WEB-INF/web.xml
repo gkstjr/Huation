@@ -45,6 +45,14 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
     
+    <servlet>
+		<servlet-name>mailSend</servlet-name>
+		<servlet-class>huation.home.web.MailSendServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+				<servlet-name>mailSend</servlet-name>
+				<url-pattern>/mailSend</url-pattern>
+		</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>action</servlet-name>
 		<url-pattern>/</url-pattern>
