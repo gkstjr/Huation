@@ -166,7 +166,12 @@ $(document).ready(function(){
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               		<ul class = "dropdown-menu">
+                               			 <li><a href="/contact/contact">Contact</a></li>
+                                		<li><a href="/contact/qna">Q&A</a></li>
+                               		</ul>
+                                </li>
                             </ul>
                         </div>
     
@@ -328,15 +333,13 @@ $(document).ready(function(){
      
 <!-- 애니메이션 스크립트 -->
 <script>
-    new WOW().init();
-    $('#mainAni01').addClass('wow fadeInUpBig');
-    $('#mainAni02').addClass('wow fadeInLeftBig');
-    $('#mainAni03').addClass('wow fadeInLeft');
-    $('#mainAni04').addClass('wow fadeInRight');
-    $('#mainAni05').addClass('wow fadeInRightBig');
-    $('#mainAni06').addClass('wow fadeInUp');
-    $('#mainAni07').addClass('wow fadeInUp');
+new WOW().init();
+$('#sectionArrow').addClass('wow fadeInDown');
 </script>
 <!-- 애니메이션 스크립트 -->
+<!--  로딩 레이어  -->
+<div id="loadingIndicator" class="loading" style="display: none;">
+	<div class="cont"><img src="../img/contact/loading.gif"><br><span class="txt">메일 전송중입니다.</span></div>
+</div>
 </body>
 </html>
