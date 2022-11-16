@@ -1,8 +1,13 @@
-package huation.home.service.impl;
+package huation.home.admin;
 
-import huation.home.dto.AdminDto;
+import java.util.HashMap;
 
+import org.egovframe.rte.psl.dataaccess.mapper.Mapper;
+
+
+@Mapper
 public interface AdminMapper {
 	
 	void insertAdmin(AdminDto adminDto);
+	HashMap<String, Object> detailAdmin(int boardId);
 }
