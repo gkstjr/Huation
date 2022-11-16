@@ -8,7 +8,12 @@
 			values(#{name},#{subject},#{contact},#{email},#{content},#{type})
 	</insert>
 	
-	<select id = "detailAdmin" resultType = "hashMap">
+	<select id = "detailAdmin" resultType = "huation.home.admin.AdminDto">
 			select * from admin_board where board_id = 1
+	</select>
+	
+	<!-- 전체 목록 조회 -->
+	<select id = "adminList" resultType = "huation.home.admin.AdminDto">
+			select * from admin_board
 	</select>
 </mapper>
