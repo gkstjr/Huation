@@ -12,7 +12,7 @@ public class AdminDto {
 	private String contact;
 	private String email;
 	private String content;
-	private int type;
+	private String type;
 	
 	
 	
