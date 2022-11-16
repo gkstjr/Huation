@@ -363,6 +363,6 @@
                     <javadocDir>apidocs</javadocDir>
                 </configuration>
             </plugin>
-        </plugins>
+        </plugins> 
     </reporting>
 </project>
