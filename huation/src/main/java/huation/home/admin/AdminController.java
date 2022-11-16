@@ -1,37 +1,37 @@
-package huation.home.web;
+package huation.home.admin;
 
-import java.net.http.HttpRequest;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
-import huation.home.dto.AdminDto;
-import huation.home.service.impl.AdminService;
-import lombok.AllArgsConstructor; 
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 
-@Slf4j
+@Log4j2 
 @Controller
 //@AllArgsConstructor
 public class AdminController {
 	@Autowired
-	private AdminService adminService;
+	private AdminService service;
 	
 	@PostMapping("/mailSend")
 	public String insert(@ModelAttribute AdminDto admin) {
 		
+		try {
+			
+		log.info("hanseok1={}",admin);
+//		service.insert(admin);
+		  AdminDto adminDto= new AdminDto(); 
+		   service.detail(1);
 		
-		log.info("hanseok1");
-		adminService.insert(admin);
-		log.info("hanseok2");
+		log.info("adminDto = {}" ,adminDto);
+		System.out.println("왜 안되냐고");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		return "contact/contact";
 	}
-	
+		
 }
