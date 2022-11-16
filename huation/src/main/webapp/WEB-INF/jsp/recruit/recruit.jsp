@@ -289,7 +289,7 @@ $(document).ready(function(){
 			<li class="ajax-response"></li>
 			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li>
 		</ul>
-		<input type="hidden" name="type" id="type" value="3">
+		<input type="hidden" name="type" id="type" value="1">
 
 		<ul class="solutionFeature02">
 			<li>인턴 기간에도 급여는 100% 지급입니다.</li>

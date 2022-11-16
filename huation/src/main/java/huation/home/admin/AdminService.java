@@ -1,6 +1,7 @@
 package huation.home.admin;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,16 +14,22 @@ public class AdminService {
 	
 	@Autowired
 	private AdminMapper mapper;
-	
+//	문의등록
 	public void insert(AdminDto admin) {
 		mapper.insertAdmin(admin);
 	}
-	
-	public HashMap<String, Object> detail(int boardId) {
+//	상세보기(아직 완성아님)
+	public AdminDto detail(int boardId) {
 		log.info("확인!!");
 		System.out.println(boardId);
-		HashMap<String, Object> dto = mapper.detailAdmin(boardId);
+		AdminDto dto = mapper.detailAdmin(boardId);
 		System.out.println(dto.toString());
 		return dto;
+	}
+	
+// 전체 목록 
+	public List<AdminDto> list() {
+		
+		return mapper.adminList();
 	}
 }
