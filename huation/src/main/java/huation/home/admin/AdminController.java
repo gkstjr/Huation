@@ -21,14 +21,28 @@ public class AdminController {
 	@Autowired
 	private AdminService service;
 	
-//	관리자페이지 들어가기
+	//목록 + 페이지네이션
 	@GetMapping("/admin")
+	public String list(Criteria cri, Model model) {
+		
+		log.info("list : " + cri);
+		model.addAttribute("list",service.getList(cri));
+		System.out.println(service.getList(cri));
+		int total = service.getTotal(cri);
+		log.info("total = {}",total);
+		model.addAttribute("pageMaker",new PageDto(cri,total));
+		
+		return "admin/list";
+	}
+	
+//	관리자페이지 들어가기
+	@GetMapping("/admin1")
 	public String admin(Model model) {
 		
 		List<AdminDto> list = service.list(); 
 		System.out.println(list);
 		model.addAttribute("boardList",list);
-		return "admin/list";			
+		return "admin/list2";			
 	}
 	
 	@PostMapping("/mailSend")
