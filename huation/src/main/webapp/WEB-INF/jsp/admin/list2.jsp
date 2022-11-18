@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -28,7 +26,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- 게시판 템플릿 부트스트랩 : e -->
-   
     <!-- Javascript files -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -62,7 +59,7 @@
     }
 	.table-title {
 		padding-bottom: 15px;
-		background: linear-gradient(to right, #4eabe0, #45ba75);;
+		background: #299be4;
 		color: #fff;
 		padding: 16px 30px;
 		margin: -20px -25px 10px;
@@ -207,41 +204,6 @@
     	font-weight:700;
     	font-size: 20px;
     }
-
-	/*모달창 css  */
-	  .modal-overlay {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */
-        }
-        /* The Close Button */
-        .close-area {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close-area:hover,
-        .close-area:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
 </style>
 <!-- 게시판 템플릿 스타일 : e -->
 <script>
@@ -338,7 +300,7 @@ $(document).ready(function(){
     <!-- subMenu 시작-->
     <div class = "container-fluid subMenu">
         <div class = "container">
-            <h3><a href = "/admin" style ="color: #393939;">관리페이지</a></h3>
+            <h3>관리페이지</h3>
            
         </div>
     </div>
@@ -348,40 +310,14 @@ $(document).ready(function(){
     	<div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
-            <div class="table-title">
+            <div class="table-title"  >
                 <div class="row">
                     <div class="col-xs-5">
-                        <h2><a href = "/admin" style ="color: #fff;">문의 관리</a></h2>
+                        <h2 style = "color: #fff;">문의 관리</h2>
                     </div>
-                    <div class = "col-xs-2"></div>
-                    <div class="col-xs-5">
-                       <form class = "form-inline" id = "searchForm" action = "/admin" method = "get">
-                                  
-                       		<select name = "type" class = "form-control">
-                       				<option value ="TSNCE" 
-                       				<c:out value = "${pageMaker.cri.type == null? 'selected' : '' }"/>>통합검색</option> 
-                       			<%-- <option value = ""
-                       			<c:out value = "${pageMaker.cri.type == null? 'selected': ''}"/>>--</option> --%>
-                       				<option value ="T" 
-                       				<c:out value = "${pageMaker.cri.type eq 'T' ? 'selected' : '' }"/>>분류</option>
-                       				<option value ="S" 
-                       				<c:out value = "${pageMaker.cri.type eq 'S' ? 'selected' : '' }"/>>제목</option>
-                       				<option value ="N" 
-                       				<c:out value = "${pageMaker.cri.type eq 'N' ? 'selected' : '' }"/>>이름</option>
-                       				<option value ="C" 
-                       				<c:out value = "${pageMaker.cri.type eq 'C' ? 'selected' : '' }"/>>연락처</option>
- 									<option value ="E" 
-                       				<c:out value = "${pageMaker.cri.type eq 'E' ? 'selected' : '' }"/>>이메일</option>                       				                    				
-                       		</select>
-                       		<input type = "text" class = "form-control" style= "margin-left:20px;"name = "keyword"
-                       		value = "<c:out value = "${pageMaker.cri.keyword }"/>"/>
-                       		<input type = "hidden" name = "pageNum"  value = "<c:out value = "${pageMaker.cri.pageNum }"/>"/>
-                       		<input type = "hidden" name = "amount" value = "<c:out value = "${pageMaker.cri.amount }"/>"/>
-                       		
-                    							
-                       		<button class = "btn btn-default form-control">Search</button>
-						                      		                        		 
-                       </form>					
+                    <div class="col-xs-7">
+                        <a href="#" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
                     </div>
                 </div>
             </div>
@@ -393,58 +329,48 @@ $(document).ready(function(){
                         <th>이름</th>
                         <th>연락처</th>
                         <th>이메일</th>
-                        <th style = "width: 150px">문의날짜</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach items = "${list }" var = "board">
+                <c:forEach items = "${boardList }" var = "board">
                     <tr>
                         <td><c:out value="${board.type }"></c:out></td>
-                        <td><a href="#" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
+                        <td><a href="#"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
                         <td><c:out value = "${board.contact }"></c:out></td>
-                        <td><c:out value = "${board.email }"></c:out></td>
+                        <td><c:out value = "${board.email }"></c:out> Active</td>
                         <td>
-                        	<fmt:formatDate pattern = "yyyy-MM-dd" value = "${board.regDate }"></fmt:formatDate>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
                     </tr>
                 </c:forEach>
-                   
-            
+                    <tr>
+                        <td>2</td>
+                        <td><a href="#"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Wilson</a></td>
+                        <td>05/08/2014</td>                       
+                        <td>Publisher</td>
+                        <td><span class="status text-success">&bull;</span> Active</td>
+                        <td>
+                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                        </td>
+                    </tr>
+                
+              
                 </tbody>
             </table>
-            <!-- 페이지관련 form 정보넘기기 -->
-            <form id = 'actionForm' action = "/admin" method = 'get'>
-					<input type = "hidden" name = "pageNum" value = "${pageMaker.cri.pageNum }">
-					<input type = "hidden" name = "amount" value = "${pageMaker.cri.amount }">
-					<input type = "hidden" name = "type" value = "<c:out value = "${pageMaker.cri.type }"/>">   
-					<input type = "hidden" name = "keyword" value = "<c:out value = "${pageMaker.cri.keyword }"/>">         
-            </form>
-            
-           <!--  페이지네이션 -->
             <div class="clearfix">
-                <div class="hint-text">Showing <b>10</b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                 <ul class="pagination">
-                	<c:if test = "${pageMaker.prev }">
-                    <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">Previous</a></li>                	
-                	</c:if>
-                	
-                	<c:forEach var = "num" begin= "${pageMaker.startPage }" end = "${pageMaker.endPage }">
-                    <li class="paginate_button page-item ${pageMaker.cri.pageNum == num ? "active" :""}">
-                    <a href="${num }" class="page-link">${num }</a>
-                    </li>
-                	</c:forEach>
-                	
-               
-                   <!--  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item disabled"><a href="#">Previous</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
                     <li class="page-item active"><a href="#" class="page-link">3</a></li>
                     <li class="page-item"><a href="#" class="page-link">4</a></li>
                     <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><l.a href="#" class="page-link">Next</a></li> -->
-                    
-                    <c:if test = "${pageMaker.next }">
-                    	<li class= "paginate_button page-item"><a href = "${pageMaker.endPage+1 }">Next</a></li>
-                    </c:if>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
                 </ul>
             </div>
         </div>
@@ -453,7 +379,7 @@ $(document).ready(function(){
     <!-- 게시판 끝 -->
 
 
-	
+
     <!-- 탑버튼 -->
    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
    <!--  탑버튼 끝 -->
@@ -482,45 +408,7 @@ $(document).ready(function(){
 	    </div>
 	 </footer>
      <!-- footer 끝-->
-     <script type = "text/javascript">
-     	$(document).ready(function(){
-     		
-     		var actionForm = $("#actionForm");
-     		//페이지버튼 선택하면 해당 정보가 form으로 넘어가는 기능 구현
-     		$(".paginate_button a").on("click",function(e) {
-     			
-     			e.preventDefault();
-     			console.log('click');
-     			
-     			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
-     			actionForm.submit();
-     		});
-     		
-     		//검색버튼 누르면 type과 keyword 파라미터 넘어가는 form 기능
-     		var searchForm = $("#searchForm");
-     		
-     		$("#searchForm button").on("click", function(e){
-     			
-     		if(!searchForm.find("option:selected").val()) {
-     			alert("검색종류를 선택하세요");
-     			return false;
-     		}
-     		if(!searchForm.find("input[name='keyword']").val()) {
-     			alert("키워드를 입력하세요");
-     			return false;
-     		}
-     		
-     		searchForm.find("input[name='pageNum']").val("1");
-     		e.preventDefault();
-     		
-     		searchForm.submit();
-     		
-     		});
-     		
-     		
-			
-     	});
-     </script>
+     
 
 </body>
 </html>
