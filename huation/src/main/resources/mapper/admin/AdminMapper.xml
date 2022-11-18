@@ -16,4 +16,73 @@
 	<select id = "adminList" resultType = "huation.home.admin.AdminDto">
 			select * from admin_board
 	</select>
+	
+	<!-- 목록 + 페이지네이션 -->
+	<select id = "getListWithPaging" resultType = "huation.home.admin.AdminDto">
+				<![CDATA[
+					SELECT 	TB.board_id,
+		 					TB.subject,
+		 					TB.contact,
+		 					TB.email,
+		 					TB.name,
+		 					TB.content,
+		 					TB.type,
+		 					TB.regDate
+   						FROM (SELECT 
+	   							board_id,
+			 					subject,
+			 					contact,
+			 					email,
+			 					name,
+			 					content,
+			 					TYPE,
+			 					regDate,
+		 			 			ROW_NUMBER() OVER()   AS ROMNO
+		 						FROM admin_board
+		 						
+		 				]]> <!-- 검색 sql 구현해야함 -->	
+				 
+				 <trim prefix="where (" suffix=")" prefixOverrides="OR">
+					<foreach item="type" collection="typeArr">
+						<trim prefix="OR">
+							<choose>
+								<when test="type == 'T'.toString()"> type like concat('%' , #{keyword} , '%')</when>
+								<when test="type == 'S'.toString()"> subject like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'N'.toString()"> name like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'C'.toString()"> contact like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'E'.toString()"> email like concat('%' , #{keyword} , '%')</when>								
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
+		 					
+		 				<![CDATA[
+						ORDER BY board_id DESC)       AS TB
+					WHERE TB.ROMNO > (#{pageNum} -1) * #{amount}
+						AND TB.ROMNO <= #{pageNum} * #{amount}
+				]]>
+	</select>
+	
+	<!-- 전체 게시물 수 구하기 -->
+	<select id = "getTotalCount" resultType = "int">
+		select count(*) from admin_board
+			<!-- 검색시에도 구현해주기 -->
+		where
+		 <trim prefix="(" suffix=") and" prefixOverrides="OR">
+					<foreach item="type" collection="typeArr">
+						<trim prefix="OR">
+							<choose>
+								<when test="type == 'T'.toString()"> type like concat('%' , #{keyword} , '%')</when>
+								<when test="type == 'S'.toString()"> subject like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'N'.toString()"> name like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'C'.toString()"> contact like concat('%' , #{keyword} , '%') </when>
+								<when test="type == 'E'.toString()"> email like concat('%' , #{keyword} , '%')</when>								
+							</choose>
+						</trim>
+					</foreach>
+				</trim>
+		<![CDATA[
+		board_id > 0	
+		]]>
+	</select>
 </mapper>

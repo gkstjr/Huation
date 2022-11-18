@@ -1,5 +1,7 @@
 package huation.home.admin;
 
+import java.util.Date;
+
 import lombok.Data;
 
 @Data
@@ -13,6 +15,7 @@ public class AdminDto {
 	private String email;
 	private String content;
 	private String type;
+	private Date regDate; 
 	
 	
 	
