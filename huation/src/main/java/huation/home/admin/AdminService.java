@@ -32,4 +32,17 @@ public class AdminService {
 		
 		return mapper.adminList();
 	}
+	
+	// 목록 + 페이지네이션
+	public List<AdminDto> getList(Criteria cri) {
+		
+		log.info("get List with criteria: " + cri);
+		return mapper.getListWithPaging(cri);
+		
+	}
+	
+	public int getTotal(Criteria cri) {
+		log.info("get total count");
+		return mapper.getTotalCount(cri);
+	}
 }
