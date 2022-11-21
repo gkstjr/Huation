@@ -37,7 +37,7 @@
 			 					content,
 			 					TYPE,
 			 					regDate,
-		 			 			ROW_NUMBER() OVER()   AS ROMNO
+		 			 			ROW_NUMBER() OVER(ORDER BY board_id DESC)   AS ROMNO
 		 						FROM admin_board
 		 						
 		 				]]> <!-- 검색 sql 구현해야함 -->	
@@ -55,11 +55,11 @@
 						</trim>
 					</foreach>
 				</trim>
-		 					
 		 				<![CDATA[
-						ORDER BY board_id DESC)       AS TB
+					)       AS TB
 					WHERE TB.ROMNO > (#{pageNum} -1) * #{amount}
 						AND TB.ROMNO <= #{pageNum} * #{amount}
+						
 				]]>
 	</select>
 	
