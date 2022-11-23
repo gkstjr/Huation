@@ -98,7 +98,12 @@
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               		<ul class = "dropdown-menu">
+                               			 <li><a href="/contact/contact">Contact</a></li>
+                                		<li><a href="/contact/qna">Q&A</a></li>
+                               		</ul>
+                                </li>
                             </ul>
                         </div>
     
@@ -134,7 +139,7 @@
 <section class="container-fluid whiteSection">
 	<div class="container">
 		<h2 class="centerTitle companyLine01">Benefits</h2>
-		<p class="centerTitleP">우리 회사는 대한민국의 법률에 의해 규정된 복리후생 기준 뿐만 아니라, &nbsp; 회사가 임직원들의 직업만족도 향상 및 가정생활의 안정과 개선을 도모하고,&nbsp; 회사에 대한 자금심과 자부심을 가지고  근무할 수 있도록 다음과 같은 임의 복지 제도를 운영하고 있습니다.</p>
+		<p class="centerTitleP">우리 회사는 대한민국의 법률에 의해 규정된 복리후생 기준 뿐만 아니라, &nbsp; 회사가 임직원들의 직업만족도 향상 및 가정생활의 안정과 개선을 도모하고,&nbsp; 회사에 대한 자긍심과 자부심을 가지고  근무할 수 있도록 다음과 같은 임의 복지 제도를 운영하고 있습니다.</p>
 
 		<div class="col-sm-4" id="benefitsAni14" style="margin-bottom:30px;">
 			<img src="../img/recruit/recruit_img20.png" alt="" style="margin-bottom:30px;">

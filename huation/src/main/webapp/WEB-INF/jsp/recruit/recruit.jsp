@@ -62,29 +62,10 @@ function mailSend(){
 		email.focus();
 		return;
 	}
-	
-	var sendUrl = "../mailSend";
-	// submit
-	$(".recruitBtn").bind('click', false);
-	$('#loadingIndicator').show();
-	
-	$.post(sendUrl, {
-		subject: subject.value
-		, name: name.value
-		, contact: contact.value
-		, email: email.value
-		, content: content.value
-		, type: type.value
-	}, function(data, status){
-		if(status == 'success'){
-			alert("메일을 발송하였습니다.");
-		}else{
-			alert("메일발송 중 문제가 발생했습니다.");
-		}
-		$(".recruitBtn").unbind('click', false);
-		$('.loading').hide();
-	})
+	$('#join').submit();
+	alert("문의가 완료되었습니다.");
 }
+
 
 $(document).ready(function(){
 	$.each($(".solutionFeature03 input[type='text']"), function(i, val){
@@ -166,7 +147,12 @@ $(document).ready(function(){
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               		<ul class = "dropdown-menu">
+                               			 <li><a href="/contact/contact">Contact</a></li>
+                                		<li><a href="/contact/qna">Q&A</a></li>
+                               		</ul>
+                                </li>
                             </ul>
                         </div>
     
@@ -273,18 +259,19 @@ $(document).ready(function(){
 <!-- 제품소개 시작 -->
 <section class="container-fluid graySection">
 	<div class="container">
+		<form action = "/mailSend2" method = "post" id = "join">
 		<h3 class="leftTitle">채용문의</h3>
 
 		<ul class="solutionFeature03">
-			<li><input type="text" name="user_name" value="이름" id="user_id" placeholder="이름"></li>
-			<li><input type="text" name="user_contact" value="연락처" id="user_contact" placeholder="연락처"></li>
-			<li><input type="text" name="user_email" value="이메일" id="user_email" placeholder="이메일"></li>
-			<li><input type="text" name="user_subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li><input type="text" name="name" value="이름" id="user_id" placeholder="이름"></li>
+			<li><input type="text" name="contact" value="연락처" id="user_contact" placeholder="연락처"></li>
+			<li><input type="text" name="email" value="이메일" id="user_email" placeholder="이메일"></li>
+			<li><input type="text" name="subject" value="제목" id="user_subject" placeholder="제목"></li>
 			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="상담내용을 최대한 상세하게 적어주시면 상담에 더 큰 도움이 됩니다."></textarea></li>		
 			<li class="ajax-response"></li>
-			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li>
+			<li><button type = "button" onclick="javascript:mailSend()" class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>
 		</ul>
-		<input type="hidden" name="type" id="type" value="3">
+		<input type="hidden" name="type" id="type" value="입사문의">
 
 		<ul class="solutionFeature02">
 			<li>인턴 기간에도 급여는 100% 지급입니다.</li>
@@ -293,6 +280,7 @@ $(document).ready(function(){
 			<li>대표전화 : 02-2081-6713</li>
 
 		</ul>
+		</form>
 	</div>
 </section>
 <!-- 제품소개 끝 -->
@@ -328,15 +316,13 @@ $(document).ready(function(){
      
 <!-- 애니메이션 스크립트 -->
 <script>
-    new WOW().init();
-    $('#mainAni01').addClass('wow fadeInUpBig');
-    $('#mainAni02').addClass('wow fadeInLeftBig');
-    $('#mainAni03').addClass('wow fadeInLeft');
-    $('#mainAni04').addClass('wow fadeInRight');
-    $('#mainAni05').addClass('wow fadeInRightBig');
-    $('#mainAni06').addClass('wow fadeInUp');
-    $('#mainAni07').addClass('wow fadeInUp');
+new WOW().init();
+$('#sectionArrow').addClass('wow fadeInDown');
 </script>
 <!-- 애니메이션 스크립트 -->
+<!--  로딩 레이어  -->
+<div id="loadingIndicator" class="loading" style="display: none;">
+	<div class="cont"><img src="../img/contact/loading.gif"><br><span class="txt">메일 전송중입니다.</span></div>
+</div>
 </body>
 </html>
