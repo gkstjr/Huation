@@ -105,6 +105,7 @@ public class AdminController {
 		@GetMapping("/admin/delete") 
 		public String delete(int boardId) {
 			
+			
 			service.delete(boardId);
 			
 			return "redirect:/admin";

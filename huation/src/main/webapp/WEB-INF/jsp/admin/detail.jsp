@@ -225,7 +225,7 @@ $(document).ready(function(){
 function del(boardId) {
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if(chk) {
-		location.href = 'admin/delete?board='+boardId;
+		location.href = '/admin/delete?boardId='+boardId;
 	}
 }
 </script>
