@@ -71,6 +71,12 @@ public class HuationController {
 	   public String contact() {
 	      return "contact/contact";
 	      
+	   }
+	   
+	   //CONTACT > Q&A
+	   @RequestMapping(value = "/contact/qna")
+	   public String qna() {
+	      return "forward:/getQnaList?reqPage=1";
 	   } 
 	   
 	//신영

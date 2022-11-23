@@ -107,7 +107,12 @@
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
+                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>
+                                	<ul class="dropdown-menu">
+                                		<li><a href="/contact/contact">Contact</a></li>
+                                        <li><a href="/contact/qna">Q&A</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
     
@@ -312,7 +317,7 @@
           <ul>
                <li class="footer">
                   <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
+                  <a href="mailto:sales@huation.com">이메일 문의</a> | 
                   <a href="/contact/contact">Contact us</a>
                </li>
                <li>

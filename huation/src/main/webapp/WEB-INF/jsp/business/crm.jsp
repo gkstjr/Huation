@@ -212,7 +212,7 @@
           <ul>
                <li class="footer">
                   <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
+                  <a href="mailto:sales@huation.com">이메일 문의</a> | 
                   <a href="/contact/contact">Contact us</a>
                </li>
                <li>
