@@ -144,7 +144,9 @@
 	       	 			<li>
 	       	 				<!-- a href=""에 원하는 경로의 파일을 유저가 다운로드할 수 있도록 넣어줌 -->
 	       	 				<!-- a 태그 맨뒤에 download="" 속성에 원하는 다운로드 파일명을 넣어줌(없으면 download만 추가) -->
-	       	 				<a href="../files/download/huation_CI.jpg" download="휴에이션제이피지" ><img src="../img/company/company_btn01.png"></a>
+
+	       	 				<a href="../files/download/huation_CI.jpg" download><img src="../img/company/company_btn01.png"></a>
+
 	       	 			</li>
 	       	 			<li>
 	       	 				<a href="../files/download/huation_CI.ai" download><img src="../img/company/company_btn02.png"></a>
@@ -189,7 +191,7 @@
           <ul>
                <li class="footer">
                   <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
+                  <a href="mailto:sales@huation.com">이메일 문의</a> | 
                   <a href="/contact/contact">Contact us</a>
                </li>
                <li>

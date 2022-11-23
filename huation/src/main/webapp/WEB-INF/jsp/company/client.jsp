@@ -236,9 +236,6 @@
             <div class="businessPartnerLogo"><img src="../img/company/company_logo31.png" alt=""></div>
            </div>
            <div class="col-xs-6 col-sm-3">
-            <div class="businessPartnerLogo"><img src="../img/company/company_logo32.png" alt=""></div>
-           </div>
-           <div class="col-xs-6 col-sm-3">
             <div class="businessPartnerLogo"><img src="../img/company/company_logo33.png" alt=""></div>
            </div>
 
@@ -256,7 +253,7 @@
           <ul>
                <li class="footer">
                   <a href="/company/philoshphy">회사소개</a> | 
-                  <a href="/sendMail">이메일 문의</a> | 
+                  <a href="mailto:sales@huation.com">이메일 문의</a> | 
                   <a href="/contact/contact">Contact us</a>
                </li>
                <li>
