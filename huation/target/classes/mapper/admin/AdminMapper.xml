@@ -9,7 +9,7 @@
 	</insert>
 	
 	<select id = "detailAdmin" resultType = "huation.home.admin.AdminDto">
-			select * from admin_board where board_id = 1
+			select * from admin_board where board_id = #{boardId}
 	</select>
 	
 	<!-- 전체 목록 조회 -->
@@ -85,4 +85,8 @@
 		board_id > 0	
 		]]>
 	</select>
+	
+	<delete id = "delete">
+		delete from admin_board where board_id = #{boardId}
+	</delete>
 </mapper>
