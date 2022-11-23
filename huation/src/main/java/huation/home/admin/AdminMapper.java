@@ -18,6 +18,8 @@ public interface AdminMapper {
 	// 목록 + 페이지네이션
 	List<AdminDto> getListWithPaging(Criteria cri);
 	// 전체 게시믈 수 구하기
-	int getTotalCount(Criteria cri);		
+	int getTotalCount(Criteria cri);	
+	//게시물 삭제
+	int delete(int boardId);
 	
 }
