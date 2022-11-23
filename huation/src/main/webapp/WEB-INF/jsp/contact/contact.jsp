@@ -153,7 +153,8 @@ $(document).ready(function(){
                                			 <li><a href="/contact/contact">Contact</a></li>
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
-                                </li>                            </ul>
+                                </li>                            
+                                </ul>
                         </div>
     
                     </div><!-- .container -->

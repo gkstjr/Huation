@@ -206,7 +206,7 @@
         display: inline-flex;
     }
     .fontBold {
-/*     	font-weight:700; */
+     	font-weight:300; 
     	font-size: 20px;
     }
 	
@@ -298,7 +298,14 @@ function del(boardId) {
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
+                              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               		<ul class = "dropdown-menu">
+                               			 <li><a href="/contact/contact">Contact</a></li>
+                                		<li><a href="/contact/qna">Q&A</a></li>
+                               		</ul>
+                                </li>        
+                                
+                                
                                 <li><a href="/logout">로그아웃</a></li>    
                             </ul>
                         </div>
