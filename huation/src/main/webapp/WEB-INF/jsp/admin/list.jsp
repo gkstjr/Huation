@@ -21,12 +21,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
     
     <!-- 게시판 템플릿 부트스트랩 : s-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <!-- 게시판 템플릿 부트스트랩 : e -->
    
     <!-- Javascript files -->
@@ -101,6 +101,7 @@
         border-color: #e9e9e9;
 		padding: 12px 15px;
 		vertical-align: middle;
+/* 		border: 1px solid #444444; */
     }
 	table.table tr th:first-child {
 		width: 80px;
@@ -128,7 +129,7 @@
 		font-weight: bold;
 		color: #566787;
 		display: inline-block;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 	table.table td a:hover {
 		color: #2196F3;
@@ -208,40 +209,7 @@
     	font-size: 20px;
     }
 
-	/*모달창 css  */
-	  .modal-overlay {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        }
-        /* Modal Content/Box */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */
-        }
-        /* The Close Button */
-        .close-area {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close-area:hover,
-        .close-area:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+
 </style>
 <!-- 게시판 템플릿 스타일 : e -->
 <script>
@@ -319,6 +287,7 @@ $(document).ready(function(){
                                     </ul>
                                 </li>
                                 <li><a href="/contact/contact">Contact</a></li>
+                                <li><a href="/logout">로그아웃</a></li>    
                             </ul>
                         </div>
     
@@ -400,7 +369,7 @@ $(document).ready(function(){
                 <c:forEach items = "${list }" var = "board">
                     <tr>
                         <td><c:out value="${board.type }"></c:out></td>
-                        <td><a href="#" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
+                        <td><a href="/admin/detail?boardId=${board.boardId }" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
                         <td><c:out value = "${board.contact }"></c:out></td>
                         <td><c:out value = "${board.email }"></c:out></td>
