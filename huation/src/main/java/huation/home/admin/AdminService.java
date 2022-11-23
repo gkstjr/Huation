@@ -45,4 +45,11 @@ public class AdminService {
 		log.info("get total count");
 		return mapper.getTotalCount(cri);
 	}
+	//삭제
+	
+	public int delete(int boardId) {
+	
+		return mapper.delete(boardId);
+	}
+	
 }

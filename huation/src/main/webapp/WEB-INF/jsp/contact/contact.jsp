@@ -37,10 +37,12 @@ var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
 
 function mailSend(){
+
+	
 	// validation
-	var mailType = $("input[name='mailType']:checked").get(0);
+	var mailType = $("input[name='type']:checked").get(0);
 	var name = $("#user_id").get(0);
-	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus();  return;}
+	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus();	 return;}
 	var contact = $("#user_contact").get(0);
 	if(contact.value.trim() == "" || contact.value == contact.placeholder) {alert("연락처를 입력하세요."); contact.focus(); return;}
 	var email = $("#user_email").get(0);
@@ -60,31 +62,9 @@ function mailSend(){
 		email.focus();
 		return;
 	}
-// 	var type = $("#type").get(0);
 	
-/* 	var sendUrl = "../mailSend";
-	
-	// submit
-	$(".recruitBtn").bind('click', false);
-	$('#loadingIndicator').show(); */
-	
-/* 	$.post(sendUrl ,{
-		subject: subject.value
-		, name: name.value
-		, contact: contact.value
-		, email: email.valuejh
-		, content: content.value
-// 		, type: type.value
-		, type: mailType.value
-	}, function(data, status){
-		if(status == 'success'){
-			alert("메일을 발송하였습니다.");
-		}else{
-			alert("메일발송 중 문제가 발생했습니다.");
-		}
-		$(".recruitBtn").unbind('click', false);
-		$('.loading').hide();
-	}); */
+	$('#join').submit();
+	alert("문의가 완료되었습니다.");
 }
 
 $(document).ready(function(){
@@ -96,6 +76,7 @@ $(document).ready(function(){
 	
 	$("#loadingIndicator").hide();
 });
+
 </script>
 </head>
 
@@ -209,7 +190,7 @@ $(document).ready(function(){
 <!-- 제품소개 시작 -->
 <section class="container-fluid graySection">
 	<div class="container">
-			  <form action = "/mailSend" method = "post" id = "form2">
+			  <form action = "/mailSend" method = "post" id = "join">
 		<h3 class="leftTitle">문의하기</h3>
 		<ul class="solutionFeature03">
 			<li class="mailType">
@@ -225,7 +206,7 @@ $(document).ready(function(){
 			<li><input type="text" name="subject" value="제목" id="user_subject" placeholder="제목"></li>
 			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="내용을 최대한 상세하게 적어주시면 답변에 더 큰 도움이 됩니다."></textarea></li>
 <!-- 			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li> -->
-			<li><button type = "submit"  class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>
+			<li><button type = "button" onclick="javascript:mailSend()" class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>
 		
 		</ul>
 		<ul class="solutionFeature02">
