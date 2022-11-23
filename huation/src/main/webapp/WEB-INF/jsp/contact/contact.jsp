@@ -37,10 +37,12 @@ var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
 
 function mailSend(){
+
+	
 	// validation
-	var mailType = $("input[name='mailType']:checked").get(0);
+	var mailType = $("input[name='type']:checked").get(0);
 	var name = $("#user_id").get(0);
-	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus(); return;}
+	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus();	 return;}
 	var contact = $("#user_contact").get(0);
 	if(contact.value.trim() == "" || contact.value == contact.placeholder) {alert("연락처를 입력하세요."); contact.focus(); return;}
 	var email = $("#user_email").get(0);
@@ -60,31 +62,9 @@ function mailSend(){
 		email.focus();
 		return;
 	}
-// 	var type = $("#type").get(0);
 	
-	var sendUrl = "../mailSend";
-	
-	// submit
-	$(".recruitBtn").bind('click', false);
-	$('#loadingIndicator').show();
-	
-	$.post(sendUrl ,{
-		subject: subject.value
-		, name: name.value
-		, contact: contact.value
-		, email: email.value
-		, content: content.value
-// 		, type: type.value
-		, type: mailType.value
-	}, function(data, status){
-		if(status == 'success'){
-			alert("메일을 발송하였습니다.");
-		}else{
-			alert("메일발송 중 문제가 발생했습니다.");
-		}
-		$(".recruitBtn").unbind('click', false);
-		$('.loading').hide();
-	});
+	$('#join').submit();
+	alert("문의가 완료되었습니다.");
 }
 
 $(document).ready(function(){
@@ -96,6 +76,7 @@ $(document).ready(function(){
 	
 	$("#loadingIndicator").hide();
 });
+
 </script>
 </head>
 
@@ -167,8 +148,13 @@ $(document).ready(function(){
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/contact/contact">Contact</a></li>
-                            </ul>
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               		<ul class = "dropdown-menu">
+                               			 <li><a href="/contact/contact">Contact</a></li>
+                                		<li><a href="/contact/qna">Q&A</a></li>
+                               		</ul>
+                                </li>                            
+                                </ul>
                         </div>
     
                     </div><!-- .container -->
@@ -205,15 +191,24 @@ $(document).ready(function(){
 <!-- 제품소개 시작 -->
 <section class="container-fluid graySection">
 	<div class="container">
+			  <form action = "/mailSend" method = "post" id = "join">
 		<h3 class="leftTitle">문의하기</h3>
 		<ul class="solutionFeature03">
-			<li class="mailType"><input type="radio" name="mailType" id="sales" value="2" checked /><label for="sales">제품문의</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="mailType" id="recruit" value="3"/><label for="recruit">입사문의</label></li>
-			<li><input type="text" name="user_name" value="이름" id="user_id" placeholder="이름"></li>
-			<li><input type="text" name="user_contact" value="연락처" id="user_contact" placeholder="연락처"></li>
-			<li><input type="text" name="user_email" value="이메일" id="user_email" placeholder="이메일"></li>
-			<li><input type="text" name="user_subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li class="mailType">
+			<input type="radio" name="type" id="sales" value="제품문의" checked />
+			<label for="sales">제품문의</label>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="type" id="recruit" value="입사문의"/>
+			<label for="recruit">입사문의</label>
+			</li>
+			<li><input type="text" name="name" value="이름" id="user_id" placeholder="이름"></li>
+			<li><input type="text" name="contact" value="연락처" id="user_contact" placeholder="연락처"></li>
+			<li><input type="text" name="email" value="이메일" id="user_email" placeholder="이메일"></li>
+			<li><input type="text" name="subject" value="제목" id="user_subject" placeholder="제목"></li>
 			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="내용을 최대한 상세하게 적어주시면 답변에 더 큰 도움이 됩니다."></textarea></li>
-			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li>
+<!-- 			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li> -->
+			<li><button type = "button" onclick="javascript:mailSend()" class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>
+		
 		</ul>
 		<ul class="solutionFeature02">
 			<li>서울특별시 금천구 디지털로9길 32, A동 1701호(가산동)</li>
@@ -222,7 +217,8 @@ $(document).ready(function(){
 			<li>제품문의 : sales@huation.com</li>
 			<li>입사문의 : recruit@huation.com</li>
 		</ul>
-		<input type="hidden" name="type" id="type" value="2">
+	
+		  </form>
 	</div>
 </section>
 <!-- 제품소개 끝 -->
@@ -262,7 +258,7 @@ new WOW().init();
 $('#sectionArrow').addClass('wow fadeInDown');
 </script>
 <!-- 애니메이션 스크립트 -->
-
+ 
 <!-- 로딩레이어:s -->
 <div id="loadingIndicator" class="loading">
 	<div class="cont"><img src="../img/contact/loading.gif"></a><br><span class="txt">메일 전송중입니다.</span></div>
