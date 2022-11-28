@@ -218,7 +218,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body cz-shorcut-listen="true">
+<body>
        <!-- 메뉴바 시작 -->
        <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
@@ -319,6 +319,7 @@ $(document).ready(function(){
     <!-- subMenu 끝 -->
 
     <!-- 게시판 시작  -->
+
     	<div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -358,7 +359,7 @@ $(document).ready(function(){
                        </form>					
                     </div>
                 </div>
-            </div>
+            </div>                     
             <table class="table table-striped table-hover">
                 <thead>
                     <tr class = "fontBold">
@@ -373,7 +374,7 @@ $(document).ready(function(){
                 <tbody>
                 <c:forEach items = "${list }" var = "board">
                     <tr>
-                        <td><c:out value="${board.type }"></c:out></td>
+                        <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
                         <td><a href="/admin/detail?boardId=${board.boardId }" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
                         <td><c:out value = "${board.contact }"></c:out></td>
@@ -387,6 +388,8 @@ $(document).ready(function(){
             
                 </tbody>
             </table>
+            
+            
             <!-- 페이지관련 form 정보넘기기 -->
             <form id = 'actionForm' action = "/admin" method = 'get'>
 					<input type = "hidden" name = "pageNum" value = "${pageMaker.cri.pageNum }">
@@ -421,7 +424,7 @@ $(document).ready(function(){
                     </c:if>
                 </ul>
             </div>
-        </div>
+        </div>     
     </div>        
 </div>     
     <!-- 게시판 끝 -->
