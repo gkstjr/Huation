@@ -8,6 +8,8 @@
     padding: 0px !important;
 }
 
+	
+
 * {
     font-family: "Noto Sans KR",sans-serif
             !important;
@@ -165,4 +167,7 @@
         background: #4eabe0 !important;
         color: #fff !important;
     }
+    
+
+
 /* layout.css(end) */
