@@ -54,7 +54,8 @@
         margin: 80px 0;
     }
 	.table-wrapper {
-        min-width: 1000px;
+/*         min-width: 1000px; */
+		min-width: 150px;
         background: #fff;
         padding: 20px 25px;
 		border-radius: 3px;
@@ -200,14 +201,36 @@
         padding-top: 6px
     }
     .hint-text {
-        float: left;
-        margin-top: 10px;
-        font-size: 13px;
+       float: left;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
     }
     .fontBold {
     	font-weight:700;
     	font-size: 20px;
     }
+    
+/*     페이지 개수 설명 */
+	.pageInfo {
+		margin-top: 40px;
+    	margin-bottom: 40px;
+    	margin-left: 16px;
+	}
+	.pageNumber {
+    font-weight: 750;
+    color: #01b0c0;
+}
+	.menuLine2 {
+	margin-top : 120px;
+	width: 100%;
+    height: 3px;
+    background: #45ba75;
+    background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
+    background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
+    background: linear-gradient(to right, #45ba75 0%, #4eabe0 100%);
+	}
+
 
 
 </style>
@@ -292,7 +315,10 @@ $(document).ready(function(){
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
-                                <li><a href="/logout">로그아웃</a></li>    
+                                <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>   
                             </ul>
                         </div>
     
@@ -349,7 +375,7 @@ $(document).ready(function(){
                        				<c:out value = "${pageMaker.cri.type eq 'E' ? 'selected' : '' }"/>>이메일</option>                       				                    				
                        		</select>
                        		<input type = "text" class = "form-control" style= "margin-left:20px;"name = "keyword"
-                       		value = "<c:out value = "${pageMaker.cri.keyword }"/>"/>
+                       		value = "<c:out value = "${pageMaker.cri.keyword }"/>"/ placeholder = "검색어를 입력하세요.">
                        		<input type = "hidden" name = "pageNum"  value = "<c:out value = "${pageMaker.cri.pageNum }"/>"/>
                        		<input type = "hidden" name = "amount" value = "<c:out value = "${pageMaker.cri.amount }"/>"/>
                        		
@@ -359,8 +385,22 @@ $(document).ready(function(){
                        </form>					
                     </div>
                 </div>
-            </div>                     
+            </div>  
+            <!-- 페이지 개수 설명 -->
+            <div>
+            	<c:choose>
+            	<c:when test="${pageMaker.total < 10 }">
+            		    <div class="hint-text pageInfo">총 <b><c:out value = "${pageMaker.total }"></c:out></b> 건의 글이 있습니다. <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	</c:when>
+            	<c:otherwise>
+                <div class="hint-text pageInfo">총 <b class = "pageNumber"><c:out value = "${pageMaker.total }"></c:out></b> 건의 글이 있습니다.</div>
+            	</c:otherwise>
+            	</c:choose>
+            </div>  
+            <!-- 페이지 개수 설명 끝  -->
+               
             <table class="table table-striped table-hover">
+            <div class="menuLine2"></div>
                 <thead>
                     <tr class = "fontBold">
                         <th>분류</th>
@@ -372,10 +412,26 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
+<%--                 <c:choose> --%>
+<%--                 <c:when test="${list == null }"> --%>
+<!--                 	와이 -->
+<!--                 		<tr> -->
+<!--                 			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                					<td>등록된 게시물이 없습니다.</td> -->
+                			
+<!--                 		</tr> -->
+                	
+<%--                 </c:when> --%>
+<%--                 <c:otherwise> --%>
                 <c:forEach items = "${list }" var = "board">
+                
                     <tr>
                         <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
-                        <td><a href="/admin/detail?boardId=${board.boardId }" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
+                        <td><a href="/admin/detail?boardId=${board.boardId }&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
                         <td><c:out value = "${board.contact }"></c:out></td>
                         <td><c:out value = "${board.email }"></c:out></td>
@@ -384,6 +440,8 @@ $(document).ready(function(){
                         </td>
                     </tr>
                 </c:forEach>
+<%--                 </c:otherwise> --%>
+<%--                 </c:choose> --%>
                    
             
                 </tbody>
@@ -400,7 +458,7 @@ $(document).ready(function(){
             
            <!--  페이지네이션 -->
             <div class="clearfix">
-                <div class="hint-text">Showing <b>10</b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	
                 <ul class="pagination">
                 	<c:if test = "${pageMaker.prev }">
                     <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">Previous</a></li>                	
