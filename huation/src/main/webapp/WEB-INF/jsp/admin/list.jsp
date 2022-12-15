@@ -228,9 +228,11 @@
     background: #45ba75;
     background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
     background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
-    background: linear-gradient(to right, #45ba75 0%, #4eabe0 100%);
+    background: linear-gradient(to right, #4eabe0 0%, #45ba75 100%);
 	}
-
+   .clearfix {
+   	padding: 30px 340px;
+   }
 
 
 </style>
@@ -429,7 +431,7 @@ $(document).ready(function(){
 <%--                 <c:otherwise> --%>
                 <c:forEach items = "${list }" var = "board">
                 
-                    <tr>
+                    <tr style = "height: 50px">
                         <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
                         <td><a href="/admin/detail?boardId=${board.boardId }&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
@@ -461,7 +463,7 @@ $(document).ready(function(){
             	
                 <ul class="pagination">
                 	<c:if test = "${pageMaker.prev }">
-                    <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">Previous</a></li>                	
+                    <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">&laquo;</a></li>                	
                 	</c:if>
                 	
                 	<c:forEach var = "num" begin= "${pageMaker.startPage }" end = "${pageMaker.endPage }">
@@ -478,7 +480,7 @@ $(document).ready(function(){
                     <li class="page-item"><l.a href="#" class="page-link">Next</a></li> -->
                     
                     <c:if test = "${pageMaker.next }">
-                    	<li class= "paginate_button page-item"><a href = "${pageMaker.endPage+1 }">Next</a></li>
+                    	<li class= "paginate_button page-item"><a href = "${pageMaker.endPage+1 }">&raquo;</a></li>
                     </c:if>
                 </ul>
             </div>
