@@ -37,6 +37,28 @@
     <script type="text/javascript" src="js/gnb.js"></script>
     <script type="text/javascript" src="js/slick.js"></script>
     <script type="text/javascript" src="js/wow.js"></script>
+	<style>
+	  @media (max-width: 767px) {
+	
+	.menu-custom .navbar-brand,
+	.menu-custom .navbar-nav > li > a {
+	padding-left:30px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+		color: #fff !important;
+	}
+	
+	.menu-custom .navbar-brand {
+	margin-left:15px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+	padding-left:40px;
+	}
+
+}
+	</style>
 </head>
 
 <body>

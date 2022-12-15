@@ -54,7 +54,8 @@
         margin: 80px 0;
     }
 	.table-wrapper {
-        min-width: 1000px;
+/*         min-width: 1000px; */
+		min-width: 150px;
         background: #fff;
         padding: 20px 25px;
 		border-radius: 3px;
@@ -218,7 +219,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body cz-shorcut-listen="true">
+<body>
        <!-- 메뉴바 시작 -->
        <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
@@ -292,7 +293,10 @@ $(document).ready(function(){
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
-                                <li><a href="/logout">로그아웃</a></li>    
+                                <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>   
                             </ul>
                         </div>
     
@@ -319,6 +323,7 @@ $(document).ready(function(){
     <!-- subMenu 끝 -->
 
     <!-- 게시판 시작  -->
+
     	<div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -358,7 +363,7 @@ $(document).ready(function(){
                        </form>					
                     </div>
                 </div>
-            </div>
+            </div>                     
             <table class="table table-striped table-hover">
                 <thead>
                     <tr class = "fontBold">
@@ -371,10 +376,26 @@ $(document).ready(function(){
                     </tr>
                 </thead>
                 <tbody>
+<%--                 <c:choose> --%>
+<%--                 <c:when test="${list == null }"> --%>
+<!--                 	와이 -->
+<!--                 		<tr> -->
+<!--                 			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                					<td>등록된 게시물이 없습니다.</td> -->
+                			
+<!--                 		</tr> -->
+                	
+<%--                 </c:when> --%>
+<%--                 <c:otherwise> --%>
                 <c:forEach items = "${list }" var = "board">
+                
                     <tr>
-                        <td><c:out value="${board.type }"></c:out></td>
-                        <td><a href="/admin/detail?boardId=${board.boardId }" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
+                        <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
+                        <td><a href="/admin/detail?boardId=${board.boardId }&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
                         <td><c:out value ="${board.name }"></c:out></td>                        
                         <td><c:out value = "${board.contact }"></c:out></td>
                         <td><c:out value = "${board.email }"></c:out></td>
@@ -383,10 +404,14 @@ $(document).ready(function(){
                         </td>
                     </tr>
                 </c:forEach>
+<%--                 </c:otherwise> --%>
+<%--                 </c:choose> --%>
                    
             
                 </tbody>
             </table>
+            
+            
             <!-- 페이지관련 form 정보넘기기 -->
             <form id = 'actionForm' action = "/admin" method = 'get'>
 					<input type = "hidden" name = "pageNum" value = "${pageMaker.cri.pageNum }">
@@ -397,7 +422,14 @@ $(document).ready(function(){
             
            <!--  페이지네이션 -->
             <div class="clearfix">
+            	<c:choose>
+            	<c:when test="${pageMaker.total < 10 }">
+            		    <div class="hint-text">Showing <b><c:out value = "${pageMaker.total }"></c:out></b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	</c:when>
+            	<c:otherwise>
                 <div class="hint-text">Showing <b>10</b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	</c:otherwise>
+            	</c:choose>
                 <ul class="pagination">
                 	<c:if test = "${pageMaker.prev }">
                     <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">Previous</a></li>                	
@@ -421,7 +453,7 @@ $(document).ready(function(){
                     </c:if>
                 </ul>
             </div>
-        </div>
+        </div>     
     </div>        
 </div>     
     <!-- 게시판 끝 -->

@@ -4,6 +4,8 @@ package huation.home.admin;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,7 +16,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import huation.home.qna.QnaReplyDTO;
+import huation.home.qna.QnaService;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2 
@@ -23,6 +28,7 @@ import lombok.extern.log4j.Log4j2;
 public class AdminController {
 	@Autowired
 	private AdminService service;
+	
 	
 	//로그인 화면
 	@GetMapping("/login")
@@ -59,8 +65,9 @@ public class AdminController {
 	@GetMapping("/admin")
 	public String list(Criteria cri, Model model) {
 		
-		log.info("list : " + cri);
+		model.addAttribute("cri",cri);
 		model.addAttribute("list",service.getList(cri));
+		log.info("list : " + service.getList(cri));
 		System.out.println(service.getList(cri));
 		int total = service.getTotal(cri);
 		log.info("total = {}",total);
@@ -93,21 +100,26 @@ public class AdminController {
 		
 	//상세보기
 		@GetMapping("/admin/detail") 
-		public String detail(int boardId,Model model) {
+		public String detail(int boardId,Model model,Criteria cri) {
 			
 		AdminDto admin = service.detail(boardId);
 		model.addAttribute("admin",admin);
-	
+		model.addAttribute("cri",cri);
 			return "admin/detail";
 		}
 		
 		//삭제
 		@GetMapping("/admin/delete") 
-		public String delete(int boardId) {
+		public String delete(int boardId, Criteria cri) throws UnsupportedEncodingException {
 			
 			
 			service.delete(boardId);
-			
-			return "redirect:/admin";
+			String encodeKeyword = URLEncoder.encode(cri.getKeyword(), "UTF-8");
+			System.out.println("뭔데" + cri.getKeyword());
+//			return "redirect:/admin?pageNum=" + cri.getPageNum() + "&amount=" + cri.getAmount() + "&type=" + cri.getType() + "&keyword=" + cri.getKeyword();
+			return "redirect:/admin?pageNum=" + cri.getPageNum() + "&amount=" + cri.getAmount() + "&type=" + cri.getType() + "&keyword=" + encodeKeyword;
+
 		}
+		
+
 }
