@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -36,6 +38,7 @@ for mail send.
 
 var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
 var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+var nameExp = /^[가-힣]{2,4}$/;
 
 function mailSend(){
 	// validation
@@ -51,6 +54,11 @@ function mailSend(){
 	if(content.value.trim() == "") {alert("문의내용을 입력하세요."); content.focus(); return;}
 	
 	var type = $("#type").get(0);
+	if (!nameExp.test(name.value.trim())) {
+		alert("올바른 이름을 입력해주세요.");
+		name.focus();
+		return;
+	}
 	
 	if (!regExp.test(contact.value.trim())) {
         alert("잘못된 전화번호입니다. 예) 050-XXXX-XXXX");
@@ -62,6 +70,7 @@ function mailSend(){
 		email.focus();
 		return;
 	}
+	
 	$('#join').submit();
 	alert("문의가 완료되었습니다.");
 }
@@ -153,6 +162,10 @@ $(document).ready(function(){
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>
+                                 <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>
                             </ul>
                         </div>
     
