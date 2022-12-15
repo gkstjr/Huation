@@ -123,6 +123,10 @@
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
+                                <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>
                             </ul>
                         </div>
                     </div><!-- .container -->
@@ -165,7 +169,12 @@
 		  	<c:forEach items="${qnaList}" var="list" varStatus="i">
 		    <tr>
 		      <td scope="col">${list.qnaNo}</th>	
+		      <c:if test="${pw != null }">
+		      	 <td scope="col" id="qnaTitle"><a href="/admin/getAdmin?qnaNo=${list.qnaNo}&reqPage=${reqPage}" id="qna_a">${list.qnaTitle}</a></td>
+		      </c:if>
+		      <c:if test="${pw == null }">		      
 	   		  <td scope="col" id="qnaTitle"><a href="/getQna?qnaNo=${list.qnaNo}" id="qna_a">${list.qnaTitle}</a></td>
+	   		  </c:if>
 	   		  <td scope="col">${list.qnaWriter}</td>
 	   	      <td scope="col">${list.qnaDate}</td>
 	   	      <c:choose>
