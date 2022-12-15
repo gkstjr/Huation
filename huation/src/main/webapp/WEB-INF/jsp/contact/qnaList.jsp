@@ -30,7 +30,7 @@
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
     
-    <style type="text/css">
+<style type="text/css">
 .table>thead:first-child>tr:first-child>th:nth-child(1) {
     width: 3%;
 }
@@ -46,7 +46,7 @@
 .table>thead:first-child>tr:first-child>th:nth-child(5) {
     width: 8%;
 }
-    </style>
+</style>
 </head>
 
 <body>
@@ -173,29 +173,29 @@
 		      	 <td scope="col" id="qnaTitle"><a href="/admin/getAdmin?qnaNo=${list.qnaNo}&reqPage=${reqPage}" id="qna_a">${list.qnaTitle}</a></td>
 		      </c:if>
 		      <c:if test="${pw == null }">		      
-	   		  <td scope="col" id="qnaTitle"><a href="/getQna?qnaNo=${list.qnaNo}" id="qna_a">${list.qnaTitle}</a></td>
+	   		  <td scope="col" id="qnaTitle"><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" id="qna_a">${list.qnaTitle}</a></td>
 	   		  </c:if>
 	   		  <td scope="col">${list.qnaWriter}</td>
 	   	      <td scope="col">${list.qnaDate}</td>
 	   	      <c:choose>
 		   	      <c:when test="${list.replyNo eq 0}">
-		   	      	<td scope="col" style="color:#45ba75">N</td>
+		   	      	<td scope="col" style="color:#FF5050">N</td>
 		   	      </c:when>
 		   	      <c:otherwise>
-		   	      	<td scope="col" style="color:#4eabe0">Y</td>
+		   	      	<td scope="col" style="color:#03A9F4">Y</td>
 		   	      </c:otherwise>
 		   	  </c:choose>    
 		    </tr>
 		    </c:forEach>
 		  </tbody>
 		</table>  
-				<div class="form-group row">
-					<div class="col-sm-10"></div>
-					<div class="col-sm-2">
-						<a href="/getQnaForm" class="btn btn-primary" id="write_btn_001">글쓰기</a>
-					</div>
+			<div class="form-group row">
+				<div class="col-sm-10"></div>
+				<div class="col-sm-2">
+					<a href="/getQnaForm" class="btn btn-primary" id="write_btn_001">글쓰기</a>
 				</div>
-	    		${pageNavi}
+			</div>
+    		${pageNavi}
 	    </div>
 	</section>
     <!-- 본문 끝 -->

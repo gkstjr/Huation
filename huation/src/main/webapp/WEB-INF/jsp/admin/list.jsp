@@ -387,6 +387,7 @@ $(document).ready(function(){
                        </form>					
                     </div>
                 </div>
+
             </div>  
             <!-- 페이지 개수 설명 -->
             <div>
@@ -401,6 +402,7 @@ $(document).ready(function(){
             </div>  
             <!-- 페이지 개수 설명 끝  -->
                
+
             <table class="table table-striped table-hover">
             <div class="menuLine2"></div>
                 <thead>
@@ -431,6 +433,7 @@ $(document).ready(function(){
 <%--                 <c:otherwise> --%>
                 <c:forEach items = "${list }" var = "board">
                 
+
                     <tr style = "height: 50px">
                         <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
                         <td><a href="/admin/detail?boardId=${board.boardId }&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
@@ -460,7 +463,7 @@ $(document).ready(function(){
             
            <!--  페이지네이션 -->
             <div class="clearfix">
-            	
+
                 <ul class="pagination">
                 	<c:if test = "${pageMaker.prev }">
                     <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">&laquo;</a></li>                	

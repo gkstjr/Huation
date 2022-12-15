@@ -98,7 +98,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 	border-radius: 0;
 	margin: 0;
 	text-transform: uppercase;
-	font-family: 'NanumGothic','³ª´®°íµñ','ng','sans-serif';
+	font-family: 'NanumGothic','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ng','sans-serif';
 }
 
 .navbar-custom,
@@ -180,7 +180,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45ba75', end
 
 .dropdown:hover .dropdown-menu {
     /*display: block;*/
-    margin-top: 0; // remove the gap so it doesn't close
+    margin-top: 0;  /*remove the gap so it doesn't close*/
+
  }
 
 a,
