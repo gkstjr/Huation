@@ -36,15 +36,18 @@
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
     
-    <style>
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
-</style>
+	<style>
+	.material-symbols-outlined {
+		  font-variation-settings:
+		  'FILL' 0,
+		  'wght' 400,
+		  'GRAD' 0,
+		  'opsz' 48
+	}
+	textarea.form-control {
+	  	  height: 300px;
+	}
+	</style>
 </head>
 
 <body>
@@ -148,32 +151,33 @@
     <!-- 본문 서브헤더 끝 -->
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
-    	<div class="container">
-    	   <h2 class="inputH2">글쓰기<img src="../img/contact/edit_square.png" class="write_img"></h2>
+    	<div class="container" id="container-title-00">
+    	   <h2 class="inputH2">글쓰기<!-- <img src="../img/contact/edit_square.png" class="write_img"> --></h2>
+    	   <hr id="hr-00">
     	</div>
 	    <div class="container">		
-			<form action="/insertQna" method="get">
+			<form action="/insertQna" method="post">
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">작성자</label>
-			    <div class="col-sm-3">
-			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" required>
+			    <label class="col-sm-1 col-form-label">작성자</label>
+			    <div class="col-sm-11">
+			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" maxlength="32" required>
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">제목</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" required>
+			    <label class="col-sm-1 col-form-label">제목</label>
+			    <div class="col-sm-11">
+			      <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" maxlength="99" required>
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">내용</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" required>
+			    <label class="col-sm-1 col-form-label">내용</label>
+			    <div class="col-sm-11">
+			      <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required></textarea>
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">비밀번호</label>
-			    <div class="col-sm-3">
+			    <label class="col-sm-1 col-form-label">비밀번호</label>
+			    <div class="col-sm-11">
 			      <input type="password" class="form-control" id="inputPW" placeholder="비밀번호를 입력해주세요" name="qnaPassword" required>
 			      <input type="hidden" value="1" name="reqPage">
 			    </div>
@@ -184,7 +188,7 @@
 				  	<button type="submit" class="btn btn-primary" id="submit_btn01">등록하기</button>
 				  </div>
 				  <div class="col-sm-1">
-			    	<a href="/getQnaList?reqPage=1" class="btn btn-primary">목록으로</a>
+			    	<a href="/getQnaList?reqPage=1" class="btn btn-list">목록으로</a>
 			      </div>
 			      <div class="col-sm-5"></div>
 		      </div>

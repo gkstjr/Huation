@@ -19,5 +19,9 @@ public interface QnaMapper {
 	int deleteQna(int qnaNo) throws Exception;
 
 	int updateQna(QnaDTO qnaDto) throws Exception;
+
+	QnaDTO checkPw(QnaDTO qnaDto) throws Exception;
+
+	int getQnaNo() throws Exception;
 	
 }

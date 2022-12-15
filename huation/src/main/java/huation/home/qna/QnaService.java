@@ -24,7 +24,7 @@ public class QnaService{
 	public QnaPageDTO getQnaList(int reqPage) throws Exception {
 		int numPerPage = 10; //페이지당 게시물 수
 		int end = reqPage * numPerPage; //한 페이지 마지막 게시물 번호
-		int start = end - numPerPage; //한 페이지 첫번째 게시물 번호
+		int start = end - numPerPage; //한 페이지 첫번째 게시물 번호 1, 11, 21, 31
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("start",start);
@@ -38,9 +38,8 @@ public class QnaService{
 		}else {
 			totalPage = totalCount/numPerPage + 1;
 		}
-		
 
-		int pageNaviSize = 10; //페이지네비 길이 
+		int pageNaviSize = 5; //페이지네비 길이 
 		int pageNo = ((reqPage-1)/pageNaviSize)*pageNaviSize + 1; // pageNo = 생성된 페이지 번호
 		
 		String pageNavi = "<ul class='pagination'>";
@@ -59,7 +58,7 @@ public class QnaService{
 				//페이지숫자
 				for(int i=0;i<pageNaviSize;i++) {
 					if(pageNo == reqPage) {
-						pageNavi += "<li class='page-item'><a class='page-item active-page' href='/getQnaList?reqPage="+pageNo+"'>";
+						pageNavi += "<li class='page-item'><a class='page-item active-page' style='background-color:#4eabe0;color:#FFF;' href='/getQnaList?reqPage="+pageNo+"'>";
 						pageNavi += pageNo;
 						pageNavi +="</a></li>"; 
 					}else {
@@ -89,6 +88,10 @@ public class QnaService{
 				return qpd;
 	}
 	
+	public int getQnaNo() throws Exception {
+		return qnaMapper.getQnaNo();
+	}
+	
 	public QnaReplyDTO getQna(int qnaNo) throws Exception {
 		return qnaMapper.getQna(qnaNo);
 	}
@@ -106,6 +109,8 @@ public class QnaService{
 		return qnaMapper.getQnaCount();
 	}
 
-
+	public QnaDTO checkPw(QnaDTO qnaDto) throws Exception {
+		return qnaMapper.checkPw(qnaDto);
+	}
 	
 }

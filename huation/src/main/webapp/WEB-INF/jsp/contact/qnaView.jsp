@@ -32,6 +32,12 @@
     <script type="text/javascript" src="../js/gnb.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
+    
+    <style>
+    textarea.form-control {
+	      height: 300px;
+	}
+    </style>
 </head>
 
 <body>
@@ -103,10 +109,10 @@
                                     </ul>
                                 </li>
                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
-                               		<ul class = "dropdown-menu">
-                               			 <li><a href="/contact/contact">Contact</a></li>
-                                		<li><a href="/contact/qna">Q&A</a></li>
-                               		</ul>
+                                     <ul class = "dropdown-menu">
+                                        <li><a href="/contact/contact">Contact</a></li>
+                                      	<li><a href="/contact/qna">Q&A</a></li>
+                                     </ul>
                                 </li>        
                             </ul>
                         </div>
@@ -117,125 +123,115 @@
     <!-- 메뉴바 끝 --> 
     <!-- 본문 서브헤더 시작 -->
     <div class="container-fluid subName contact02" id="subTitle1">
-    	<h2>Q&A</h2>
-    	<p>문의에 친절하게 답해드립니다</p>
+       <h2>Q&A</h2>
+       <p>문의에 친절하게 답해드립니다</p>
     </div>
     <div class="container-fluid subMenu">
-    	<div class="container">
-    		<h3>Q&A</h3>
-    		<ul>
-    			<li>Home</li>
-    			<li>></li>
-    			<li>Contact</li>
-    			<li>></li>
-    			<li>Q&A</li>
-    		</ul>
-    	</div>
+       <div class="container">
+          <h3>Q&A</h3>
+          <ul>
+             <li>Home</li>
+             <li>></li>
+             <li>Contact</li>
+             <li>></li>
+             <li>Q&A</li>
+          </ul>
+       </div>
     </div>
     <!-- 본문 서브헤더 끝 -->
     <!-- 본문 시작 -->
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
-    	<div class="container">
-	    	<h2 class="inputH2">문의상세<img src="../img/contact/manage_search.png" class="write_img"></h2>			
-	    </div>
-	    <div class="container">
-	    	<!-- container div 밑에 문의상세 시작 -->
-			<form action="/updateQna" method="get" class="form_1">
-			  <div class="form-group row">
-			    <label for="staticEmail" class="col-sm-2 col-form-label">작성자</label>
-			    <div class="col-sm-3">
-			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" required>
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">제목</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" value="${qna.qnaTitle}" required>
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">내용</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" value="${qna.qnaContent}" required>
-			    </div>
-			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-2 col-form-label">비밀번호</label>
-			    <div class="col-sm-3">
-			      <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="${qna.qnaPassword}" readonly>
-			      <input type="hidden" value="${qna.qnaNo}" name="qnaNo" >
-			      <input type="hidden" value="1" name="reqPage">
-			    </div>
-			  </div>
-			  <div class="form-group row bottomRow">
-			      <div class="col-sm-5"></div>
-				  <div class="col-sm-1">
-				  	<button type="submit" class="btn btn-primary" id="update_btn_00">수정하기</button>
-				  </div>
-				  <div class="col-sm-1">
-			    	<a href="/deleteQna?reqPage=1&qnaNo=${qna.qnaNo}" class="btn btn-primary" id="delete_btn_00">삭제하기</a>
-			      </div>
-				  <div class="col-sm-1">
-			    	<a href="/getQnaList?reqPage=1" class="btn btn-primary">목록으로</a>
-			      </div>
-			      <div class="col-sm-5"></div>
-		      </div>
-			</form>
-    		<!-- 본문 끝 -->
-			<!-- 댓글창 시작 -->
-			<div class="form-group row form-01">
-			    <label class="col-sm-2 col-form-label">댓글</label>
-			    <div class="col-sm-10">
-			    	<div class="form-inline col-sm-12">
-			    		<div class="col-sm-1 col">
-			    		</div>
-					</div>
-					<c:choose>
-						<c:when test="${qna.replyNo ne 0}">
-						<div id="form-2">
-							<form action="/updateReply" method="get">
-								<input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="replyContent" value="${qna.replyContent}" required>
-								<input type="hidden" value="${qna.qnaNo}" name="qnaNo" >
-								<input type="hidden" value="1" name="reqPage">
-								<div class="form-group row">
-									<div class="col-sm-4"></div>
-									<div class="col-sm-2">
-										<button type="submit" class="btn btn-primary btn-1" id="update_btn_admin">댓글수정</button>
-									</div>
-									<div class="col-sm-2">
-										<a href="/deleteReply?reqPage=1&replyNo=${qna.replyNo}" class="btn btn-primary btn-1" id="delete_btn_admin">댓글삭제</a>
-									</div>
-								</div>
-							</form>
-						</div>
-						</c:when>
-						<c:otherwise>
-						<div id="form-2">
-							<form action="/insertReply" method="get">
-								<input type="text" class="form-control" id="exampleFormControlTextarea1" rows="3" name="replyContent" required>
-								<input type="hidden" value="${qna.qnaNo}" name="qnaNo" >
-								<input type="hidden" value="1" name="reqPage">
-								<div class="form-group row">
-									<div class="col-sm-1">
-										<button type="submit" class="btn btn-primary btn-1" id="write_btn_admin">댓글등록</button>
-									</div>
-								</div>
-							</form>
-						</div>
-						</c:otherwise>
-					</c:choose>
-			    </div>
-			</div>
-			<!-- 댓글창 끝 -->
-	    </div>
-	</section>
+       <div class="container">
+          <h2 class="inputH2">문의상세<!-- <img src="../img/contact/manage_search.png" class="write_img"> --></h2>  
+          <hr id="hr-00">       
+       </div>
+       <div class="container">
+          <!-- container div 밑에 문의상세 시작 -->
+         <form action="/updateQna" method="post" class="form_1">
+           <div class="form-group row">
+             <label for="staticEmail" class="col-sm-1 col-form-label">작성자</label>
+             <div class="col-sm-11">
+               <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" maxlength="32" required>
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">제목</label>
+             <div class="col-sm-11">
+               <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" value="${qna.qnaTitle}" maxlength="99" required>
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">내용</label>
+             <div class="col-sm-11">
+               <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required><c:out value="${qna.qnaContent}" /></textarea>
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">비밀번호</label>
+             <div class="col-sm-11">
+               <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
+               <input type="hidden" value="${qna.qnaNo}" name="qnaNo" id="qnaNo_00">
+               <input type="hidden" value="1" name="reqPage">
+             </div>
+           </div>
+           <div class="form-group row bottomRow">
+               <div class="col-sm-5"></div>
+              <div class="col-sm-1">
+                 <button type="button" class="btn btn-2 btn-primary" id="update_btn_00">수정하기</button>
+              </div>
+              <div class="col-sm-1">
+                <a class="btn btn-2 btn-primary" id="delete_btn_00" value="삭제하기">삭제하기</a>
+               	<!-- form으로 바꿔서 delete도 post 타입으로 넘기기 -->
+               	<%-- <button type="button" onclick="location.href='/deleteQna?reqPage=${reqPage}&qnaNo=${qna.qnaNo}'" id="real_del_btn" hidden>리얼삭제</button> --%>
+              </div>
+              <div class="col-sm-1">
+                <a href="/getQnaList?reqPage=${reqPage}" class="btn btn-2 btn-list">목록으로</a>
+               </div>
+               <div class="col-sm-5"></div>
+            </div>
+         </form>
+         <form action="deleteQna" method="post">
+         	<input type="hidden" name="qnaNo" value="${qna.qnaNo}">
+         	<input type="hidden" name="reqPage" value="${reqPage}">
+         	<button type="submit" id="real_del_btn" hidden></button>
+         </form>
+         <!-- 본문 끝 -->
+         <!-- 댓글창 시작 -->
+         <!-- 댓글 있을때 -->
+   	      <c:choose>
+	   	      <c:when test="${qna.replyNo ne 0}">
+	   	      	<div class="form-group row form-01">
+	             <!-- <label class="col-sm-2 col-form-label">댓글</label>
+	             <div class="col-sm-10"> -->
+		             <div class="col-sm-12 reply-wrap">
+		             	<div class="col-sm-12 reply-header">
+	                 		<div class="col-sm-1" id="reply_img_00">
+	                 			<img src="../img/main/favicon.ico" class="reply_img">
+	                 		</div>
+	                 		<div class="col-sm-2" id="reply_img_01">
+                 				<p id="p-01">관리자</p>
+                 				<p class="p-reply" id="p-02"><c:out value="${qna.replyDate}" /></p>
+	                 		</div>
+	                 	</div>	
+	                  	<div class="col-sm-12 reply-content">
+	                  		<p class="p-reply" id="p-03"><c:out value="${qna.replyContent}" /></p>
+	                  	</div>
+	                </div>
+	            </div>
+	   	      </c:when>
+	   	      <c:otherwise>
+	   	      </c:otherwise>
+	   	  </c:choose> 
+         <!-- 댓글창 끝 -->
+       </div>
+   </section>
     <!-- 본문 끝 -->
     
     <!-- 스크롤바 시작 -->
     <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
-	
+   <!-- 스크롤바 끝 -->
+   
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
        <div class="container">
@@ -265,8 +261,8 @@
 <!-- 애니메이션 스크립트 -->
 <script>
 $(function(){
-	const adminPw = '1111';
-	
+   const adminPw = '1111';
+   
     new WOW().init();
     $('#company01Ani01').addClass('wow fadeInLeftBig');
     $('#company01Ani02').addClass('wow fadeInLeft');
@@ -277,60 +273,100 @@ $(function(){
     
     //Q&A 수정 검증
     $("#update_btn_00").on("click", function(){
-    	const InputPw = prompt("기존 비밀번호를 입력하세요.");
-    	const PastPw = $("#inputPassword").val();
-    	if(InputPw == PastPw){
-    		alert("질문글이 성공적으로 수정되었습니다.");
-    	}else{
-    		alert("비밀번호가 불일치합니다. 수정하기 버튼을 다시 누르세요.");
-    		return false;
-    	}
+       const qnaPassword = prompt("기존 비밀번호를 입력하세요.");
+       //console.log("qnaPassword : "+ qnaPassword);
+       const qnaNo = $("#qnaNo_00").val();
+       //console.log("qnaNo : "+ qnaNo);
+       const qnaWriter = $("input[name = qnaWriter]").val();
+       //console.log("qnaWriter : "+ qnaWriter);
+       const qnaTitle = $("input[name = qnaTitle]").val();
+       //console.log("qnaTitle : "+ qnaTitle);
+       const qnaContent = $("textarea[name = qnaContent]").val();
+       console.log("qnaContent : "+ qnaContent);
+       const reqPage = '<c:out value="${reqPage}"/>';
+       //console.log("reqPage : "+ reqPage);
+       $.ajax({
+    	  url: "/checkPw",
+    	  type: "post",
+    	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
+    	  success: function(data) {
+    		  if(data == "1"){
+    			  //update실행
+    			  $.ajax({
+    				 url: "/updateQna",
+    				 type: "post",
+    				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, reqPage: reqPage},
+    				 success: function(data) {
+    	    			  alert("수정이 완료되었습니다.");
+    				 }
+    			  });
+    		  }else if(data == "-1"){
+    			  alert("비밀번호가 일치하지 않습니다.");
+    		  }
+    	  }
+       });
     });
     
   //Q&A 삭제 검증
-	   $("#delete_btn_00").on("click", function(){
-	   	const InputPw = prompt("기존 비밀번호를 입력하세요.");
-	   	const PastPw = $("#inputPassword").val();
-	   	if(InputPw == PastPw){
-	   		alert("질문글이 성공적으로 삭제되었습니다.");
-	   	}else{
-	   		alert("비밀번호가 불일치합니다. 삭제하기 버튼을 다시 누르세요.");
-	   		return false;
-	   	}
+      $("#delete_btn_00").on("click", function(){
+       const qnaPassword = prompt("기존 비밀번호를 입력하세요.");
+       const qnaNo = $("#qnaNo_00").val();
+       const qnaWriter = $("input[name = qnaWriter]").val();
+       const qnaTitle = $("input[name = qnaTitle]").val();
+       const qnaContent = $("input[name = qnaContent]").val();
+       const reqPage = '<c:out value="${reqPage}"/>';
+       $.ajax({
+    	  url: "/checkPw",
+    	  type: "post",
+    	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
+    	  success: function(data) {
+    		  if(data == "1"){
+    			  var result = confirm("비밀번호가 일치합니다. 정말로 삭제하시겠습니까?");
+    			  if(result == true){//확인 눌렀을때
+    				  //안보이는 버튼 만들어서 강제 클릭시키고 delete로 보내버림
+    				  $("#real_del_btn").trigger("click");
+    			  }else {//취소 눌렀을때
+    				  alert("글 삭제를 취소하셨습니다.");
+    			  }
+    		  }else if(data == "-1"){
+    			  alert("비밀번호가 일치하지 않습니다.");
+    		  }
+    	  }
+       });
+    });
+  
+  /* //reply insert 버튼
+     $("#write_btn_admin").on("click", function(){
+         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
+         if(InputPw == adminPw){
+            alert("댓글 등록 완료");
+         }else{
+            alert("관리자 비밀번호를 다시 입력하세요.");
+            return false;
+         }
    });
   
-  //reply insert 버튼
-	  $("#write_btn_admin").on("click", function(){
-	   	const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-	   	if(InputPw == adminPw){
-	   		alert("댓글 등록 완료");
-	   	}else{
-	   		alert("관리자 비밀번호를 다시 입력하세요.");
-	   		return false;
-	   	}
+   //reply update 버튼
+     $("#update_btn_admin").on("click", function(){
+         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
+         if(InputPw == adminPw){
+            alert("댓글 수정 완료");
+         }else{
+            alert("관리자 비밀번호를 다시 입력하세요.");
+            return false;
+         }
    });
-  
-	//reply update 버튼
-	  $("#update_btn_admin").on("click", function(){
-	   	const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-	   	if(InputPw == adminPw){
-	   		alert("댓글 수정 완료");
-	   	}else{
-	   		alert("관리자 비밀번호를 다시 입력하세요.");
-	   		return false;
-	   	}
-   });
-	
-	//reply delete 버튼
-	  $("#delete_btn_admin").on("click", function(){
-	   	const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-	   	if(InputPw == adminPw){
-	   		alert("댓글 삭제 완료");
-	   	}else{
-	   		alert("관리자 비밀번호를 다시 입력하세요.");
-	   		return false;
-	   	}
-   });
+   
+   //reply delete 버튼
+     $("#delete_btn_admin").on("click", function(){
+         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
+         if(InputPw == adminPw){
+            alert("댓글 삭제 완료");
+         }else{
+            alert("관리자 비밀번호를 다시 입력하세요.");
+            return false;
+         }
+   }); */
 });
 </script>
 <!-- 애니메이션 스크립트 -->

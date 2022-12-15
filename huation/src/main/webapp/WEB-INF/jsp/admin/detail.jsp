@@ -225,7 +225,7 @@ $(document).ready(function(){
 function del(boardId) {
 	var chk = confirm("정말 삭제하시겠습니까?");
 	if(chk) {
-		location.href = '/admin/delete?boardId='+boardId;
+		location.href = '/admin/delete?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}&boardId='+boardId;
 	}
 }
 </script>
@@ -306,7 +306,10 @@ function del(boardId) {
                                 </li>        
                                 
                                 
-                                <li><a href="/logout">로그아웃</a></li>    
+                                 <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>
                             </ul>
                         </div>
     
@@ -418,7 +421,7 @@ function del(boardId) {
              
               <div class="clearfix">
                 <div class="hint-text">
-                	<a href = "/admin" style="color:white; margin-right:7px">
+                	<a href = "/admin?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" style="color:white; margin-right:7px">
                 	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;">목록</button>
                 	</a>
                 

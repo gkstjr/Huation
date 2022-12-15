@@ -503,8 +503,18 @@ Contact
 	height: 7rem;
 }
 .btn-primary {
-    background-color: #4eabe0;
+    background-color: #03A9F4;
     border: none;
+}
+.btn-list {
+	background-color: #7a7a7a;
+    border: none;
+    color: #fff;
+}
+.btn-list:hover {
+	background-color: #333;
+	border: none;
+    color: #fff;
 }
 .mb-2 > span {
 	vertical-align: middle;
@@ -514,19 +524,21 @@ Contact
 }
 .inputTextArea {
 	height: 300px;
+	resize: none;
 }
 .inputH2 {
-	padding-bottom: 100px;
-	text-align:center;
-	padding-left: 64px;
+	/* padding-bottom: 100px; */
+	text-align: left;
+	/* padding-left: 64px; */
 }
 .bottomRow {
 	padding-top: 60px;
 }
 #form-2 {
-	padding-top: 100px;
+	/* padding-top: 100px;
 	padding-right: 100px;
 	padding-left: 100px;
+	padding-bottom: 30px; */
 	background-color: rgb(224, 224, 224);
 }
 .btn-1 {
@@ -566,4 +578,54 @@ Contact
 }
 #write_btn_001 {
 	margin-top: 30px;
+}
+/* #container-title-00 {
+	background: linear-gradient(to right, #4eabe0, #45ba75);
+} */
+#hr-00 {
+	border: 1px solid #ccc;
+	margin: 60px 0px;
+}
+.col-form-label {
+	font-weight: 600;
+	text-align: left;
+	/* padding-left: 80px; */
+}
+.reply-wrap {
+    padding: 25px;
+    text-align: left;
+    border: 1px solid #b4b4b4;
+    border-radius: 5px;
+}
+.reply_img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+.reply-content {
+	padding-top: 22px;
+	padding-bottom: 5px;
+	padding-left: 12px;
+	border-top: 1px solid #b4b4b4;
+}
+#p-01 {
+	font-size: 16px;
+    font-weight: bold;
+}
+#p-02 {
+	padding-top: 6px;
+    padding-bottom: 20px;
+    color: #7a7a7a;
+}
+.p-reply {
+	color: #2d2e38;
+}
+#reply_img_00 {
+	padding: 0px 0px;
+}
+#reply_img_01 {
+	padding: 0px 0px;
+}
+.btn-2 {
+	padding: 7px 14px;
 }
