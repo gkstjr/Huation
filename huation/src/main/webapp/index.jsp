@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/slick.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css"/>  
     <link rel="stylesheet" type="text/css" media="screen" href="css/style2.css" />
     
   
