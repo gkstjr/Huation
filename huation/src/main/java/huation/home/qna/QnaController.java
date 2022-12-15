@@ -97,7 +97,7 @@ public class QnaController {
 		}else {
 			model.addAttribute("qnaNo",qnaNo);
 			model.addAttribute("reqPage",reqPage);
-			return "redirct:/getQna";
+			return "redirect:/getQna";
 		}
 	  }	 
 	  
