@@ -350,7 +350,7 @@ $(function(){
      $("#update_btn_admin").on("click", function(){
          const InputPw = prompt("관리자 비밀번호를 입력하세요.");
          if(InputPw == adminPw){
-            alert("댓글 수정 완료");
+            alert("댓글 수정 완료")
          }else{
             alert("관리자 비밀번호를 다시 입력하세요.");
             return false;
@@ -367,6 +367,7 @@ $(function(){
             return false;
          }
    }); */
+
 });
 </script>
 <!-- 애니메이션 스크립트 -->

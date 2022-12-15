@@ -48,16 +48,20 @@ public class QnaController {
 		model.addAttribute("qnaList",qpd.getQnaList());
     	model.addAttribute("pageNavi",qpd.getPageNavi());
     	model.addAttribute("reqPage",reqPage);
+    
     	return "contact/qnaList"; 
     }
 	
+
 	 //Q&A get 메소드
 	 @RequestMapping(value = "/getQna")
 	 public String getQna(int reqPage, int qnaNo, Model model) throws Exception {
+
 		QnaReplyDTO qna = qnaService.getQna(qnaNo);
 		
 		model.addAttribute("qna",qna);
 		model.addAttribute("reqPage",reqPage);
+
 		return "contact/qnaView";
 	}
 	
@@ -102,17 +106,18 @@ public class QnaController {
 	  }	 
 	  
 		
-  	//한석
-	//Q&A 댓글 관리자 메소드
-	@RequestMapping(value = "/admin/getAdmin")
-	public String getAdmin(int qnaNo, Model model,int reqPage) throws Exception {
-		System.out.println(qnaNo);
-		QnaReplyDTO qna = qnaService.getQna(qnaNo);
-		System.out.println(qna);
-		model.addAttribute("qna",qna);
-		model.addAttribute("reqPage",reqPage);
-		
-		return "admin/AdminQnaView";
-	}
+
+	  	//한석
+		//Q&A 댓글 관리자 메소드
+		@RequestMapping(value = "/admin/getAdmin")
+		public String getAdmin(int qnaNo, Model model,int reqPage) throws Exception {
+			System.out.println(qnaNo);
+			QnaReplyDTO qna = qnaService.getQna(qnaNo);
+			System.out.println(qna);
+			model.addAttribute("qna",qna);
+			model.addAttribute("reqPage",reqPage);
+			
+			return "admin/AdminQnaView";
+		}
 	 
 }
