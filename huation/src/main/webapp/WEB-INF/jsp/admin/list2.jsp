@@ -54,7 +54,8 @@
         margin: 80px 0;
     }
 	.table-wrapper {
-        min-width: 1000px;
+/*         min-width: 1000px; */
+		min-width: 150px;
         background: #fff;
         padding: 20px 25px;
 		border-radius: 3px;
@@ -203,34 +204,22 @@
         float: left;
         margin-top: 10px;
         font-size: 13px;
-        display: inline-flex;
     }
     .fontBold {
-     	font-weight:300; 
+    	font-weight:700;
     	font-size: 20px;
     }
-	
-	.clearfix {
-		width : 100px;
-		margin : 0 auto;
-	}
-	
+
+
 </style>
 <!-- 게시판 템플릿 스타일 : e -->
 <script>
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 });
-
-function del(boardId) {
-	var chk = confirm("정말 삭제하시겠습니까?");
-	if(chk) {
-		location.href = '/admin/delete?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}&boardId='+boardId;
-	}
-}
 </script>
 </head>
-<body cz-shorcut-listen="true">
+<body>
        <!-- 메뉴바 시작 -->
        <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
@@ -298,18 +287,16 @@ function del(boardId) {
                                         <li><a href="/recruit/recruit">채용절차</a></li>
                                     </ul>
                                 </li>
-                              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
+                               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact<span class="caret"></span></a>                                
                                		<ul class = "dropdown-menu">
                                			 <li><a href="/contact/contact">Contact</a></li>
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
-                                
-                                
-                                 <c:if test="${pw !=null }">
+                                <c:if test="${pw !=null }">
                                 <li><a href="/admin">관리자페이지</a></li>
                                 <li><a href="/logout">로그아웃</a></li>
-                                </c:if>
+                                </c:if>   
                             </ul>
                         </div>
     
@@ -336,6 +323,7 @@ function del(boardId) {
     <!-- subMenu 끝 -->
 
     <!-- 게시판 시작  -->
+
     	<div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
@@ -346,98 +334,127 @@ function del(boardId) {
                     </div>
                     <div class = "col-xs-2"></div>
                     <div class="col-xs-5">
-                     	
+                       <form class = "form-inline" id = "searchForm" action = "/admin" method = "get">
+                                  
+                       		<select name = "type" class = "form-control">
+                       				<option value ="TSNCE" 
+                       				<c:out value = "${pageMaker.cri.type == null? 'selected' : '' }"/>>통합검색</option> 
+                       			<%-- <option value = ""
+                       			<c:out value = "${pageMaker.cri.type == null? 'selected': ''}"/>>--</option> --%>
+                       				<option value ="T" 
+                       				<c:out value = "${pageMaker.cri.type eq 'T' ? 'selected' : '' }"/>>분류</option>
+                       				<option value ="S" 
+                       				<c:out value = "${pageMaker.cri.type eq 'S' ? 'selected' : '' }"/>>제목</option>
+                       				<option value ="N" 
+                       				<c:out value = "${pageMaker.cri.type eq 'N' ? 'selected' : '' }"/>>이름</option>
+                       				<option value ="C" 
+                       				<c:out value = "${pageMaker.cri.type eq 'C' ? 'selected' : '' }"/>>연락처</option>
+ 									<option value ="E" 
+                       				<c:out value = "${pageMaker.cri.type eq 'E' ? 'selected' : '' }"/>>이메일</option>                       				                    				
+                       		</select>
+                       		<input type = "text" class = "form-control" style= "margin-left:20px;"name = "keyword"
+                       		value = "<c:out value = "${pageMaker.cri.keyword }"/>"/>
+                       		<input type = "hidden" name = "pageNum"  value = "<c:out value = "${pageMaker.cri.pageNum }"/>"/>
+                       		<input type = "hidden" name = "amount" value = "<c:out value = "${pageMaker.cri.amount }"/>"/>
+                       		
+                    							
+                       		<button class = "btn btn-default form-control">Search</button>
+						                      		                        		 
+                       </form>					
                     </div>
                 </div>
-            </div>
-            <table class="table table-striped table-hover" style="margin-bottom: 5px;">
-                <colgroup>
-                	<col width = "20%">
-                	<col width = "*">
-                </colgroup>
+            </div>                     
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class = "fontBold">
+                        <th>분류</th>
+                        <th>제목</th>						
+                        <th>이름</th>
+                        <th>연락처</th>
+                        <th>이메일</th>
+                        <th style = "width: 150px">문의날짜</th>
+                    </tr>
+                </thead>
                 <tbody>
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					분류
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.type }">
-                	</td>
-                	</tr>
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					이름
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.name }">
-                	</td>
-            		</tr>    
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					연락처
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.contact }">
-                	</td>
-            		</tr>   
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					이메일
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.email }">
-                	</td>
-            		</tr>    
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					제목
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.subject }" style = "width:789px;">
-                	</td>
-            		</tr>     
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					내용
-            				</label>
-            			</th>
-                	<td style="padding-bottom:0px;">
-                		<textarea readonly style="width: 789px; height: 173px; text-align:left;">${admin.content }</textarea>
-                	</td>
-            		</tr>    
+<%--                 <c:choose> --%>
+<%--                 <c:when test="${list == null }"> --%>
+<!--                 	와이 -->
+<!--                 		<tr> -->
+<!--                 			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
+<!--                 			                					<td>등록된 게시물이 없습니다.</td> -->
+                			
+<!--                 		</tr> -->
+                	
+<%--                 </c:when> --%>
+<%--                 <c:otherwise> --%>
+                <c:forEach items = "${list }" var = "board">
+                
+                    <tr>
+                        <td style = "width: 82px;"><c:out value="${board.type }"></c:out></td>
+                        <td><a href="/admin/detail?boardId=${board.boardId }&pageNum=${cri.pageNum}&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" class = "btn-modal"><c:out value="${board.subject }"></c:out></a></td>
+                        <td><c:out value ="${board.name }"></c:out></td>                        
+                        <td><c:out value = "${board.contact }"></c:out></td>
+                        <td><c:out value = "${board.email }"></c:out></td>
+                        <td>
+                        	<fmt:formatDate pattern = "yyyy-MM-dd" value = "${board.regDate }"></fmt:formatDate>
+                        </td>
+                    </tr>
+                </c:forEach>
+<%--                 </c:otherwise> --%>
+<%--                 </c:choose> --%>
+                   
+            
                 </tbody>
             </table>
-             
-              <div class="clearfix">
-                <div class="hint-text">
-                	<a href = "/admin?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" style="color:white; margin-right:7px">
-                	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;">목록</button>
-                	</a>
-                
-                <a  style="color:white; margin-left:7px">
-                	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;" onclick ="del(${admin.boardId})">삭제</button>
-                	</a>
-                </div>
-                
-<!--                  <div class="hint-text"> -->
+            
+            
+            <!-- 페이지관련 form 정보넘기기 -->
+            <form id = 'actionForm' action = "/admin" method = 'get'>
+					<input type = "hidden" name = "pageNum" value = "${pageMaker.cri.pageNum }">
+					<input type = "hidden" name = "amount" value = "${pageMaker.cri.amount }">
+					<input type = "hidden" name = "type" value = "<c:out value = "${pageMaker.cri.type }"/>">   
+					<input type = "hidden" name = "keyword" value = "<c:out value = "${pageMaker.cri.keyword }"/>">         
+            </form>
+            
+           <!--  페이지네이션 -->
+            <div class="clearfix">
+            	<c:choose>
+            	<c:when test="${pageMaker.total < 10 }">
+            		    <div class="hint-text">Showing <b><c:out value = "${pageMaker.total }"></c:out></b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	</c:when>
+            	<c:otherwise>
+                <div class="hint-text">Showing <b>10</b> out of <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
+            	</c:otherwise>
+            	</c:choose>
+                <ul class="pagination">
+                	<c:if test = "${pageMaker.prev }">
+                    <li class="page-item paginate_button"><a href="${pageMaker.startPage-1 }">Previous</a></li>                	
+                	</c:if>
                 	
-<!--                 </div> -->
+                	<c:forEach var = "num" begin= "${pageMaker.startPage }" end = "${pageMaker.endPage }">
+                    <li class="paginate_button page-item ${pageMaker.cri.pageNum == num ? "active" :""}">
+                    <a href="${num }" class="page-link">${num }</a>
+                    </li>
+                	</c:forEach>
+                	
                
+                   <!--  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><l.a href="#" class="page-link">Next</a></li> -->
+                    
+                    <c:if test = "${pageMaker.next }">
+                    	<li class= "paginate_button page-item"><a href = "${pageMaker.endPage+1 }">Next</a></li>
+                    </c:if>
+                </ul>
             </div>
-             
-        </div>
-    </div>   
+        </div>     
+    </div>        
 </div>     
     <!-- 게시판 끝 -->
 
