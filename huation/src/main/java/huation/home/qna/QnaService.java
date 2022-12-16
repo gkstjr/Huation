@@ -2,6 +2,7 @@ package huation.home.qna;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,6 +112,21 @@ public class QnaService{
 
 	public QnaDTO checkPw(QnaDTO qnaDto) throws Exception {
 		return qnaMapper.checkPw(qnaDto);
+	}
+
+	public boolean deleteQnaList(String qnaNoList) throws Exception {
+		StringTokenizer sT = new StringTokenizer(qnaNoList, "/");
+		boolean result = true;
+		while(sT.hasMoreTokens()) {
+			String qnaNoStr = sT.nextToken();
+			int qnaNo = Integer.parseInt(qnaNoStr);
+			int delResult = qnaMapper.deleteQna(qnaNo);
+			if(delResult == 0) {
+				result = false;
+				break;
+			}
+		}
+		return result;
 	}
 	
 }
