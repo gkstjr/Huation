@@ -181,12 +181,10 @@
                  <button type="button" class="btn btn-2 btn-primary" id="update_btn_00">수정하기</button>
               </div>
               <div class="col-sm-1">
-                <a class="btn btn-2 btn-primary" id="delete_btn_00" value="삭제하기">삭제하기</a>
-               	<!-- form으로 바꿔서 delete도 post 타입으로 넘기기 -->
-               	<%-- <button type="button" onclick="location.href='/deleteQna?reqPage=${reqPage}&qnaNo=${qna.qnaNo}'" id="real_del_btn" hidden>리얼삭제</button> --%>
+                 <a class="btn btn-2 btn-primary" id="delete_btn_00" value="삭제하기">삭제하기</a>
               </div>
               <div class="col-sm-1">
-                <a href="/getQnaList?reqPage=${reqPage}" class="btn btn-2 btn-list">목록으로</a>
+                 <a href="/getQnaList?reqPage=${reqPage}" class="btn btn-2 btn-list">목록으로</a>
                </div>
                <div class="col-sm-5"></div>
             </div>

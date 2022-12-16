@@ -1,7 +1,8 @@
+<%-- <%@ include file = "/WEB-INF/jsp/egovframework/template/header.jsp"%> --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -9,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[한석,신영] 휴에이션</title>
+    <title>기업이념</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media = "screen" href="../css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,19 +19,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
-    
-    <!-- 게시판 템플릿 부트스트랩 : s-->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-    <!-- 게시판 템플릿 부트스트랩 : e -->
-   
-    <!-- Javascript files -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
 
+    <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
     <script type="text/javascript" src="../js/jquery.parallax-1.1.3.js"></script>
@@ -40,184 +32,13 @@
     <script type="text/javascript" src="../js/gnb.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
-
-
-<!-- 게시판 템플릿 스타일 -->
-<style>
-    body {
-        color: #566787;
-		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
-		font-size: 13px;
+    
+    <style>
+    textarea.form-control {
+	      height: 300px;
 	}
-    .table-responsive {
-        margin: 80px 0;
-    }
-	.table-wrapper {
-        min-width: 1000px;
-        background: #fff;
-        padding: 20px 25px;
-		border-radius: 3px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    }
-	.table-title {
-		padding-bottom: 15px;
-		background: linear-gradient(to right, #4eabe0, #45ba75);;
-		color: #fff;
-		padding: 16px 30px;
-		margin: -20px -25px 10px;
-		border-radius: 3px 3px 0 0;
-    }
-    .table-title h2 {
-		margin: 5px 0 0;
-		font-size: 24px;
-	}
-	.table-title .btn {
-		color: #566787;
-		float: right;
-		font-size: 13px;
-		background: #fff;
-		border: none;
-		min-width: 50px;
-		border-radius: 2px;
-		border: none;
-		outline: none !important;
-		margin-left: 10px;
-	}
-	.table-title .btn:hover, .table-title .btn:focus {
-        color: #566787;
-		background: #f2f2f2;
-	}
-	.table-title .btn i {
-		float: left;
-		font-size: 21px;
-		margin-right: 5px;
-	}
-	.table-title .btn span {
-		float: left;
-		margin-top: 2px;
-	}
-    table.table tr th, table.table tr td {
-        border-color: #e9e9e9;
-		padding: 12px 15px;
-		vertical-align: middle;
-/* 		border: 1px solid #444444; */
-    }
-	table.table tr th:first-child {
-		width: 80px;
-	}
-	table.table tr th:last-child {
-		width: 100px;
-	}
-    table.table-striped tbody tr:nth-of-type(odd) {
-    	background-color: #fcfcfc;
-	}
-	table.table-striped.table-hover tbody tr:hover {
-		background: #f5f5f5;
-	}
-    table.table th i {
-        font-size: 13px;
-        margin: 0 5px;
-        cursor: pointer;
-    }	
-    table.table td:last-child i {
-		opacity: 0.9;
-		font-size: 22px;
-        margin: 0 5px;
-    }
-	table.table td a {
-		font-weight: bold;
-		color: #566787;
-		display: inline-block;
-		text-decoration: underline;
-	}
-	table.table td a:hover {
-		color: #2196F3;
-	}
-	table.table td a.settings {
-        color: #2196F3;
-    }
-    table.table td a.delete {
-        color: #F44336;
-    }
-    table.table td i {
-        font-size: 19px;
-    }
-	table.table .avatar {
-		border-radius: 50%;
-		vertical-align: middle;
-		margin-right: 10px;
-	}
-	.status {
-		font-size: 30px;
-		margin: 2px 2px 0 0;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 10px;
-	}
-    .text-success {
-        color: #10c469;
-    }
-    .text-info {
-        color: #62c9e8;
-    }
-    .text-warning {
-        color: #FFC107;
-    }
-    .text-danger {
-        color: #ff5b5b;
-    }
-    .pagination {
-        float: right;
-        margin: 0 0 5px;
-    }
-    .pagination li a {
-        border: none;
-        font-size: 13px;
-        min-width: 30px;
-        min-height: 30px;
-        color: #999;
-        margin: 0 2px;
-        line-height: 30px;
-        border-radius: 2px !important;
-        text-align: center;
-        padding: 6px;
-    }
-    .pagination li a:hover {
-        color: #666;
-    }	
-    .pagination li.active a, .pagination li.active a.page-link {
-        background: #03A9F4;
-    }
-    .pagination li.active a:hover {        
-        background: #0397d6;
-    }
-	.pagination li.disabled i {
-        color: #ccc;
-    }
-    .pagination li i {
-        font-size: 16px;
-        padding-top: 6px
-    }
-    .hint-text {
-        float: left;
-        margin-top: 10px;
-        font-size: 13px;
-        display: inline-flex;
-    }
-    .fontBold {
-     	font-weight:300; 
-    	font-size: 20px;
-    }
-	
-	.clearfix {
-		width : 100px;
-		margin : 0 auto;
-	}
-	
-</style>
-<!-- 게시판 템플릿 스타일 : e -->
-<script>
+    </style>
+    <script>
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 });
@@ -230,8 +51,9 @@ function del(boardId) {
 }
 </script>
 </head>
-<body cz-shorcut-listen="true">
-       <!-- 메뉴바 시작 -->
+
+<body>
+      <!-- 메뉴바 시작 -->
        <div class="container-fluid menuWrap" id="home">
         <header class="header menuBg" style="left:0px;">
         <div class="menuLine"></div>
@@ -334,183 +156,137 @@ function del(boardId) {
         </div>
     </div>
     <!-- subMenu 끝 -->
-
-    <!-- 게시판 시작  -->
-    	<div class="container">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-xs-5">
-                        <h2><a href = "/admin" style ="color: #fff;">문의 관리</a></h2>
-                    </div>
-                    <div class = "col-xs-2"></div>
-                    <div class="col-xs-5">
-                     	
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped table-hover" style="margin-bottom: 5px;">
-                <colgroup>
-                	<col width = "20%">
-                	<col width = "*">
-                </colgroup>
-                <tbody>
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					분류
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.type }">
-                	</td>
-                	</tr>
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					이름
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.name }">
-                	</td>
-            		</tr>    
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					연락처
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.contact }">
-                	</td>
-            		</tr>   
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					이메일
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.email }">
-                	</td>
-            		</tr>    
-            			<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					제목
-            				</label>
-            			</th>
-                	<td>
-                		<input type = "text" readonly value = "${admin.subject }" style = "width:789px;">
-                	</td>
-            		</tr>     
-            		<tr class = "fontBold">
-            			<th style = "background-color:#f0f0f0;">
-            				<label>
-            					내용
-            				</label>
-            			</th>
-                	<td style="padding-bottom:0px;">
-                		<textarea readonly style="width: 789px; height: 173px; text-align:left;">${admin.content }</textarea>
-                	</td>
-            		</tr>    
-                </tbody>
-            </table>
-             
-              <div class="clearfix">
+    <!-- 본문 시작 -->
+    <section class="container-fluid whiteSectionWrap">
+       <div class="container">
+          <h2 class="inputH2">문의 관리</h2>  
+          <hr id="hr-00">       
+       </div>
+       <div class="container">
+          <!-- container div 밑에 문의상세 시작 -->
+         <form class="form_1">
+           <div class="form-group row">
+             <label for="staticEmail" class="col-sm-1 col-form-label">분류</label>
+             <div class="col-sm-11">
+               <input type = "text" class="form-control" readonly value = "${admin.type }">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">이름</label>
+             <div class="col-sm-11">
+               <input type = "text" class="form-control" readonly value = "${admin.name }">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">연락처</label>
+             <div class="col-sm-11">
+               <input type = "text" class="form-control" readonly value = "${admin.contact }">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">이메일</label>
+             <div class="col-sm-11">
+               <input type = "text" class="form-control" readonly value = "${admin.email }">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">제목</label>
+             <div class="col-sm-11">
+               <input type = "text" class="form-control" readonly value = "${admin.subject }">
+             </div>
+           </div>
+           <div class="form-group row">
+             <label class="col-sm-1 col-form-label">내용</label>
+           	 <div class="col-sm-11">
+           	   <textarea class="form-control inputTextArea" readonly>${admin.content }</textarea>
+             </div>
+           </div>
+         </form> 
+         <!-- 시작 -->
+          <div class="form-group row bottomRow">
+           <div class="clearfix">
                 <div class="hint-text">
                 	<a class = "btn btn-primary" href = "/admin?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" style="color:white;margin-right:7px;padding: 10px;width: 80px;background: #03A9F3;border: none;">
 					목록
 <!--                 	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;">목록</button> -->
                 	</a>
                 
+
 <!--                 <a  style="color:white; margin-left:7px"> -->
                 	<button class = "btn" style="width: 80px;height: 40px;color: white;background:#03A9F4;" onclick ="del(${admin.boardId})">삭제</button>
 <!--                 	</a> -->
+
                 </div>
-                
-<!--                  <div class="hint-text"> -->
-                	
-<!--                 </div> -->
-               
             </div>
-             
-        </div>
-    </div>   
-</div>     
-    <!-- 게시판 끝 -->
-
-
-	
-    <!-- 탑버튼 -->
-   <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-   <!--  탑버튼 끝 -->
- <!-- footer 시작-->
+          </div>
+          <!-- 끝 -->
+       </div>
+   </section>
+    <!-- 본문 끝 -->
+    <!-- 스크롤바 시작 -->
+    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
+   <!-- 스크롤바 끝 -->
+    <!-- footer 시작-->
     <footer class="container-fluid footerBack">
-	    <div class="container">
-	    	<ul>
-                <li class="footer">
-                    <a href="/company/philoshphy">회사소개</a> | 
-                    <a href="/sendMail">이메일 문의</a> | 
-                    <a href="/contact/contact">Contact us</a>
-                 </li>
-		   		<li>
-		   			서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
-		   		</li>
-		   		<li>
-			   		<span class="blue">T</span> 02-2081-6713 <span class="blue">F</span> 02-6269-4804 <span class="blue">통신판매업 신고번호</span> 제2011-서울금천-0502호 <span class="blue">사업자등록번호</span> 108-81-93762
-	    		</li>
-	    	</ul>
-	    </div>
-	    <div class="footerLine">
-	    	<div class="container">
-		    	<img src="img/common/gnb_logo2.png" alt="">
-		    	<span>Copyright(c) 2010~2023, All Rights Reserved.</span>
-	    	</div>
-	    </div>
-	 </footer>
-     <!-- footer 끝-->
-     <script type = "text/javascript">
-     	$(document).ready(function(){
-     		
-     		var actionForm = $("#actionForm");
-     		//페이지버튼 선택하면 해당 정보가 form으로 넘어가는 기능 구현
-     		$(".paginate_button a").on("click",function(e) {
-     			
-     			e.preventDefault();
-     			console.log('click');
-     			
-     			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
-     			actionForm.submit();
-     		});
-     		
-     		//검색버튼 누르면 type과 keyword 파라미터 넘어가는 form 기능
-     		var searchForm = $("#searchForm");
-     		
-     		$("#searchForm button").on("click", function(e){
-     			
-     		if(!searchForm.find("option:selected").val()) {
-     			alert("검색종류를 선택하세요");
-     			return false;
-     		}
-     		if(!searchForm.find("input[name='keyword']").val()) {
-     			alert("키워드를 입력하세요");
-     			return false;
-     		}
-     		
-     		searchForm.find("input[name='pageNum']").val("1");
-     		e.preventDefault();
-     		
-     		searchForm.submit();
-     		
-     		});
-     		
-     		
-			
-     	});
-     </script>
-
+       <div class="container">
+          <ul>
+               <li class="footer">
+                  <a href="/company/philoshphy">회사소개</a> | 
+                  <a href="mailto:sales@huation.com">이메일 문의</a> | 
+                  <a href="/contact/contact">Contact us</a>
+               </li>
+               <li>
+                  서울특별시 금천구 디지털로9길 32, A동 1701호(가산동) (주)휴에이션
+               </li>
+               <li>
+                  <span class="blue">T</span> 02-2081-6713 <span class="blue">F</span> 02-6269-4804 <span class="blue">통신판매업 신고번호</span> 제2011-서울금천-0502호 <span class="blue">사업자등록번호</span> 108-81-93762
+             </li>
+          </ul>
+       </div>
+       <div class="footerLine">
+          <div class="container">
+             <img src="../img/common/gnb_logo2.png" alt="">
+             <span>Copyright(c) 2010~2023, All Rights Reserved.</span>
+          </div>
+       </div>
+    </footer>
+    <!-- footer 끝-->
+     
+<script type = "text/javascript">
+    	$(document).ready(function(){
+    		
+    		var actionForm = $("#actionForm");
+    		//페이지버튼 선택하면 해당 정보가 form으로 넘어가는 기능 구현
+    		$(".paginate_button a").on("click",function(e) {
+    			
+    			e.preventDefault();
+    			console.log('click');
+    			
+    			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+    			actionForm.submit();
+    		});
+    		
+    		//검색버튼 누르면 type과 keyword 파라미터 넘어가는 form 기능
+    		var searchForm = $("#searchForm");
+    		
+    		$("#searchForm button").on("click", function(e){
+    			
+    		if(!searchForm.find("option:selected").val()) {
+    			alert("검색종류를 선택하세요");
+    			return false;
+    		}
+    		if(!searchForm.find("input[name='keyword']").val()) {
+    			alert("키워드를 입력하세요");
+    			return false;
+    		}
+    		
+    		searchForm.find("input[name='pageNum']").val("1");
+    		e.preventDefault();
+    		
+    		searchForm.submit();
+    		
+    		});
+    	});
+    </script>
 </body>
 </html>
