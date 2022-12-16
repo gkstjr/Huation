@@ -40,7 +40,7 @@ public class QnaService{
 			totalPage = totalCount/numPerPage + 1;
 		}
 
-		int pageNaviSize = 5; //페이지네비 길이 
+		int pageNaviSize = 10; //페이지네비 길이 
 		int pageNo = ((reqPage-1)/pageNaviSize)*pageNaviSize + 1; // pageNo = 생성된 페이지 번호
 		
 		String pageNavi = "<ul class='pagination'>";
@@ -54,7 +54,7 @@ public class QnaService{
 					pageNavi += "<span>chevron_left</span></a></li>"; 
 					원본 끝*/
 					pageNavi += "<li class='page-item'><a class='page-link' href='/getQnaList?reqPage="+(pageNo-1)+"'>";
-					pageNavi += "<span>Previous</span></a></li>";
+					pageNavi += "<span>&laquo;</span></a></li>";
 				}
 				//페이지숫자
 				for(int i=0;i<pageNaviSize;i++) {
@@ -82,7 +82,7 @@ public class QnaService{
 					pageNavi += "<span class='material-symbols-outlined material-icons'>keyboard_double_arrow_right</span></a></li>"; 
 					 */
 					pageNavi += "<li class='page-item'><a class='page-item' href='/getQnaList?reqPage="+pageNo+"'>";
-					pageNavi += "<span>Next</span></a></li>";
+					pageNavi += "<span>&raquo;</span></a></li>";
 				}
 				pageNavi += "</ul>";
 				QnaPageDTO qpd = new QnaPageDTO(list, pageNavi);
