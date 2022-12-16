@@ -16,18 +16,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
-<!--     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>   -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
 
-	  <!-- 게시판 템플릿 부트스트랩 : s-->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-    <!-- 게시판 템플릿 부트스트랩 : e -->
-    
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
@@ -39,198 +30,22 @@
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
     
-<style>
-    body {
-        color: #566787;
-		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
-		font-size: 13px;
-	}
-    .table-responsive {
-        margin: 80px 0;
-    }
-	.table-wrapper {
-/*         min-width: 1000px; */
-		min-width: 150px;
-        background: #fff;
-        padding: 20px 25px;
-		border-radius: 3px;
-        box-shadow: 0 1px 1px rgba(0,0,0,.05);
-    }
-	.table-title {
-		padding-bottom: 15px;
-		background: linear-gradient(to right, #4eabe0, #45ba75);;
-		color: #fff;
-		padding: 16px 30px;
-		margin: -20px -25px 10px;
-		border-radius: 3px 3px 0 0;
-    }
-    .table-title h2 {
-		margin: 5px 0 0;
-		font-size: 24px;
-	}
-	.table-title .btn {
-		color: #566787;
-		float: right;
-		font-size: 13px;
-		background: #fff;
-		border: none;
-		min-width: 50px;
-		border-radius: 2px;
-		border: none;
-		outline: none !important;
-		margin-left: 10px;
-	}
-	.table-title .btn:hover, .table-title .btn:focus {
-        color: #566787;
-		background: #f2f2f2;
-	}
-	.table-title .btn i {
-		float: left;
-		font-size: 21px;
-		margin-right: 5px;
-	}
-	.table-title .btn span {
-		float: left;
-		margin-top: 2px;
-	}
-    table.table tr th, table.table tr td {
-        border-color: #e9e9e9;
-		padding: 12px 15px;
-		vertical-align: middle;
-/* 		border: 1px solid #444444; */
-    }
-	table.table tr th:first-child {
-		width: 80px;
-	}
-	table.table tr th:last-child {
-		width: 100px;
-	}
-    table.table-striped tbody tr:nth-of-type(odd) {
-    	background-color: #fcfcfc;
-	}
-	table.table-striped.table-hover tbody tr:hover {
-		background: #f5f5f5;
-	}
-    table.table th i {
-        font-size: 13px;
-        margin: 0 5px;
-        cursor: pointer;
-    }	
-    table.table td:last-child i {
-		opacity: 0.9;
-		font-size: 22px;
-        margin: 0 5px;
-    }
-	table.table td a {
-		font-weight: bold;
-		color: #566787;
-		display: inline-block;
-		text-decoration: underline;
-	}
-	table.table td a:hover {
-		color: #2196F3;
-	}
-	table.table td a.settings {
-        color: #2196F3;
-    }
-    table.table td a.delete {
-        color: #F44336;
-    }
-    table.table td i {
-        font-size: 19px;
-    }
-	table.table .avatar {
-		border-radius: 50%;
-		vertical-align: middle;
-		margin-right: 10px;
-	}
-	.status {
-		font-size: 30px;
-		margin: 2px 2px 0 0;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 10px;
-	}
-    .text-success {
-        color: #10c469;
-    }
-    .text-info {
-        color: #62c9e8;
-    }
-    .text-warning {
-        color: #FFC107;
-    }
-    .text-danger {
-        color: #ff5b5b;
-    }
-    .pagination {
-/*         float: right; */
-        margin-left: 360px
-    }
-    .pagination li a {
-/*         border: none; */
-        font-size: 13px;
-        min-width: 30px;
-        min-height: 30px;
-        color: #999;
-        margin: 0 2px;
-        line-height: 30px;
-        border-radius: 2px !important;
-        text-align: center;
-        padding: 6px;
-    }
-    .pagination li a:hover {
-        color: #666;
-    }	
-    .pagination li.active a, .pagination li.active a.page-link {
-        background: #03A9F4;
-    }
-    .pagination li.active a:hover {        
-        background: #0397d6;
-    }
-	.pagination li.disabled i {
-        color: #ccc;
-    }
-    .pagination li i {
-        font-size: 16px;
-        padding-top: 6px
-    }
-    .hint-text {
-       float: left;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    }
-    .fontBold {
-    	font-weight:700;
-    	font-size: 20px;
-    }
-    
-/*     페이지 개수 설명 */
-	.pageInfo {
-		margin-top: 40px;
-    	margin-bottom: 40px;
-    	margin-left: 16px;
-	}
-	.pageNumber {
-    font-weight: 750;
-    color: #01b0c0;
+<style type="text/css">
+.table>thead:first-child>tr:first-child>th:nth-child(1) {
+    width: 3%;
 }
-	.menuLine2 {
-	margin-top : 120px;
-	width: 100%;
-    height: 3px;
-    background: #45ba75;
-    background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
-    background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
-    background: linear-gradient(to right, #4eabe0 0%, #45ba75 100%);
-	}
-   .clearfix {
-   	padding: 30px 340px;
-   }
-
-
+.table>thead:first-child>tr:first-child>th:nth-child(2) {
+    width: 42%;
+}
+.table>thead:first-child>tr:first-child>th:nth-child(3) {
+    width: 10%;
+}
+.table>thead:first-child>tr:first-child>th:nth-child(4) {
+    width: 10%;
+}
+.table>thead:first-child>tr:first-child>th:nth-child(5) {
+    width: 8%;
+}
 </style>
 </head>
 
@@ -308,10 +123,10 @@
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
-<%--                                 <c:if test="${pw !=null }"> --%>
-<!--                                 <li><a href="/admin">관리자페이지</a></li> -->
-<!--                                 <li><a href="/logout">로그아웃</a></li> -->
-<%--                                 </c:if> --%>
+                                <c:if test="${pw !=null }">
+                                <li><a href="/admin">관리자페이지</a></li>
+                                <li><a href="/logout">로그아웃</a></li>
+                                </c:if>
                             </ul>
                         </div>
                     </div><!-- .container -->
@@ -320,7 +135,7 @@
     </div>
     <!-- 메뉴바 끝 --> 
     <!-- 본문 서브헤더 시작 -->
-    <div class="container-fluid subName contact02" id="subName01">
+    <div class="container-fluid subName contact02" id="subTitle1">
     	<h2>Q&A</h2>
     	<p>문의에 친절하게 답해드립니다</p>
     </div>
@@ -338,80 +153,42 @@
     </div>
     <!-- 본문 서브헤더 끝 -->
     <!-- 본문 시작 -->
-   <div class="container">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-xs-5">
-                        <h2><a href = "/admin" style ="color: #fff;">문의 관리</a></h2>
-                    </div>
-                    <div class = "col-xs-2"></div>
-                    <div class="col-xs-5">
-                       				
-                    </div>
-                </div>
-
-            </div>  
-            <!-- 페이지 개수 설명 -->
-            <div>
-            
-                <div class="hint-text pageInfo">총 <b class = "pageNumber"><c:out value = "#"></c:out></b> 건의 글이 있습니다.</div>
-            	
-            </div>  
-            <!-- 페이지 개수 설명 끝  -->
-	     <table class="table table-striped table-hover">
-            <div class="menuLine2"></div>
-                <thead>
-                    <tr class = "fontBold">
-                        <th scope="col">No.</th>
+    <section class="container-fluid whiteSectionWrap">
+	    <div class="container">
+	    <table class="table">
+		  <thead class="thead-dark">
+		    <tr>
+		      <th scope="col" id="noTh">No.</th>
 		      <th scope="col">제목</th>
 		      <th scope="col">글쓴이</th>
 		      <th scope="col">작성일</th>
-		      <th style = "width: 150px" scope="col">답변여부</th>
-                      
-                    </tr>
-                </thead>
-                <tbody>
-<%--                 <c:choose> --%>
-<%--                 <c:when test="${list == null }"> --%>
-<!--                 	와이 -->
-<!--                 		<tr> -->
-<!--                 			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                					<td>등록된 게시물이 없습니다.</td> -->
-                			
-<!--                 		</tr> -->
-                	
-<%--                 </c:when> --%>
-<%--                 <c:otherwise> --%>
-                <c:forEach items = "${qnaList }" var = "list" varStatus="i">
-                
-
-                    <tr style = "height: 50px">
-                        <td style = "width: 82px;">${list.qnaNo }</td>
-                        <td><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
-                        <td><c:out value ="${list.qnaWriter }"></c:out></td>                        
-                        <td><c:out value = "${list.qnaDate }"></c:out></td>
-                     <c:choose>
-				   	      <c:when test="${list.replyNo eq 0}">
-				   	      	<td scope="col" style="color:#FF5050; padding-left:50px">N</td>
-				   	      </c:when>
-				   	      <c:otherwise>
-				   	      	<td scope="col" style="color:#03A9F4; padding-left:50px">Y</td>
-				   	      </c:otherwise>
-		   	  		</c:choose>    
-                    </tr>
-                </c:forEach>
-<%--                 </c:otherwise> --%>
-<%--                 </c:choose> --%>
-                   
-            
-                </tbody>
-            </table>
+		      <th scope="col">답변여부</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<c:forEach items="${qnaList}" var="list" varStatus="i">
+		    <tr>
+		      <td scope="col">${list.qnaNo}</th>	
+		      <c:if test="${pw != null }">
+		      	 <td scope="col" id="qnaTitle"><a href="/admin/getAdmin?qnaNo=${list.qnaNo}&reqPage=${reqPage}" id="qna_a">${list.qnaTitle}</a></td>
+		      </c:if>
+		      <c:if test="${pw == null }">		      
+	   		  <td scope="col" id="qnaTitle"><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" id="qna_a">${list.qnaTitle}</a></td>
+	   		  </c:if>
+	   		  <td scope="col">${list.qnaWriter}</td>
+	   	      <td scope="col">${list.qnaDate}</td>
+	   	      <c:choose>
+		   	      <c:when test="${list.replyNo eq 0}">
+		   	      	<td scope="col" style="color:#FF5050">N</td>
+		   	      </c:when>
+		   	      <c:otherwise>
+		   	      	<td scope="col" style="color:#03A9F4">Y</td>
+		   	      </c:otherwise>
+		   	  </c:choose>    
+		    </tr>
+		    </c:forEach>
+		  </tbody>
+		</table>  
 			<div class="form-group row">
 				<div class="col-sm-10"></div>
 				<div class="col-sm-2">
@@ -420,9 +197,7 @@
 			</div>
     		${pageNavi}
 	    </div>
-	    </div>
-	</div>
-	
+	</section>
     <!-- 본문 끝 -->
     
     <!-- 스크롤바 시작 -->

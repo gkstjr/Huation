@@ -74,6 +74,7 @@ public class AdminController {
 		log.info("total = {}",total);
 		model.addAttribute("pageMaker",new PageDto(cri,total));
 		
+		
 		return "admin/list";
 	}
 	

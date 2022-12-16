@@ -421,13 +421,14 @@ function del(boardId) {
              
               <div class="clearfix">
                 <div class="hint-text">
-                	<a href = "/admin?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" style="color:white; margin-right:7px">
-                	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;">목록</button>
+                	<a class = "btn btn-primary" href = "/admin?pageNum=${cri.pageNum }&amount=${cri.amount}&type=${cri.type}&keyword=${cri.keyword}" style="color:white;margin-right:7px;padding: 10px;width: 80px;background: #03A9F3;border: none;">
+					목록
+<!--                 	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;">목록</button> -->
                 	</a>
                 
-                <a  style="color:white; margin-left:7px">
-                	<button class = "btn" style="width: 80px;height: 40px; background:#03A9F4;" onclick ="del(${admin.boardId})">삭제</button>
-                	</a>
+<!--                 <a  style="color:white; margin-left:7px"> -->
+                	<button class = "btn" style="width: 80px;height: 40px;color: white;background:#03A9F4;" onclick ="del(${admin.boardId})">삭제</button>
+<!--                 	</a> -->
                 </div>
                 
 <!--                  <div class="hint-text"> -->

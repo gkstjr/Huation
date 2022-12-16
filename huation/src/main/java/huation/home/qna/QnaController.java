@@ -2,6 +2,8 @@ package huation.home.qna;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.antlr.grammar.v3.ANTLRParser.exceptionGroup_return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,14 +44,18 @@ public class QnaController {
 	
     //Q&A list 가져오는 메소드
     @RequestMapping(value = "/getQnaList") 
-    public String getQnaList(int reqPage, Model model) throws Exception { 
+    public String getQnaList(int reqPage, Model model,HttpSession session) throws Exception { 
 		QnaPageDTO qpd = qnaService.getQnaList(reqPage);
     	
 		model.addAttribute("qnaList",qpd.getQnaList());
     	model.addAttribute("pageNavi",qpd.getPageNavi());
     	model.addAttribute("reqPage",reqPage);
-    
-    	return "contact/qnaList"; 
+    	
+    	if(session.getAttribute("pw") != null) {
+    		return "contact/AdminQnaList";
+    	}else {
+    		return "contact/qnaList";     		
+    	}
     }
 	
 
