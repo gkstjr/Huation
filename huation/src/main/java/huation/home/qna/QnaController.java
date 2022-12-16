@@ -101,11 +101,20 @@ public class QnaController {
 		}else {
 			model.addAttribute("qnaNo",qnaNo);
 			model.addAttribute("reqPage",reqPage);
-			return "redirct:/getQna";
+			return "redirect:/getQna";
 		}
 	  }	 
 	  
-		
+	  //Q&A List delete 메소드
+	  @RequestMapping(value = "deleteQnaList")
+	  public String deleteQnaList(String qnaNoList) throws Exception {
+		  boolean result = qnaService.deleteQnaList(qnaNoList);
+		  if(result) {
+			  return "#";
+		  }else {
+			  return "#";
+		  }
+	  }
 
 	  	//한석
 		//Q&A 댓글 관리자 메소드

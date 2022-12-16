@@ -28,7 +28,7 @@
 <!--         <property name="url" value="jdbc:mariadb://192.168.2.72:3306/huation_db" /> -->
         
         <property name="url" value="jdbc:mariadb://127.0.0.1:3306/huation_db" />
-        <property name="username" value="han"/>
+        <property name="username" value="shin"/>
         <property name="password" value="1234"/>
     </bean>
     
