@@ -152,7 +152,7 @@
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
     	<div class="container" id="container-title-00">
-    	   <h2 class="inputH2">글쓰기<!-- <img src="../img/contact/edit_square.png" class="write_img"> --></h2>
+    	   <h2 class="inputH2">글쓰기</h2>
     	   <hr id="hr-00">
     	</div>
 	    <div class="container">		
