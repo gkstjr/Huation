@@ -169,11 +169,11 @@
         color: #ff5b5b;
     }
     .pagination {
-        float: right;
+/*         float: right; */
         margin: 0 0 5px;
     }
     .pagination li a {
-        border: none;
+/*         border: none; */
         font-size: 13px;
         min-width: 30px;
         min-height: 30px;
@@ -231,7 +231,11 @@
     background: linear-gradient(to right, #4eabe0 0%, #45ba75 100%);
 	}
    .clearfix {
-   	padding: 30px 340px;
+/*    	padding: 30px 340px; */
+text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
    }
 
 
@@ -391,14 +395,9 @@ $(document).ready(function(){
             </div>  
             <!-- 페이지 개수 설명 -->
             <div>
-            	<c:choose>
-            	<c:when test="${pageMaker.total < 10 }">
-            		    <div class="hint-text pageInfo">총 <b><c:out value = "${pageMaker.total }"></c:out></b> 건의 글이 있습니다. <b><c:out value = "${pageMaker.total }"></c:out></b> entries</div>
-            	</c:when>
-            	<c:otherwise>
+        
                 <div class="hint-text pageInfo">총 <b class = "pageNumber"><c:out value = "${pageMaker.total }"></c:out></b> 건의 글이 있습니다.</div>
-            	</c:otherwise>
-            	</c:choose>
+            	
             </div>  
             <!-- 페이지 개수 설명 끝  -->
                
