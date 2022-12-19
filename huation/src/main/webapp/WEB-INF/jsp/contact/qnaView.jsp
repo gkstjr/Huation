@@ -272,37 +272,35 @@ $(function(){
     //Q&A 수정 검증
     $("#update_btn_00").on("click", function(){
        const qnaPassword = prompt("기존 비밀번호를 입력하세요.");
-       //console.log("qnaPassword : "+ qnaPassword);
        const qnaNo = $("#qnaNo_00").val();
-       //console.log("qnaNo : "+ qnaNo);
        const qnaWriter = $("input[name = qnaWriter]").val();
-       //console.log("qnaWriter : "+ qnaWriter);
        const qnaTitle = $("input[name = qnaTitle]").val();
-       //console.log("qnaTitle : "+ qnaTitle);
        const qnaContent = $("textarea[name = qnaContent]").val();
-       console.log("qnaContent : "+ qnaContent);
        const reqPage = '<c:out value="${reqPage}"/>';
-       //console.log("reqPage : "+ reqPage);
-       $.ajax({
-    	  url: "/checkPw",
-    	  type: "post",
-    	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
-    	  success: function(data) {
-    		  if(data == "1"){
-    			  //update실행
-    			  $.ajax({
-    				 url: "/updateQna",
-    				 type: "post",
-    				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, reqPage: reqPage},
-    				 success: function(data) {
-    	    			  alert("수정이 완료되었습니다.");
-    				 }
-    			  });
-    		  }else if(data == "-1"){
-    			  alert("비밀번호가 일치하지 않습니다.");
-    		  }
-    	  }
-       });
+       if(qnaPassword != null) {
+           $.ajax({
+         	  url: "/checkPw",
+         	  type: "post",
+         	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
+         	  success: function(data) {
+         		  if(data == "1"){
+         			  //update실행
+         			  $.ajax({
+         				 url: "/updateQna",
+         				 type: "post",
+         				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, reqPage: reqPage},
+         				 success: function(data) {
+         	    			  alert("수정이 완료되었습니다.");
+         				 }
+         			  });
+         		  }else if(data == "-1"){
+         			  alert("비밀번호가 일치하지 않습니다.");
+         		  }
+         	  }
+            });
+       	}else if(qnaPassword == null) {
+       		alert("게시글 수정이 취소되었습니다.");
+       	}
     });
     
   //Q&A 삭제 검증
@@ -313,59 +311,29 @@ $(function(){
        const qnaTitle = $("input[name = qnaTitle]").val();
        const qnaContent = $("input[name = qnaContent]").val();
        const reqPage = '<c:out value="${reqPage}"/>';
-       $.ajax({
-    	  url: "/checkPw",
-    	  type: "post",
-    	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
-    	  success: function(data) {
-    		  if(data == "1"){
-    			  var result = confirm("비밀번호가 일치합니다. 정말로 삭제하시겠습니까?");
-    			  if(result == true){//확인 눌렀을때
-    				  //안보이는 버튼 만들어서 강제 클릭시키고 delete로 보내버림
-    				  $("#real_del_btn").trigger("click");
-    			  }else {//취소 눌렀을때
-    				  alert("글 삭제를 취소하셨습니다.");
-    			  }
-    		  }else if(data == "-1"){
-    			  alert("비밀번호가 일치하지 않습니다.");
-    		  }
-    	  }
-       });
+       if(qnaPassword != null) {
+	       $.ajax({
+	    	  url: "/checkPw",
+	    	  type: "post",
+	    	  data: {qnaNo: qnaNo, qnaPassword: qnaPassword},
+	    	  success: function(data) {
+	    		  if(data == "1"){
+	    			  var result = confirm("비밀번호가 일치합니다. 정말로 삭제하시겠습니까?");
+	    			  if(result == true){//확인 눌렀을때
+	    				  //안보이는 버튼 만들어서 강제 클릭시키고 delete로 보내버림
+	    				  $("#real_del_btn").trigger("click");
+	    			  }else {//취소 눌렀을때
+	    				  alert("게시글 삭제가 취소되었습니다.");
+	    			  }
+	    		  }else if(data == "-1"){
+	    			  alert("비밀번호가 일치하지 않습니다.");
+	    		  }
+	    	  }
+	       });
+       }else if(qnaPassword == null) {
+      		alert("게시글 삭제가 취소되었습니다.");
+       }    
     });
-  
-  /* //reply insert 버튼
-     $("#write_btn_admin").on("click", function(){
-         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-         if(InputPw == adminPw){
-            alert("댓글 등록 완료");
-         }else{
-            alert("관리자 비밀번호를 다시 입력하세요.");
-            return false;
-         }
-   });
-  
-   //reply update 버튼
-     $("#update_btn_admin").on("click", function(){
-         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-         if(InputPw == adminPw){
-            alert("댓글 수정 완료")
-         }else{
-            alert("관리자 비밀번호를 다시 입력하세요.");
-            return false;
-         }
-   });
-   
-   //reply delete 버튼
-     $("#delete_btn_admin").on("click", function(){
-         const InputPw = prompt("관리자 비밀번호를 입력하세요.");
-         if(InputPw == adminPw){
-            alert("댓글 삭제 완료");
-         }else{
-            alert("관리자 비밀번호를 다시 입력하세요.");
-            return false;
-         }
-   }); */
-  
 });
 </script>
 <!-- 애니메이션 스크립트 -->
