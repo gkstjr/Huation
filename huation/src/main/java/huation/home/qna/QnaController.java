@@ -46,7 +46,9 @@ public class QnaController {
     @RequestMapping(value = "/getQnaList") 
     public String getQnaList(int reqPage, Model model,HttpSession session) throws Exception { 
 		QnaPageDTO qpd = qnaService.getQnaList(reqPage);
+		int qnaCount = qnaService.getQnaCount();
     	
+		model.addAttribute("qnaCount",qnaCount);
 		model.addAttribute("qnaList",qpd.getQnaList());
     	model.addAttribute("pageNavi",qpd.getPageNavi());
     	model.addAttribute("reqPage",reqPage);
@@ -113,12 +115,14 @@ public class QnaController {
 	  
 	  //Q&A List delete 메소드
 	  @RequestMapping(value = "deleteQnaList")
-	  public String deleteQnaList(String qnaNoList) throws Exception {
+	  public String deleteQnaList(int reqPage, String qnaNoList, Model model) throws Exception {
 		  boolean result = qnaService.deleteQnaList(qnaNoList);
 		  if(result) {
-			  return "#";
+			  model.addAttribute("reqPage",reqPage);
+		      return "redirect:/getQnaList"; 
 		  }else {
-			  return "#";
+			  model.addAttribute("reqPage",reqPage);
+		      return "redirect:/getQnaList"; 
 		  }
 	  }
 

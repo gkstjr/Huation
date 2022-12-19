@@ -160,13 +160,13 @@
 			  <div class="form-group row">
 			    <label class="col-sm-1 col-form-label">작성자</label>
 			    <div class="col-sm-11">
-			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" maxlength="32" required>
+			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" maxlength="15" required>
 			    </div>
 			  </div>
 			  <div class="form-group row">
 			    <label class="col-sm-1 col-form-label">제목</label>
 			    <div class="col-sm-11">
-			      <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" maxlength="99" required>
+			      <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" maxlength="50" required>
 			    </div>
 			  </div>
 			  <div class="form-group row">

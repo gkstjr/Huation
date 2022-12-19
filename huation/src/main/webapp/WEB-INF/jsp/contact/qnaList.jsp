@@ -197,10 +197,10 @@
         padding-top: 6px
     }
     .hint-text {
-       float: left;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
+        float: left;
+	    margin-top: 10px;
+	    font-size: 18px;
+	    font-weight: 600;
     }
     .fontBold {
     	font-weight:700;
@@ -214,23 +214,59 @@
     	margin-left: 16px;
 	}
 	.pageNumber {
-    font-weight: 750;
-    color: #01b0c0;
-}
+	    font-weight: 750;
+	    color: #01b0c0;
+	}
 	.menuLine2 {
-	margin-top : 120px;
-	width: 100%;
-    height: 3px;
-    background: #45ba75;
-    background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
-    background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
-    background: linear-gradient(to right, #4eabe0 0%, #45ba75 100%);
+		margin-top : 120px;
+		width: 100%;
+	    height: 3px;
+	    background: #45ba75;
+	    background: -moz-linear-gradient(left, #45ba75 0%, #4eabe0 100%);
+	    background: -webkit-linear-gradient(left, #45ba75 0%,#4eabe0 100%);
+	    background: linear-gradient(to right, #4eabe0 0%, #45ba75 100%);
 	}
    .clearfix {
-   	padding: 30px 340px;
+   		padding: 30px 340px;
    }
-
-
+   .whiteSectionWrap {
+    	background-color:#fff;
+   }
+	table.table td a {
+    	text-decoration: none; 
+	}
+	.table>thead:first-child>tr:first-child>th:nth-child(1) {
+        width: 10%;
+	}
+	.table>thead:first-child>tr:first-child>th:nth-child(2) {
+	    width: 57%;
+	}
+	.table>thead:first-child>tr:first-child>th:nth-child(3) {
+	    width: 12%;
+	}
+	.table>thead:first-child>tr:first-child>th:nth-child(4) {
+	    width: 10%;
+	}
+	.table>thead:first-child>tr:first-child>th:nth-child(5) {
+	    width: 8%;
+	}
+	section h2 {
+    	text-align: left;
+    	padding-left: 10px;
+    	/* color: #fff; */
+	}
+	#write_btn_001 {
+		margin-top: 13px;
+   		margin-left: 90px;
+	}
+	.btn-primary {
+	    background-color: #03A9F4;
+	    border: none;
+	}
+	.form-group {
+	    margin-bottom: 10px;
+	    padding-top: 20px;
+	}
 </style>
 </head>
 
@@ -338,13 +374,14 @@
     </div>
     <!-- 본문 서브헤더 끝 -->
     <!-- 본문 시작 -->
+   <section class="container-fluid whiteSectionWrap">
    <div class="container">
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-xs-5">
-                        <h2><a href = "/admin" style ="color: #fff;">문의 관리</a></h2>
+                        <h2>문의글</h2>
                     </div>
                     <div class = "col-xs-2"></div>
                     <div class="col-xs-5">
@@ -355,42 +392,22 @@
             </div>  
             <!-- 페이지 개수 설명 -->
             <div>
-            
-                <div class="hint-text pageInfo">총 <b class = "pageNumber"><c:out value = "#"></c:out></b> 건의 글이 있습니다.</div>
-            	
+                <div class="hint-text pageInfo">총 <b class = "pageNumber"><c:out value = "${qnaCount }"></c:out></b> 건의 문의글이 있습니다.</div>
             </div>  
             <!-- 페이지 개수 설명 끝  -->
 	     <table class="table table-striped table-hover">
             <div class="menuLine2"></div>
                 <thead>
                     <tr class = "fontBold">
-                        <th scope="col">No.</th>
-		      <th scope="col">제목</th>
-		      <th scope="col">글쓴이</th>
-		      <th scope="col">작성일</th>
-		      <th style = "width: 150px" scope="col">답변여부</th>
-                      
+                      <th scope="col">No.</th>
+				      <th scope="col">제목</th>
+				      <th scope="col">글쓴이</th>
+				      <th scope="col">작성일</th>
+				      <th style = "width: 150px" scope="col">답변여부</th>
                     </tr>
                 </thead>
                 <tbody>
-<%--                 <c:choose> --%>
-<%--                 <c:when test="${list == null }"> --%>
-<!--                 	와이 -->
-<!--                 		<tr> -->
-<!--                 			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                			<td>등록된 게시물이 없습니다.</td> -->
-<!--                 			                					<td>등록된 게시물이 없습니다.</td> -->
-                			
-<!--                 		</tr> -->
-                	
-<%--                 </c:when> --%>
-<%--                 <c:otherwise> --%>
                 <c:forEach items = "${qnaList }" var = "list" varStatus="i">
-                
-
                     <tr style = "height: 50px">
                         <td style = "width: 82px;">${list.qnaNo }</td>
                         <td><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
@@ -406,23 +423,19 @@
 		   	  		</c:choose>    
                     </tr>
                 </c:forEach>
-<%--                 </c:otherwise> --%>
-<%--                 </c:choose> --%>
-                   
-            
                 </tbody>
             </table>
 			<div class="form-group row">
-				<div class="col-sm-10"></div>
+				<div class="col-sm-10">${pageNavi}</div>
 				<div class="col-sm-2">
-					<a href="/getQnaForm" class="btn btn-primary" id="write_btn_001">글쓰기</a>
+					<a href="/getQnaForm" class="btn btn-2 btn-primary" id="write_btn_001">글쓰기</a>
 				</div>
 			</div>
-    		${pageNavi}
+    		<%-- ${pageNavi} --%>
 	    </div>
 	    </div>
 	</div>
-	
+	</section>
     <!-- 본문 끝 -->
     
     <!-- 스크롤바 시작 -->
