@@ -116,10 +116,10 @@ public class QnaService{
 
 	public boolean deleteQnaList(String qnaNoList) throws Exception {
 		StringTokenizer sT = new StringTokenizer(qnaNoList, "/");
-		boolean result = true;
+		boolean result = true; //삭제가 모두 완료되었는지 확인할 result 값 설정
 		while(sT.hasMoreTokens()) {
-			String qnaNoStr = sT.nextToken();
-			int qnaNo = Integer.parseInt(qnaNoStr);
+			String qnaNoStr = sT.nextToken();//qnaNo 하나 자름
+			int qnaNo = Integer.parseInt(qnaNoStr);//qnaNo String->int로 변환
 			int delResult = qnaMapper.deleteQna(qnaNo);
 			if(delResult == 0) {
 				result = false;

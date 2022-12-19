@@ -28,7 +28,7 @@
 <!--         <property name="url" value="jdbc:mariadb://192.168.2.72:3306/huation_db" /> -->
         <!-- 한석 window -->
         <property name="url" value="jdbc:mariadb://127.0.0.1:3306/huation_db" />     
-        <property name="username" value="han"/>
+        <property name="username" value="shin"/>
         <property name="password" value="1234"/>
         <!-- 서버에서 db가 장시간 미접속시 끊김 방지위한 기능 -->
         <property name="validationQuery" value="select 1 from dual" />
