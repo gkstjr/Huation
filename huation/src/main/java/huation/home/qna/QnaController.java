@@ -114,7 +114,7 @@ public class QnaController {
 	  }	 
 	  
 	  //Q&A List delete 메소드
-	  @RequestMapping(value = "deleteQnaList")
+	  @RequestMapping(value = "/admin/deleteQnaList")
 	  public String deleteQnaList(int reqPage, String qnaNoList, Model model) throws Exception {
 		  boolean result = qnaService.deleteQnaList(qnaNoList);
 		  if(result) {
