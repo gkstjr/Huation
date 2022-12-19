@@ -287,6 +287,14 @@
 		border: none;
 	    color: #fff;
 	}
+	 h2 {
+   	font-weight: 700 !important;
+   }
+
+	.subName {
+		padding: 80px 0px;
+		width: 100%;
+	}
 </style>
 </head>
 
@@ -519,7 +527,7 @@ $(function(){
 			//만약 delete 성공하면 list 다시 가져옴 실패하면 걍 실패 alert 띄우기
 			const qnaNoList = qnaDelArr.join("/");
 			console.log("qnaNoList : " + qnaNoList);
-			location.href="/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage};  
+			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage};  
 			console.log(${reqPage});
 			/* $.ajax({
 	         	  url: "/deleteQnaList",

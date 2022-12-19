@@ -267,6 +267,14 @@
 	    margin-bottom: 10px;
 	    padding-top: 20px;
 	}
+		 h2, h3 {
+   	font-weight: 700 !important;
+   }
+
+	.subName {
+		padding: 80px 0px;
+		width: 100%;
+	}
 </style>
 </head>
 

@@ -46,7 +46,7 @@
 <style>
     body {
         color: #566787;
-		background: #f5f5f5;
+		background: #fff;
 		font-family: 'Varela Round', sans-serif;
 		font-size: 13px;
 	}
@@ -130,7 +130,7 @@
 		font-weight: bold;
 		color: #566787;
 		display: inline-block;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	table.table td a:hover {
 		color: #2196F3;
@@ -236,8 +236,14 @@ text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
 }
+   h2 {
+   	font-weight: 700 !important;
    }
 
+	.subName {
+		padding: 80px 0px;
+		width: 100%;
+	}
 
 </style>
 <!-- 게시판 템플릿 스타일 : e -->
