@@ -1,5 +1,8 @@
 package huation.home.reply;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +31,7 @@ public class ReplyController {
 //	    	model.addAttribute("qnaList",qpd.getQnaList());
 //	    	model.addAttribute("pageNavi",qpd.getPageNavi());
 //	    	model.addAttribute("reqPage",reqPage);
-			return "redirect:/admin/getAdmin?qnaNo="+replyDto.getQnaNo() + "&reqPage=" + reqPage; 
+			return "redirect:/admin/getAdminQna?qnaNo="+replyDto.getQnaNo() + "&reqPage=" + reqPage; 
 	}
 	
 	@RequestMapping(value = "/admin/getReply")
@@ -38,24 +41,15 @@ public class ReplyController {
 	}
 	
 	@RequestMapping(value = "/admin/updateReply")
-	public String updateReply(int reqPage, ReplyDTO replyDto, Model model) throws Exception {
-		replyService.updateReply(replyDto);
-		
-//		QnaPageDTO qpd = qnaService.getQnaList(reqPage);
-//    	model.addAttribute("qnaList",qpd.getQnaList());
-//    	model.addAttribute("pageNavi",qpd.getPageNavi());
-//    	model.addAttribute("reqPage",reqPage);
-		return "redirect:/admin/getAdmin?qnaNo="+replyDto.getQnaNo()+ "&reqPage=" + reqPage; 
+	public String updateReply(int reqPage, ReplyDTO replyDto) throws Exception {
+		int result = replyService.updateReply(replyDto);
+		return "redirect:/admin/getAdminQna?qnaNo="+replyDto.getQnaNo()+ "&reqPage=" + reqPage; 
 	}
 	
 	@RequestMapping(value = "/admin/deleteReply")
 	public String deleteReply(int reqPage, int replyNo, Model model,int qnaNo) throws Exception {
 		replyService.deleteReply(replyNo);
-		
-//		QnaPageDTO qpd = qnaService.getQnaList(reqPage);
-//    	model.addAttribute("qnaList",qpd.getQnaList());
-//    	model.addAttribute("pageNavi",qpd.getPageNavi());
-//    	model.addAttribute("reqPage",reqPage);
-		return "redirect:/admin/getAdmin?qnaNo="+qnaNo + "&reqPage=" + reqPage; 
+		return "redirect:/admin/getAdminQna?qnaNo="+qnaNo + "&reqPage=" + reqPage; 
 	}
+	
 }

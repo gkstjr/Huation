@@ -439,7 +439,7 @@
                 <c:forEach items = "${qnaList }" var = "list" varStatus="i">
                     <tr style = "height: 50px">
                         <td class="qnaNo-01" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
-                        <td><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
+                        <td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
                         <td><c:out value ="${list.qnaWriter }"></c:out></td>                        
                         <td><c:out value = "${list.qnaDate }"></c:out></td>
                      <c:choose>
@@ -511,44 +511,20 @@
     
 $(function(){
 	$("#del_btn_001").on("click",function(){
-		/* const reqPage = "<c:out value='${reqPage}'/>"; */
-		
-		const delCheck = $("#delCheck:checked");//체크박스를 모아 변수에 넣음??
-		console.log(delCheck);
+		const delCheck = $("#delCheck:checked");
+		const reqPage = '<c:out value="${reqPage}"/>';
 		if(delCheck.length == 0){
 			alert("선택된 회원이 없습니다.");
 			return;
 		}else if(confirm("정말 삭제하시겠습니까?")){
 			const qnaDelArr = new Array();//array 하나 만듬
 			delCheck.each(function(index,item){//index(0부터 시작하는 key값)-item 조합으로 array에 삭제할 memberId를 하나씩 넣음
-				/* qnaDelArr.push($("#delCheck").parent().parent().children().first().text());//★★★★선택자가 잘못됐음★★★★ */
 				qnaDelArr.push($(item).parent().siblings("#qnaNo-00").text());
 			});
 			//만약 delete 성공하면 list 다시 가져옴 실패하면 걍 실패 alert 띄우기
 			const qnaNoList = qnaDelArr.join("/");
-			console.log("qnaNoList : " + qnaNoList);
-			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage};  
-			console.log(${reqPage});
-			/* $.ajax({
-	         	  url: "/deleteQnaList",
-	         	  type: "post",
-	         	  data: {qnaNoList: qnaNoList},
-	         	  success: function(data) {
-	         		  if(data == "1"){//delete 성공
-	         			  $.ajax({
-	         				 url: "/getQnaList",
-	         				 type: "get",
-	         				 data: {reqPage: reqPage},
-	         				 success: function(data) {
-	         	    			  alert("문의글 삭제가 완료되었습니다.");
-	         				 }
-	         			  });
-	         		  }else if(data == "-1"){//delete 실패
-	         			  alert("문의글 삭제에 실패했습니다.");
-	         		  }
-	         	  }
-	            });
-			 */
+			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage}; 
+
 		}else{
 			alert("회원 삭제를 취소합니다.");
 			$('#delCheck:checked').prop('checked',false);

@@ -1,12 +1,15 @@
 package huation.home.qna;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -127,6 +130,12 @@ public class QnaService{
 			}
 		}
 		return result;
+	}
+
+	public String today() throws Exception {	
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String today = formatter.format(new Date()); //현재날짜 new Date()객체를 'yyyy-MM-dd' 형식으로 변환 
+		return today;
 	}
 	
 }
