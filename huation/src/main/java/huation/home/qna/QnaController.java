@@ -111,6 +111,20 @@ public class QnaController {
 			model.addAttribute("reqPage",reqPage);
 			return "redirect:/getQna";
 		}
+	  }	
+	  
+	  //Admin에서 Q&A delete 메소드
+	  @RequestMapping(value = "/admin/deleteQna") 
+	  public String deleteQnaAdmin(int reqPage, int qnaNo, Model model) throws Exception { 
+		int result = qnaService.deleteQna(qnaNo);
+		if(result>0) {
+	    	model.addAttribute("reqPage",reqPage);
+	    	return "redirect:/getQnaList"; 
+		}else {
+			model.addAttribute("qnaNo",qnaNo);
+			model.addAttribute("reqPage",reqPage);
+			return "redirect:/getQna";
+		}
 	  }	 
 	  
 	  //Q&A List delete 메소드
@@ -125,18 +139,27 @@ public class QnaController {
 		      return "redirect:/getQnaList"; 
 		  }
 	  }
+	  
+	 //Q&A get 메소드
+	 @RequestMapping(value = "/admin/getAdminQna")
+	 public String getAdminQna(int reqPage, int qnaNo, Model model) throws Exception {
+		QnaReplyDTO qna = qnaService.getQna(qnaNo);
+		String today = qnaService.today();
+		model.addAttribute("today",today);
+		model.addAttribute("qna",qna);
+		model.addAttribute("reqPage",reqPage);
+		return "admin/AdminQnaView";
+	}
 
-	  	//한석
-		//Q&A 댓글 관리자 메소드
-		@RequestMapping(value = "/admin/getAdmin")
-		public String getAdmin(int qnaNo, Model model,int reqPage) throws Exception {
-			System.out.println(qnaNo);
-			QnaReplyDTO qna = qnaService.getQna(qnaNo);
-			System.out.println(qna);
-			model.addAttribute("qna",qna);
-			model.addAttribute("reqPage",reqPage);
-			
-			return "admin/AdminQnaView";
-		}
+	/*
+	 * //한석 //Q&A 댓글 관리자 메소드
+	 * 
+	 * @RequestMapping(value = "/admin/getAdmin") public String getAdmin(int qnaNo,
+	 * Model model,int reqPage) throws Exception { System.out.println(qnaNo);
+	 * QnaReplyDTO qna = qnaService.getQna(qnaNo); System.out.println(qna);
+	 * model.addAttribute("qna",qna); model.addAttribute("reqPage",reqPage);
+	 * 
+	 * return "admin/AdminQnaView"; }
+	 */
 	 
 }

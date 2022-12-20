@@ -431,7 +431,7 @@
                 <c:forEach items = "${qnaList }" var = "list" varStatus="i">
                     <tr style = "height: 50px">
                         <td class="qnaNo-01" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
-                        <td><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
+                        <td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
                         <td><c:out value ="${list.qnaWriter }"></c:out></td>                        
                         <td><c:out value = "${list.qnaDate }"></c:out></td>
                      <c:choose>
