@@ -2,6 +2,7 @@ package huation.home.qna;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.antlr.grammar.v3.ANTLRParser.exceptionGroup_return;
@@ -23,7 +24,7 @@ public class QnaController {
 	
 	//Q&A form 가져오는 메소드
 	@RequestMapping(value = "/getQnaForm")
-	public String getQnaForm() {
+	public String getQnaForm(Model model) {
 		return "contact/qnaForm";
 	}
 	
@@ -32,10 +33,10 @@ public class QnaController {
 	public String insertQna(int reqPage, QnaDTO qnaDto, Model model) throws Exception {
 		//insert 수행 후 qnaNo 리턴해줌
 		int result = qnaService.insertQna(qnaDto);
+		model.addAttribute("reqPage",reqPage);
 		if(result>0) {
 			int qnaNo = qnaService.getQnaNo();
 			model.addAttribute("qnaNo",qnaNo);
-			model.addAttribute("reqPage",reqPage);
 	    	return "redirect:/getQna"; 
 		}else {
 			return "redirect:/getQnaForm";
@@ -44,7 +45,7 @@ public class QnaController {
 	
     //Q&A list 가져오는 메소드
     @RequestMapping(value = "/getQnaList") 
-    public String getQnaList(int reqPage, Model model,HttpSession session) throws Exception { 
+    public String getQnaList(int reqPage, Model model, HttpSession session) throws Exception { 
 		QnaPageDTO qpd = qnaService.getQnaList(reqPage);
 		int qnaCount = qnaService.getQnaCount();
     	
@@ -64,12 +65,9 @@ public class QnaController {
 	 //Q&A get 메소드
 	 @RequestMapping(value = "/getQna")
 	 public String getQna(int reqPage, int qnaNo, Model model) throws Exception {
-
 		QnaReplyDTO qna = qnaService.getQna(qnaNo);
-		
 		model.addAttribute("qna",qna);
 		model.addAttribute("reqPage",reqPage);
-
 		return "contact/qnaView";
 	}
 	
@@ -77,7 +75,7 @@ public class QnaController {
 	  @PostMapping(value = "/updateQna") 
 	  public String updateQna(int reqPage, QnaDTO qnaDto, Model model) throws Exception { 
 		int result = qnaService.updateQna(qnaDto);		
-		
+		System.out.println(result);
 		if(result>0) {
 			int qnaNo = qnaDto.getQnaNo();
 			model.addAttribute("reqPage",reqPage);
@@ -113,6 +111,33 @@ public class QnaController {
 		}
 	  }	
 	  
+	  //Notice count 메소드
+	  @ResponseBody
+	  @RequestMapping(value = "/countNotice")
+	  public String countNotice() throws Exception {
+		  int result = qnaService.getNoticeCount();
+		  if(result < 3) {
+			  return "1";
+		  }else {
+			  return "-1";
+		  }
+	  }
+	  
+	  //Q&A insert 메소드
+		@RequestMapping(value = "/admin/insertNotice")
+		public String insertNotice(QnaDTO qnaDto, Model model) throws Exception {
+			//insert 수행 후 qnaNo 리턴해줌
+			int result = qnaService.insertNotice(qnaDto);
+			int reqPage = 1;
+			if(result > 0) {
+				int qnaNo = qnaService.getQnaNo();
+				model.addAttribute("qnaNo",qnaNo);
+				model.addAttribute("reqPage",reqPage);
+		    	return "redirect:/getQna"; 
+			}else {
+				return "redirect:/getQnaForm";
+			}
+		}
 	  //Admin에서 Q&A delete 메소드
 	  @RequestMapping(value = "/admin/deleteQna") 
 	  public String deleteQnaAdmin(int reqPage, int qnaNo, Model model) throws Exception { 
@@ -130,6 +155,7 @@ public class QnaController {
 	  //Q&A List delete 메소드
 	  @RequestMapping(value = "/admin/deleteQnaList")
 	  public String deleteQnaList(int reqPage, String qnaNoList, Model model) throws Exception {
+		  System.out.println(qnaNoList);
 		  boolean result = qnaService.deleteQnaList(qnaNoList);
 		  if(result) {
 			  model.addAttribute("reqPage",reqPage);

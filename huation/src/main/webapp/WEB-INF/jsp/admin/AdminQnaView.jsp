@@ -113,7 +113,11 @@
                                         <li><a href="/contact/contact">Contact</a></li>
                                       	<li><a href="/contact/qna">Q&A</a></li>
                                      </ul>
-                                </li>        
+                                </li> 
+                                 <c:if test="${pw !=null }"> 
+	                                 <li><a href="/admin">관리자페이지</a></li> 
+	                                 <li><a href="/logout">로그아웃</a></li> 
+                                 </c:if>        
                             </ul>
                         </div>
                     </div><!-- .container -->
@@ -143,21 +147,31 @@
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
        <div class="container">
-          <h2 class="inputH2">문의상세<!-- <img src="../img/contact/manage_search.png" class="write_img"> --></h2>  
+       	   <c:choose>
+		       <c:when test="${qna.qnaStatus == 2}">	
+		    	   <h2 class="inputH2">공지글</h2>
+		    	</c:when>
+	            <c:otherwise>	
+		    	   <h2 class="inputH2">문의상세</h2>
+		    	</c:otherwise> 
+           </c:choose>
           <hr id="hr-00">       
        </div>
        <div class="container">
           <!-- container div 밑에 문의상세 시작 -->
          <form action="/updateQna" method="post" class="form_1">
-           <div class="form-group row">
+           <%-- <div class="form-group row">
              <label for="staticEmail" class="col-sm-1 col-form-label">작성자</label>
              <div class="col-sm-11">
                <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" maxlength="32" required>
              </div>
-           </div>
+           </div> --%>
            <div class="form-group row">
              <label class="col-sm-1 col-form-label">제목</label>
              <div class="col-sm-11">
+               <input type="hidden" value="${qna.qnaNo}" name="qnaNo">
+               <input type="hidden" value="${qna.qnaStatus}" name="qnaStatus">
+               <input type="hidden" value="${reqPage}" name="reqPage">
                <input type="text" class="form-control" placeholder="제목을 입력해주세요" name="qnaTitle" value="${qna.qnaTitle}" maxlength="99" required>
              </div>
            </div>
@@ -167,19 +181,19 @@
                <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required><c:out value="${qna.qnaContent}" /></textarea>
              </div>
            </div>
-           <div class="form-group row">
+           <%-- <div class="form-group row">
              <label class="col-sm-1 col-form-label">비밀번호</label>
              <div class="col-sm-11">
                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
                <input type="hidden" value="${qna.qnaNo}" name="qnaNo" id="qnaNo_00">
                <input type="hidden" value="1" name="reqPage">
              </div>
-           </div>
+           </div> --%>
            <div class="form-group row bottomRow">
-               <div class="col-sm-5"></div>
-              <!-- <div class="col-sm-1">
-                 <button type="button" class="btn btn-2 btn-primary" id="update_btn_00">수정하기</button>
-              </div> -->
+              <div class="col-sm-5"></div>
+              <div class="col-sm-1">
+                 <button type="submit" class="btn btn-2 btn-primary" id="update_btn_00">수정하기</button>
+              </div>
               <div class="col-sm-1">
                  <a href="/admin/deleteQna?reqPage=${reqPage}&qnaNo=${qna.qnaNo}" class="btn btn-2 btn-primary" id="delete_btn_00" value="삭제하기">삭제하기</a>
               </div>

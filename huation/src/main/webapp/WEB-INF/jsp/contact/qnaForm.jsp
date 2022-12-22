@@ -1,8 +1,7 @@
 <%-- <%@ include file = "/WEB-INF/jsp/egovframework/template/header.jsp"%> --%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -123,7 +122,21 @@
                                			 <li><a href="/contact/contact">Contact</a></li>
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
-                                </li>        
+                                </li> 
+                                <c:if test="${pw!=null }"> 
+                                 <li><a href="/admin">관리자페이지</a></li> 
+                                 <li><a href="/logout">로그아웃</a></li> 
+                                </c:if>
+                                <%-- 
+                                <c:choose>
+                                	<c:when test="${pw!=null }">
+                                		<div style="color:#ccc;">세션존재함</div>
+                                	</c:when>
+                                	<c:otherwise>
+                                		<div style="color:#ccc;">세션없뜸</div>
+                                	</c:otherwise>
+                                </c:choose>     
+                                --%>   
                             </ul>
                         </div>
                     </div><!-- .container -->
@@ -152,17 +165,31 @@
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
     	<div class="container" id="container-title-00">
-    	   <h2 class="inputH2">글쓰기</h2>
+    	<c:choose>
+	    	<c:when test="${pw == null }">
+	    	   <h2 class="inputH2">글쓰기</h2>
+	    	</c:when> 
+	    	<c:otherwise>
+    	      <h2 class="inputH2">공지글</h2> 
+    	    </c:otherwise>   
+    	</c:choose> 
     	   <hr id="hr-00">
     	</div>
-	    <div class="container">		
-			<form action="/insertQna" method="post">
-			  <div class="form-group row">
-			    <label class="col-sm-1 col-form-label">작성자</label>
-			    <div class="col-sm-11">
-			      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" maxlength="15" required>
-			    </div>
-			  </div>
+	    <div class="container">	
+	    	<c:choose>
+		      <c:when test="${pw == null }">	
+				  <form action="/insertQna" method="post">
+					  <div class="form-group row">
+					    <label class="col-sm-1 col-form-label">작성자</label>
+					    <div class="col-sm-11">
+					      <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" maxlength="15" required>
+					    </div>
+				  	  </div>
+			  </c:when>
+			  <c:otherwise>
+			  	  <form>
+			  </c:otherwise>
+			</c:choose>
 			  <div class="form-group row">
 			    <label class="col-sm-1 col-form-label">제목</label>
 			    <div class="col-sm-11">
@@ -175,23 +202,39 @@
 			      <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required></textarea>
 			    </div>
 			  </div>
-			  <div class="form-group row">
-			    <label class="col-sm-1 col-form-label">비밀번호</label>
-			    <div class="col-sm-11">
-			      <input type="password" class="form-control" id="inputPW" placeholder="비밀번호를 입력해주세요" name="qnaPassword" required>
-			      <input type="hidden" value="1" name="reqPage">
-			    </div>
-			  </div>
-			  <div class="form-group row bottomRow">
-			      <div class="col-sm-5"></div>
-				  <div class="col-sm-1">
-				  	<button type="submit" class="btn btn-primary" id="submit_btn01">등록하기</button>
-				  </div>
-				  <div class="col-sm-1">
-			    	<a href="/getQnaList?reqPage=1" class="btn btn-list">목록으로</a>
-			      </div>
-			      <div class="col-sm-5"></div>
-		      </div>
+			  <c:choose>
+				  <c:when test="${pw == null }">	
+					  <div class="form-group row">
+					    <label class="col-sm-1 col-form-label">비밀번호</label>
+					    <div class="col-sm-11">
+					      <input type="password" class="form-control" id="inputPW" placeholder="비밀번호를 입력해주세요" name="qnaPassword" required>
+					      <input type="hidden" value="1" name="reqPage">
+					    </div>
+					    <div class="form-group row bottomRow">
+					      <div class="col-sm-5"></div>
+						  <div class="col-sm-1">
+						  	<button type="submit" class="btn btn-primary" id="submit_btn01">등록하기</button>
+						  </div>
+						  <div class="col-sm-1">
+					    	<a href="/getQnaList?reqPage=1" class="btn btn-list">목록으로</a>
+					      </div>
+					      <div class="col-sm-5"></div>
+				       </div>
+					  </div>
+				  </c:when>
+				  <c:otherwise>
+					  <div class="form-group row bottomRow">
+					      <div class="col-sm-5"></div>
+						  <div class="col-sm-1">
+						  	<button type="button" class="btn btn-primary" id="submit_btn02">공지등록</button>
+						  </div>
+						  <div class="col-sm-1">
+					    	<a href="/getQnaList?reqPage=1" class="btn btn-list">목록으로</a>
+					      </div>
+					      <div class="col-sm-5"></div>
+				      </div>
+		        </c:otherwise>
+		     </c:choose>
 			</form>
 	    </div>
 	</section>
@@ -249,6 +292,34 @@ $(function(){
     		alert("비밀번호는 숫자 4자리만 가능합니다.");
     		return false;
     	}
+    });
+    
+  //비밀번호 정규식
+    $("#submit_btn02").on("click", function(){
+    	const qnaTitle = $("input[name = qnaTitle]").val();
+    	console.log(qnaTitle);
+        const qnaContent = $("textarea[name = qnaContent]").val();
+        console.log(qnaContent);
+        /* const reqPage = '<c:out value="${reqPage}"/>';
+        console.log(reqPage); */
+    	$.ajax({
+	    	  url: "/countNotice",
+	    	  type: "get",
+	    	  success: function(data) {
+	    		  if(data == "1"){
+	    			  	$.ajax({
+	    			  		url: "/admin/insertNotice",
+	    			  		type: "get",
+	    			  		data: {qnaTitle: qnaTitle, qnaContent: qnaContent},
+	    			  		success: function(data) {
+	    			  			alert("공지글 등록 성공");
+	    			  		}
+	    			  	});
+	    		  }else if(data == "-1"){
+	    			  alert("공지글 3개 초과! 삭제후 재시도 하세요.");
+	    		  }
+	    	  }
+	       });
     });
 });
 </script>
