@@ -2,8 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="huation.home.qna.QnaMapper" >
    <insert id="insertQna" parameterType="huation.home.qna.QnaDTO">
-      insert into qna (qna_no,qna_title,qna_content,qna_writer,qna_date,qna_password) 
-      		values (#{qnaNo},#{qnaTitle},#{qnaContent},#{qnaWriter},date_format(NOW(), '%Y-%m-%d'),#{qnaPassword})
+      insert into qna (qna_no,qna_title,qna_content,qna_writer,qna_date,qna_password,qna_status) 
+      		values (#{qnaNo},#{qnaTitle},#{qnaContent},#{qnaWriter},date_format(NOW(), '%Y-%m-%d'),#{qnaPassword},1)
+   </insert>
+   <insert id="insertNotice" parameterType="huation.home.qna.QnaDTO">
+      insert into qna (qna_no,qna_title,qna_content,qna_writer,qna_date,qna_password,qna_status) 
+      		values (#{qnaNo},#{qnaTitle},#{qnaContent},'관리자',date_format(NOW(), '%Y-%m-%d'),'1111',2)
    </insert>
    <select id="getQnaNo" resultType="int">
    	  select max(qna_no) from qna
@@ -16,9 +20,10 @@
             qna_writer AS qnaWriter,
             qna_date AS qnaDate,
             qna_password AS qnaPassword,
+            qna_status AS qnaStatus,
             reply_no AS replyNo,
             reply_content AS replyContent,
-            reply_date AS replyDate
+            reply_date AS replyDate 
             from qna 
             LEFT JOIN(SELECT * FROM reply WHERE (reply.qna_no) IN (SELECT reply.qna_no FROM reply) GROUP BY reply.qna_no) AS r ON qna.qna_no = r.qna_no
       where qna.qna_no = #{qnaNo} 
@@ -36,27 +41,39 @@
    </select>
    <select id="qnaList" parameterType="map" resultType="huation.home.qna.QnaReplyDTO">
       SELECT
-         qna.qna_no AS qnaNo,
-         qna_title AS qnaTitle,
-         qna_content AS qnaContent,
-         qna_writer AS qnaWriter,
-         qna_date AS qnaDate,
-         qna_password AS qnaPassword,
-         reply_no AS replyNo,
-         reply_content AS replyContent,
-         reply_date AS replyDate
-         FROM qna 
-         LEFT JOIN(SELECT * FROM reply WHERE (reply.qna_no) IN (SELECT reply.qna_no FROM reply) GROUP BY reply.qna_no) AS r ON qna.qna_no = r.qna_no
-         order by qna.qna_no DESC
-       LIMIT #{start},#{numPerPage}
+			qna.qna_no AS qnaNo,
+			qna_title AS qnaTitle,
+			qna_content AS qnaContent,
+			qna_writer AS qnaWriter,
+			qna_date AS qnaDate,
+			qna_password AS qnaPassword,
+			qna_status AS qnaStatus,
+			reply_no AS replyNo,
+			reply_content AS replyContent,
+			reply_date AS replyDate
+			FROM qna 
+			LEFT JOIN(SELECT * FROM reply WHERE (reply.qna_no) IN (SELECT reply.qna_no FROM reply) GROUP BY reply.qna_no) AS r ON qna.qna_no = r.qna_no
+			order BY FIELD(qna_status,2,1) ,qna.qna_no DESC
+	 LIMIT #{start},#{numPerPage}
    </select>
    <select id="getQnaCount" resultType="int">
       select count(*) from qna
+   </select>
+   <select id="getNoticeCount" resultType="int">
+      select count(*) from qna where qna_status=2
    </select>
    <delete id="deleteQna" parameterType="int">
       delete from qna where qna_no = #{qnaNo} 
    </delete>
    <update id="updateQna" parameterType="huation.home.qna.QnaDTO">
-      update qna set qna_title = #{qnaTitle},qna_content=#{qnaContent},qna_writer=#{qnaWriter},qna_date=date_format(NOW(), '%Y-%m-%d') where qna_no=#{qnaNo}
+      update qna set 
+      <choose>
+ 		<when test="qnaStatus == 1">
+ 			qna_title = #{qnaTitle},qna_content=#{qnaContent},qna_writer=#{qnaWriter},qna_date=date_format(NOW(), '%Y-%m-%d') where qna_no=#{qnaNo}
+ 		</when>
+ 		<when test="qnaStatus == 2">
+ 			qna_title = #{qnaTitle},qna_content = #{qnaContent},qna_date = date_format(NOW(), '%Y-%m-%d') where qna_no=#{qnaNo}
+ 		</when>
+ 	</choose>
    </update>
 </mapper>

@@ -278,15 +278,45 @@
 	    margin-right: 20px;
 	}
 	.btn-list {
-	background-color: #7a7a7a;
-    border: none;
-    color: #fff;
+		background-color: #7a7a7a;
+	    border: none;
+	    color: #fff;
 	}
 	.btn-list:hover {
 		background-color: #333;
 		border: none;
 	    color: #fff;
 	}
+	.tr-00 {
+		height: 50px;
+	}
+	.tr-01 {
+		background-color: #ccc;
+	}
+	.img-00 {
+		height: 15px;
+	}
+	/* .board-tag > * {
+	    display: table-cell;
+	    vertical-align: middle;
+	    border: 1px solid rgba(255, 80, 80, 0.5);
+	    background-color: rgba(255, 80, 80, 0.1); 
+	    border-radius: 3px;
+	    text-align: center;
+	}
+	.board-tag-txt {
+	    display: block;
+	    width: 54px;
+	    height: 21px;
+	    border-radius: 3px;
+	    font-size: 11px;
+	    vertical-align: middle;
+	}
+	.board-tag>strong>span {
+		color: #FF5050;
+	    text-align: center;
+	    vertical-align: middle;
+	} */
 </style>
 </head>
 
@@ -429,26 +459,47 @@
                 </thead>
                 <tbody>
                 <c:forEach items = "${qnaList }" var = "list" varStatus="i">
-                    <tr style = "height: 50px">
-                        <td class="qnaNo-01" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
-                        <td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
-                        <td><c:out value ="${list.qnaWriter }"></c:out></td>                        
-                        <td><c:out value = "${list.qnaDate }"></c:out></td>
-                     <c:choose>
-				   	      <c:when test="${list.replyNo eq 0}">
-				   	      	<td scope="col" style="color:#FF5050; padding-left:50px">N</td>
-				   	      </c:when>
-				   	      <c:otherwise>
-				   	      	<td scope="col" style="color:#03A9F4; padding-left:50px">Y</td>
-				   	      </c:otherwise>
-		   	  		</c:choose> 
-		   	  			<td><input type="checkbox" id="delCheck"></td>   
-                    </tr>
+                    <c:choose>
+                    	<c:when test="${list.qnaStatus eq 2 }">
+	                    	<tr class="tr-00 tr-01" style = "background-color: rgba(220, 220, 220, 0.5);">
+			                    <td class="qnaNo-01" style = "width: 82px;">
+			                    	<input value="${list.qnaNo }" hidden>
+			                    	<div class="board-tag">
+			                    		<strong class="board-tag-txt">
+			                    			<span class="inner">공지</span>
+			                    		</strong>
+			                    	</div>	
+			                    </td>
+			                    <td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo }&reqPage=${reqPage }" style = "color: #FF5050; font-weight: bolder;">${list.qnaTitle }</a></td>
+		                        <td>관리자</td>                        
+		                        <td><c:out value = "${list.qnaDate }"></c:out></td>
+					   	      	<td scope="col" style="color:#FF5050; padding-left:50px"></td>
+			   	  			    <td><input type="checkbox" id="delCheck"></td>   
+	                       </tr>	
+                    	</c:when>
+                    	<c:otherwise>
+	                    	<tr class="tr-00">
+	                        	<td class="qnaNo-02" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
+	                        	<td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo }&reqPage=${reqPage }" class = "btn-modal">${list.qnaTitle }</a></td>
+	                        	<td><c:out value ="${list.qnaWriter }"></c:out></td>                        
+		                        <td><c:out value = "${list.qnaDate }"></c:out></td>
+		                   <c:choose>
+					   	      <c:when test="${list.replyNo eq 0}">
+					   	      	<td scope="col" style="color:#FF5050; padding-left:50px">N</td>
+					   	      </c:when>
+					   	      <c:otherwise>
+					   	      	<td scope="col" style="color:#03A9F4; padding-left:50px">Y</td>
+					   	      </c:otherwise>
+			   	  		  </c:choose> 
+			   	  			   <td><input type="checkbox" id="delCheck"></td>   
+	                       </tr>	
+                    	</c:otherwise>
+                    </c:choose>
                 </c:forEach>
                 </tbody>
             </table>
 			<div class="form-group row">
-				<div class="col-sm-10">${pageNavi}</div>
+				<div class="col-sm-10">${pageNavi }</div>
 				<div class="col-sm-2">
 					<a href="/getQnaForm" class="btn btn-2 btn-primary" id="write_btn_001">글쓰기</a>
 					<button class="btn btn-list" id="del_btn_001">글삭제</button>
@@ -511,10 +562,9 @@ $(function(){
 		}else if(confirm("정말 삭제하시겠습니까?")){
 			const qnaDelArr = new Array();//array 하나 만듬
 			delCheck.each(function(index,item){//index(0부터 시작하는 key값)-item 조합으로 array에 삭제할 memberId를 하나씩 넣음
-				qnaDelArr.push($(item).parent().siblings("#qnaNo-00").text());
+				qnaDelArr.push($(item).parent().siblings(".qnaNo-01").children("input").val());//jquery selector
+				qnaDelArr.push($(item).parent().siblings(".qnaNo-02").text());//jquery selector
 			});
-			//만약 delete 성공하면 list 다시 가져옴 실패하면 걍 실패 alert 띄우기
-			const qnaNoList = qnaDelArr.join("/");
 			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage}; 
 		}else{
 			alert("회원 삭제를 취소합니다.");

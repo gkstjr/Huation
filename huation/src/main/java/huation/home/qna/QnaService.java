@@ -112,6 +112,10 @@ public class QnaService{
 	public int getQnaCount() throws Exception {
 		return qnaMapper.getQnaCount();
 	}
+	
+	public int getNoticeCount() throws Exception {
+		return qnaMapper.getNoticeCount();
+	}
 
 	public QnaDTO checkPw(QnaDTO qnaDto) throws Exception {
 		return qnaMapper.checkPw(qnaDto);
@@ -136,6 +140,10 @@ public class QnaService{
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		String today = formatter.format(new Date()); //현재날짜 new Date()객체를 'yyyy-MM-dd' 형식으로 변환 
 		return today;
+	}
+
+	public int insertNotice(QnaDTO qnaDto) throws Exception {
+		return qnaMapper.insertNotice(qnaDto);
 	}
 	
 }
