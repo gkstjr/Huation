@@ -182,7 +182,8 @@
              <div class="col-sm-11">
                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
                <input type="hidden" value="${qna.qnaNo}" name="qnaNo" id="qnaNo_00">
-               <input type="hidden" value="1" name="reqPage">
+               <input type="hidden" value="${qna.qnaStatus}" name="qnaStatus">
+               <input type="hidden" value="${reqPage}" name="reqPage">
              </div>
            </div>
           </c:if> 
@@ -207,7 +208,6 @@
                 </div>
              </c:otherwise>
             </c:choose> 
-               
             </div>
          </form>
          <form action="deleteQna" method="post">
@@ -295,6 +295,7 @@ $(function(){
        const qnaWriter = $("input[name = qnaWriter]").val();
        const qnaTitle = $("input[name = qnaTitle]").val();
        const qnaContent = $("textarea[name = qnaContent]").val();
+       const qnaStatus = $("input[name = qnaStatus]").val();
        const reqPage = '<c:out value="${reqPage}"/>';
        if(qnaPassword != null) {
            $.ajax({
@@ -307,7 +308,7 @@ $(function(){
          			  $.ajax({
          				 url: "/updateQna",
          				 type: "post",
-         				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, reqPage: reqPage},
+         				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, qnaStatus: qnaStatus, reqPage: reqPage},
          				 success: function(data) {
          	    			  alert("수정이 완료되었습니다.");
          				 }
