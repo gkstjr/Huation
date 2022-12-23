@@ -60,10 +60,10 @@
 }
 	</style>
 </head>
-<frameset rows="100%,0%" border="0">
-      <frame name="main" src="<%= request.getContextPath()%>/home2" noresize>
-      <frame name="blank" src="about:blank">
-</frameset>
+<!-- <frameset rows="100%,0%" border="0"> -->
+<%--       <frame name="main" src="<%= request.getContextPath()%>/home2" noresize> --%>
+<!--       <frame name="blank" src="about:blank"> -->
+<!-- </frameset> -->
 
 <body>
     <!-- 메뉴바 시작 -->

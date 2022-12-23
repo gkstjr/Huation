@@ -13,6 +13,12 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HuationController {
 	
+	//한석
+		@RequestMapping(value = "/home2")
+		public String home() {
+			return "index";
+			
+		} 
 
 	//한석
 	@RequestMapping(value = "/solution/pabx")
