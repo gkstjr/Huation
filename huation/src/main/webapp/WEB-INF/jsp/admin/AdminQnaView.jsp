@@ -160,12 +160,14 @@
        <div class="container">
           <!-- container div 밑에 문의상세 시작 -->
          <form action="/updateQna" method="post" class="form_1">
-           <%-- <div class="form-group row">
-             <label for="staticEmail" class="col-sm-1 col-form-label">작성자</label>
-             <div class="col-sm-11">
-               <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" maxlength="32" required>
-             </div>
-           </div> --%>
+		     <c:if test="${qna.qnaStatus == 1}">
+	           <div class="form-group row">
+	             <label for="staticEmail" class="col-sm-1 col-form-label">작성자</label>
+	             <div class="col-sm-11">
+	               <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" maxlength="32" required>
+	             </div>
+	           </div> 
+	         </c:if>
            <div class="form-group row">
              <label class="col-sm-1 col-form-label">제목</label>
              <div class="col-sm-11">
@@ -181,14 +183,14 @@
                <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required><c:out value="${qna.qnaContent}" /></textarea>
              </div>
            </div>
-           <%-- <div class="form-group row">
-             <label class="col-sm-1 col-form-label">비밀번호</label>
-             <div class="col-sm-11">
-               <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
-               <input type="hidden" value="${qna.qnaNo}" name="qnaNo" id="qnaNo_00">
-               <input type="hidden" value="1" name="reqPage">
-             </div>
-           </div> --%>
+           <c:if test="${qna.qnaStatus == 1}">
+	           <div class="form-group row">
+	             <label class="col-sm-1 col-form-label">비밀번호</label>
+	             <div class="col-sm-11">
+	               <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
+	             </div>
+	           </div>
+           </c:if>
            <div class="form-group row bottomRow">
               <div class="col-sm-5"></div>
               <div class="col-sm-1">

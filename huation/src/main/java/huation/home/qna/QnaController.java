@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class QnaController {	
 	
@@ -24,7 +27,7 @@ public class QnaController {
 	
 	//Q&A form 가져오는 메소드
 	@RequestMapping(value = "/getQnaForm")
-	public String getQnaForm(Model model) {
+	public String getQnaForm(Model model) {		
 		return "contact/qnaForm";
 	}
 	
@@ -73,17 +76,24 @@ public class QnaController {
 	
 	  //Q&A update 메소드
 	  @PostMapping(value = "/updateQna") 
-	  public String updateQna(int reqPage, QnaDTO qnaDto, Model model) throws Exception { 
-		int result = qnaService.updateQna(qnaDto);		
-		System.out.println(result);
-		if(result>0) {
-			int qnaNo = qnaDto.getQnaNo();
-			model.addAttribute("reqPage",reqPage);
-			model.addAttribute("qnaNo",qnaNo);
-	    	return "redirect:/getQna"; 
-		}else {
-			return "redirect:/getQnaForm";
-		}
+	  public String updateQna(int reqPage, QnaDTO qnaDto, Model model, HttpSession session) throws Exception { 
+			/*
+			 * System.out.println("qnaNo = " + qnaDto.getQnaNo());
+			 * System.out.println("qnaTitle = " + qnaDto.getQnaTitle());
+			 * System.out.println("qnaContent = " + qnaDto.getQnaContent());
+			 * System.out.println("qnaWriter = " + qnaDto.getQnaWriter());
+			 * System.out.println("qnaPassword = " + qnaDto.getQnaPassword());
+			 * System.out.println("qnaStatus = " + qnaDto.getQnaStatus());
+			 */
+		int result = qnaService.updateQna(qnaDto);
+		int qnaNo = qnaDto.getQnaNo();
+		model.addAttribute("qnaNo",qnaNo);
+		model.addAttribute("reqPage",reqPage);
+		if(session.getAttribute("pw") != null) {//관리자면
+			return "redirect:/admin/getAdminQna";
+    	}else {//사용자면
+	    	return "redirect:/getQna";   		
+    	}
 	  }
 	  
 	  @ResponseBody
