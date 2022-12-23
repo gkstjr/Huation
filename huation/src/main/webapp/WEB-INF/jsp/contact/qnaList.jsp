@@ -101,6 +101,9 @@
 		vertical-align: middle;
 /* 		border: 1px solid #444444; */
     }
+    table.table tr td:nth-child(1) {
+    	text-align: center;
+    }
 	table.table tr th:first-child {
 		width: 80px;
 	}
@@ -238,6 +241,7 @@
 	}
 	.table>thead:first-child>tr:first-child>th:nth-child(1) {
         width: 10%;
+        text-align: center;
 	}
 	.table>thead:first-child>tr:first-child>th:nth-child(2) {
 	    width: 57%;
@@ -280,6 +284,9 @@
     	padding-left: 5px;
 
 	}
+	.board-tag {
+		padding-left: 12px;
+	} 
 </style>
 </head>
 
