@@ -560,17 +560,31 @@ $(function(){
 			alert("선택된 회원이 없습니다.");
 			return;
 		}else if(confirm("정말 삭제하시겠습니까?")){
-			const qnaDelArr = new Array();//array 하나 만듬
+			const qnaDelArr1 = new Array();//array 하나 만듬
 			delCheck.each(function(index,item){//index(0부터 시작하는 key값)-item 조합으로 array에 삭제할 memberId를 하나씩 넣음
-				qnaDelArr.push($(item).parent().siblings(".qnaNo-01").children("input").val());//jquery selector
-				qnaDelArr.push($(item).parent().siblings(".qnaNo-02").text());//jquery selector
+				qnaDelArr1.push($(item).parent().siblings(".qnaNo-01").children("input").val());//jquery selector
+				qnaDelArr1.push($(item).parent().siblings(".qnaNo-02").text());//jquery selector
 			});
+			const qnaDelArr = qnaDelArr1.filter(qnaNo => { 
+				return qnaNo !== undefined && qnaNo !== '';
+			});
+			console.log(qnaDelArr);
 			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage}; 
 		}else{
 			alert("회원 삭제를 취소합니다.");
 			$('#delCheck:checked').prop('checked',false);
 		}
 	});
+	
+	/* $("#filter_btn").on("click",function(){
+		const words = ['spray', undefined, 'limit', 'elite', 'exuberant', 'destruction', 'present', undefined];
+
+		//const result = words.filter(word => word.length > 6);
+		
+		const result = words.filter(word => word !== undefined);
+		
+		console.log(result);
+	}); */
 });
 </script>
 <!-- 애니메이션 스크립트 -->
