@@ -98,7 +98,9 @@
         border-color: #e9e9e9;
 		padding: 12px 15px;
 		vertical-align: middle;
-/* 		border: 1px solid #444444; */
+    }
+    table.table tr td:nth-child(1) {
+    	text-align: center;
     }
 	table.table tr th:first-child {
 		width: 80px;
@@ -237,6 +239,7 @@
 	}
 	.table>thead:first-child>tr:first-child>th:nth-child(1) {
         width: 10%;
+        text-align: center;
 	}
 	.table>thead:first-child>tr:first-child>th:nth-child(2) {
 	    width: 50%;
@@ -296,27 +299,9 @@
 	.img-00 {
 		height: 15px;
 	}
-	/* .board-tag > * {
-	    display: table-cell;
-	    vertical-align: middle;
-	    border: 1px solid rgba(255, 80, 80, 0.5);
-	    background-color: rgba(255, 80, 80, 0.1); 
-	    border-radius: 3px;
-	    text-align: center;
-	}
-	.board-tag-txt {
-	    display: block;
-	    width: 54px;
-	    height: 21px;
-	    border-radius: 3px;
-	    font-size: 11px;
-	    vertical-align: middle;
-	}
-	.board-tag>strong>span {
-		color: #FF5050;
-	    text-align: center;
-	    vertical-align: middle;
-	} */
+	.board-tag {
+		padding-left: 12px;
+	} 
 </style>
 </head>
 
