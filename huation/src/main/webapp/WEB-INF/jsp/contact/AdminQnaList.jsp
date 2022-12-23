@@ -464,7 +464,7 @@
                     	</c:when>
                     	<c:otherwise>
 	                    	<tr class="tr-00">
-	                        	<td class="qnaNo-02" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
+	                        	<td class="qnaNo-02" style = "width: 82px;padding-left:30px" id="qnaNo-00">${list.qnaNo }</td>
 	                        	<td><a href="/admin/getAdminQna?qnaNo=${list.qnaNo }&reqPage=${reqPage }" class = "btn-modal">${list.qnaTitle }</a></td>
 	                        	<td><c:out value ="${list.qnaWriter }"></c:out></td>                        
 		                        <td><c:out value = "${list.qnaDate }"></c:out></td>
@@ -555,6 +555,7 @@ $(function(){
 			});
 			console.log(qnaDelArr);
 			location.href="/admin/deleteQnaList?qnaNoList="+qnaDelArr.join("/")+"&reqPage="+${reqPage}; 
+
 		}else{
 			alert("회원 삭제를 취소합니다.");
 			$('#delCheck:checked').prop('checked',false);
