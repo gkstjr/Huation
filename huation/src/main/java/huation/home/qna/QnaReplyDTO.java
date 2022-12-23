@@ -17,6 +17,7 @@ public class QnaReplyDTO {
 	private String qnaWriter;
 	private String qnaDate;
 	private String qnaPassword;
+	private int qnaStatus;
 	
 	private int replyNo;
 	private String replyContent;

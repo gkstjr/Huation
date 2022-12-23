@@ -13,6 +13,8 @@ public interface QnaMapper {
 	ArrayList<QnaReplyDTO> qnaList(HashMap<String, Object> map) throws Exception;
 
 	int getQnaCount() throws Exception;
+	
+	int getNoticeCount() throws Exception;
 
 	QnaReplyDTO getQna(int qnaNo) throws Exception;
 
@@ -23,5 +25,7 @@ public interface QnaMapper {
 	QnaDTO checkPw(QnaDTO qnaDto) throws Exception;
 
 	int getQnaNo() throws Exception;
+
+	int insertNotice(QnaDTO qnaDto) throws Exception;
 	
 }

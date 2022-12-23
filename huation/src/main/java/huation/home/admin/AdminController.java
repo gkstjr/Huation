@@ -57,8 +57,7 @@ public class AdminController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		
-		session.removeAttribute("pw");
-		
+		session.removeAttribute("pw"); 
 		return "redirect:/login";
 	}
 	

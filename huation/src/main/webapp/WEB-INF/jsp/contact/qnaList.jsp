@@ -68,6 +68,7 @@
     .table-title h2 {
 		margin: 5px 0 0;
 		font-size: 24px;
+		font-weight: bold;
 	}
 	.table-title .btn {
 		color: #566787;
@@ -267,13 +268,17 @@
 	    margin-bottom: 10px;
 	    padding-top: 20px;
 	}
-		 h2, h3 {
-   	font-weight: 700 !important;
-   }
 
-	.subName {
-		padding: 80px 0px;
-		width: 100%;
+	.tr-00 {
+		height: 50px;
+	}
+	.tr-01 {
+		background: rgb(204, 204, 204, 0.1);
+	}
+	.img-00 {
+	    height: 18px;
+    	padding-left: 5px;
+
 	}
 </style>
 </head>
@@ -352,10 +357,10 @@
                                 		<li><a href="/contact/qna">Q&A</a></li>
                                		</ul>
                                 </li>        
-<%--                                 <c:if test="${pw !=null }"> --%>
-<!--                                 <li><a href="/admin">관리자페이지</a></li> -->
-<!--                                 <li><a href="/logout">로그아웃</a></li> -->
-<%--                                 </c:if> --%>
+                                 <c:if test="${pw !=null }"> 
+	                                <li><a href="/admin">관리자페이지</a></li>
+	                                <li><a href="/logout">로그아웃</a></li>
+                                 </c:if> 
                             </ul>
                         </div>
                     </div><!-- .container -->
@@ -416,20 +421,39 @@
                 </thead>
                 <tbody>
                 <c:forEach items = "${qnaList }" var = "list" varStatus="i">
-                    <tr style = "height: 50px">
-                        <td style = "width: 82px;">${list.qnaNo }</td>
-                        <td><a href="/getQna?qnaNo=${list.qnaNo}&reqPage=${reqPage}" class = "btn-modal">${list.qnaTitle }</a></td>
-                        <td><c:out value ="${list.qnaWriter }"></c:out></td>                        
-                        <td><c:out value = "${list.qnaDate }"></c:out></td>
-                     <c:choose>
-				   	      <c:when test="${list.replyNo eq 0}">
-				   	      	<td scope="col" style="color:#FF5050; padding-left:50px">N</td>
-				   	      </c:when>
-				   	      <c:otherwise>
-				   	      	<td scope="col" style="color:#03A9F4; padding-left:50px">Y</td>
-				   	      </c:otherwise>
-		   	  		</c:choose>    
-                    </tr>
+                    <c:choose>
+                    	<c:when test="${list.qnaStatus eq 2 }">
+	                    	<tr class="tr-00 tr-01" style = "background-color: rgba(220, 220, 220, 0.5);">
+			                    <td class="qnaNo-01" style = "width: 82px;">
+			                    	<div class="board-tag">
+			                    		<strong class="board-tag-txt">
+			                    			<span class="inner">공지</span>
+			                    		</strong>
+			                    	</div>
+			                    </td>
+			                    <td><a href="/getQna?qnaNo=${list.qnaNo }&reqPage=${reqPage }" style = "color: #FF5050; font-weight: bolder;">${list.qnaTitle }</a></td>
+		                        <td>관리자</td>                        
+		                        <td><c:out value = "${list.qnaDate }"></c:out></td>
+					   	      	<td scope="col" style="color:#FF5050; padding-left:50px"></td>
+	                       </tr>	
+                    	</c:when>
+                    	<c:otherwise>
+	                    	<tr class="tr-00">
+	                        	<td class="qnaNo-01" style = "width: 82px;" id="qnaNo-00">${list.qnaNo }</td>
+	                        	<td><a href="/getQna?qnaNo=${list.qnaNo }&reqPage=${reqPage }" class = "btn-modal">${list.qnaTitle }</a></td>
+	                        	<td><c:out value ="${list.qnaWriter }"></c:out></td>                        
+		                        <td><c:out value = "${list.qnaDate }"></c:out></td>
+		                   <c:choose>
+					   	      <c:when test="${list.replyNo eq 0}">
+					   	      	<td scope="col" style="color:#FF5050; padding-left:50px">N</td>
+					   	      </c:when>
+					   	      <c:otherwise>
+					   	      	<td scope="col" style="color:#03A9F4; padding-left:50px">Y</td>
+					   	      </c:otherwise>
+			   	  		  </c:choose>  
+	                       </tr>	
+                    	</c:otherwise>
+                    </c:choose>
                 </c:forEach>
                 </tbody>
             </table>

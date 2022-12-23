@@ -143,18 +143,27 @@
     <!-- 본문 시작 -->
     <section class="container-fluid whiteSectionWrap">
        <div class="container">
-          <h2 class="inputH2">문의상세<!-- <img src="../img/contact/manage_search.png" class="write_img"> --></h2>  
+          <c:choose>
+		       <c:when test="${qna.qnaStatus == 2}">	
+		    	   <h2 class="inputH2">공지글</h2>
+		    	</c:when>
+	            <c:otherwise>	
+		    	   <h2 class="inputH2">문의상세</h2>
+		    	</c:otherwise> 
+           </c:choose>
           <hr id="hr-00">       
        </div>
        <div class="container">
           <!-- container div 밑에 문의상세 시작 -->
          <form action="/updateQna" method="post" class="form_1">
+         <c:if test="${qna.qnaStatus eq 1 }">
            <div class="form-group row">
              <label for="staticEmail" class="col-sm-1 col-form-label">작성자</label>
              <div class="col-sm-11">
                <input type="text" class="form-control" placeholder="작성자를 입력해주세요" name="qnaWriter" value="${qna.qnaWriter}" maxlength="32" required>
              </div>
            </div>
+         </c:if>
            <div class="form-group row">
              <label class="col-sm-1 col-form-label">제목</label>
              <div class="col-sm-11">
@@ -167,16 +176,21 @@
                <textarea class="form-control inputTextArea" placeholder="내용을 입력해주세요" name="qnaContent" maxlength="332" required><c:out value="${qna.qnaContent}" /></textarea>
              </div>
            </div>
+          <c:if test="${qna.qnaStatus eq 1 }"> 
            <div class="form-group row">
              <label class="col-sm-1 col-form-label">비밀번호</label>
              <div class="col-sm-11">
                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요" name="qnaPassword" value="●●●●" readonly>
                <input type="hidden" value="${qna.qnaNo}" name="qnaNo" id="qnaNo_00">
-               <input type="hidden" value="1" name="reqPage">
+               <input type="hidden" value="${qna.qnaStatus}" name="qnaStatus">
+               <input type="hidden" value="${reqPage}" name="reqPage">
              </div>
            </div>
+          </c:if> 
            <div class="form-group row bottomRow">
-               <div class="col-sm-5"></div>
+           <c:choose>
+			 <c:when test="${qna.qnaStatus eq 1 }">           
+              <div class="col-sm-5"></div>
               <div class="col-sm-1">
                  <button type="button" class="btn btn-2 btn-primary" id="update_btn_00">수정하기</button>
               </div>
@@ -187,6 +201,13 @@
                  <a href="/getQnaList?reqPage=${reqPage}" class="btn btn-2 btn-list">목록으로</a>
                </div>
                <div class="col-sm-5"></div>
+             </c:when>
+             <c:otherwise>
+             	<div class="col-sm-12">
+                 <a href="/getQnaList?reqPage=${reqPage}" class="btn btn-2 btn-list">목록으로</a>
+                </div>
+             </c:otherwise>
+            </c:choose> 
             </div>
          </form>
          <form action="deleteQna" method="post">
@@ -200,8 +221,6 @@
    	      <c:choose>
 	   	      <c:when test="${qna.replyNo ne 0}">
 	   	      	<div class="form-group row form-01">
-	             <!-- <label class="col-sm-2 col-form-label">댓글</label>
-	             <div class="col-sm-10"> -->
 		             <div class="col-sm-12 reply-wrap">
 		             	<div class="col-sm-12 reply-header">
 	                 		<div class="col-sm-1" id="reply_img_00">
@@ -276,6 +295,7 @@ $(function(){
        const qnaWriter = $("input[name = qnaWriter]").val();
        const qnaTitle = $("input[name = qnaTitle]").val();
        const qnaContent = $("textarea[name = qnaContent]").val();
+       const qnaStatus = $("input[name = qnaStatus]").val();
        const reqPage = '<c:out value="${reqPage}"/>';
        if(qnaPassword != null) {
            $.ajax({
@@ -288,7 +308,7 @@ $(function(){
          			  $.ajax({
          				 url: "/updateQna",
          				 type: "post",
-         				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, reqPage: reqPage},
+         				 data: {qnaNo: qnaNo, qnaTitle: qnaTitle, qnaContent: qnaContent, qnaWriter: qnaWriter, qnaStatus: qnaStatus, reqPage: reqPage},
          				 success: function(data) {
          	    			  alert("수정이 완료되었습니다.");
          				 }

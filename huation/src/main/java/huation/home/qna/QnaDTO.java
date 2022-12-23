@@ -18,4 +18,5 @@ public class QnaDTO {
 	private String qnaWriter;
 	private String qnaDate;
 	private String qnaPassword;
+	private int qnaStatus;
 }
