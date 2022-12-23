@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
 <!--     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>   -->
-
+ 
 	  <!-- 게시판 템플릿 부트스트랩 : s-->
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
