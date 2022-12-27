@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[한석,신영] 휴에이션</title>
+    <title>전광판</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media = "screen" href="../css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -15,7 +15,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/> 
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon"> 
     
     <!-- Javascript files -->
 
@@ -233,9 +234,6 @@
         </section>
         <!-- spec 끝-->
 
-    <!-- 탑버튼 -->
-   <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-   <!--  탑버튼 끝 -->
  <!-- footer 시작-->
     <footer class="container-fluid footerBack">
 	    <div class="container">
@@ -261,6 +259,12 @@
 	    </div>
 	 </footer>
      <!-- footer 끝-->
+     
+     <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>
