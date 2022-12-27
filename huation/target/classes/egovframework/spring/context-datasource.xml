@@ -7,7 +7,7 @@
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 	
-
+ 
 	
 	
     <!-- hsql (테스트용 메모리 DB)
@@ -27,7 +27,7 @@
         <!-- 회사서버 ubuntu(lenux) -->
 <!--         <property name="url" value="jdbc:mariadb://192.168.2.72:3306/huation_db" /> -->
         <!-- 한석 window -->
-        <property name="url" value="jdbc:mariadb://192.168.0.49:3306/huation_db" />     
+        <property name="url" value="jdbc:mariadb://127.0.0.1:3306/huation_db" />     
         <property name="username" value="han"/>
         <property name="password" value="1234"/>
         <!-- 서버에서 db가 장시간 미접속시 끊김 방지위한 기능 -->
@@ -35,7 +35,7 @@
 		<property name="testWhileIdle" value="true" />
 		<property name="timeBetweenEvictionRunsMillis" value="600000" />
     </bean>
-    
+      
     <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>

@@ -272,6 +272,7 @@
 	    margin-bottom: 10px;
 	    padding-top: 20px;
 	}
+
 	.tr-00 {
 		height: 50px;
 	}
@@ -281,6 +282,7 @@
 	.img-00 {
 	    height: 18px;
     	padding-left: 5px;
+
 	}
 	.board-tag {
 		padding-left: 12px;

@@ -37,6 +37,7 @@
     textarea.form-control {
 	      height: 300px;
 	}
+	
     </style>
     <script>
 $(document).ready(function(){
