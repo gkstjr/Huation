@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/> 
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">     
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -136,7 +137,7 @@
     <section class="container-fluid whiteSectionWrap">
 	    <div class="container">
 	       <h2 class="centerTitle companyLine01">Business Overview</h2>
-	       <p class="centerTitleP">자사가 생산하는 모든 제품에 대하여 100% 원천 기술을 확보하기 위해 공격적이고 지속적인 R&D 투자를 수행하고 있습니다.
+	       <p class="centerTitleP">자사가 생산하는 모든 제품에 대하여 100% 원천 기술을 확보하기 위해 공격적이고 지속적인 R&D 투자를 수행하고 있습니다.<br>
 			회사 설립 초기 B2B 기업용 eFax 구축 사업을 시작으로 하여, 현재는 IPT/IPCC 구축 그리고 
 			ECM(Enterprise Contents Management) 사업에서 당사가 보유한 핵심 기술과 제품을 기반으로 
 			솔루션 및 컨설팅 중심의 SI 사업을 영위하고 있습니다.</p>
@@ -154,9 +155,6 @@
     </section>
     <!-- 본문 끝 -->
     
-    <!-- 스크롤바 시작 -->
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
 	
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
@@ -183,6 +181,12 @@
        </div>
     </footer>
     <!-- footer 끝-->
+    
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>

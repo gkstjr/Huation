@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/> 
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon"> 
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

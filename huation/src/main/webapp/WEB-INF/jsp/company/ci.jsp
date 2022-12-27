@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">  
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -181,9 +182,6 @@
     </section>
     <!-- 본문 끝 -->
     
-    <!-- 스크롤바 시작 -->
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
 	
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
@@ -210,6 +208,12 @@
        </div>
     </footer>
     <!-- footer 끝-->
+    
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>

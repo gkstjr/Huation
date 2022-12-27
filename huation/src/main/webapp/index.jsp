@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[한석,신영] 휴에이션</title>
+    <title>(주)휴에이션</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media = "screen" href="css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="css/animate.css"/>  
     <link rel="stylesheet" type="text/css" media="screen" href="css/style2.css" />
-    
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">
   
    
     <!--
@@ -209,37 +209,37 @@
    <div class="mainBanner02 container">
       <div class="mainBannerImg02" id="mainBannerImg0201">
          <img src="../img/main/main_banner0201.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/huefax"><img src="img/main/main_btn04.png"></a>
       </div>
       <div class="mainBannerImg02" id="mainBannerImg0202">
          <img src="../img/main/main_banner0202.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/pabx"><img src="img/main/main_btn04.png"></a>
       </div>
       <div class="mainBannerImg02" id="mainBannerImg0203">
          <img src="../img/main/main_banner0203.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/hueres"><img src="img/main/main_btn04.png"></a>
       </div>
 
       <div class="mainBannerImg02" id="mainBannerImg0204">
          <img src="../img/main/main_banner0204.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/hueplus"><img src="img/main/main_btn04.png"></a>
       </div>
       <div class="mainBannerImg02" id="mainBannerImg0205">
          <img src="../img/main/main_banner0205.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/hueic"><img src="img/main/main_btn04.png"></a>
       </div>
       <div class="mainBannerImg02" id="mainBannerImg0206">
          <img src="../img/main/main_banner0206.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/hueboard"><img src="img/main/main_btn04.png"></a>
       </div>
 
       <div class="mainBannerImg02" id="mainBannerImg0207">
          <img src="../img/main/main_banner0207.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/huefaction"><img src="img/main/main_btn04.png"></a>
       </div>
       <div class="mainBannerImg02" id="mainBannerImg0208">
          <img src="../img/main/main_banner0208.png">
-         <a class="mainBannerButton02" href="#"><img src="img/main/main_btn04.png"></a>
+         <a class="mainBannerButton02" href="/solution/huesta"><img src="img/main/main_btn04.png"></a>
       </div>
       
 
@@ -331,7 +331,11 @@
         </div>
        <a id="mainAni07" href="/company/client"><img src="img/main/main_btn06.png"></a>
      </section>
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="img/common/top_btn.png"></a> 
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
 
     <!-- 신영님 연구개발 및 기술 중심 기업 끝 -->
 
