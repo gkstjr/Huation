@@ -71,7 +71,9 @@ function mailSend(){
 	}
 
 	$('#join').submit();
-	alert("문의가 완료되었습니다.");
+// 	alert("메일을 전송합니다.");
+	$("#loadingIndicator").show();
+
 }
 
 $(document).ready(function(){
@@ -202,20 +204,20 @@ $(document).ready(function(){
 <!-- 제품소개 시작 -->
 <section class="container-fluid graySection">
 	<div class="container">
-			  <form action = "/mailSend" method = "post" id = "join">
+			  <form action = "/mail1" method = "post" id = "join">
 		<h3 class="leftTitle">문의하기</h3>
 		<ul class="solutionFeature03">
 			<li class="mailType">
-			<input type="radio" name="type" id="sales" value="제품문의" checked />
+			<input type="radio" name="type" id="sales" value="2" checked />
 			<label for="sales">제품문의</label>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="radio" name="type" id="recruit" value="입사문의"/>
+			<input type="radio" name="type" id="recruit" value="1"/>
 			<label for="recruit">입사문의</label>
 			</li>
 			<li><input type="text" name="name" value="이름" id="user_id" placeholder="이름"></li>
 			<li><input type="text" name="contact" value="연락처" id="user_contact" placeholder="연락처"></li>
 			<li><input type="text" name="email" value="이메일" id="user_email" placeholder="이메일"></li>
-			<li><input type="text" name="subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li><input type="text" name="subject2" value="제목" id="user_subject" placeholder="제목"></li>
 			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="내용을 최대한 상세하게 적어주시면 답변에 더 큰 도움이 됩니다."></textarea></li>
 <!-- 			<li><a href="javascript:mailSend()" class="recruitBtn"><img src="../img/contact/contact_btn01.png"></a></li> -->
 			<li><button type = "button" onclick="javascript:mailSend()" class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>

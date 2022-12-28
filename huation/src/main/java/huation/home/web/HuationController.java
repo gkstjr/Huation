@@ -1,11 +1,34 @@
 package huation.home.web;
 
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
+import java.util.Properties;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.StreamingHttpOutputMessage.Body;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.sun.mail.imap.protocol.BODY;
+
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,11 +36,12 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HuationController {
 	
-	
 
 	//한석
 	@RequestMapping(value = "/solution/pabx")
 	public String pabx() {
+		
+		
 		return "solution/pabx";
 		
 	} 

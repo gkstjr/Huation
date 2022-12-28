@@ -41,6 +41,7 @@ var emailRegExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,
 var nameExp = /^[가-힣]{2,4}$/;
 
 function mailSend(){
+	
 	// validation
 	var name = $("#user_id").get(0);
 	if(name.value.trim() == "" || name.value == name.placeholder) {alert("이름을 입력하세요."); name.focus(); return;}
@@ -72,7 +73,8 @@ function mailSend(){
 	}
 	
 	$('#join').submit();
-	alert("문의가 완료되었습니다.");
+	$("#loadingIndicator").show();
+// 	alert("메일을 전송합니다.");
 }
 
 
@@ -83,6 +85,7 @@ $(document).ready(function(){
 		});
 	});
 	$("#loadingIndicator").hide();
+	
 });
 
 </script>
@@ -272,19 +275,19 @@ $(document).ready(function(){
 <!-- 제품소개 시작 -->
 <section class="container-fluid graySection">
 	<div class="container">
-		<form action = "/mailSend2" method = "post" id = "join">
+		<form action = "/mail2" method = "post" id = "join">
 		<h3 class="leftTitle">채용문의</h3>
 
 		<ul class="solutionFeature03">
 			<li><input type="text" name="name" value="이름" id="user_id" placeholder="이름"></li>
 			<li><input type="text" name="contact" value="연락처" id="user_contact" placeholder="연락처"></li>
 			<li><input type="text" name="email" value="이메일" id="user_email" placeholder="이메일"></li>
-			<li><input type="text" name="subject" value="제목" id="user_subject" placeholder="제목"></li>
+			<li><input type="text" name="subject2" value="제목" id="user_subject" placeholder="제목"></li>
 			<li><textarea id="Content" rows="8" title="상담내용" name="content" placeholder="상담내용을 최대한 상세하게 적어주시면 상담에 더 큰 도움이 됩니다."></textarea></li>		
 			<li class="ajax-response"></li>
 			<li><button type = "button" onclick="javascript:mailSend()" class = recruitBtn><img src="../img/contact/contact_btn01.png"></button></li>
 		</ul>
-		<input type="hidden" name="type" id="type" value="입사문의">
+		<input type="hidden" name="type" id="type" value=1>
 
 		<ul class="solutionFeature02">
 			<li>인턴 기간에도 급여는 100% 지급입니다.</li>
