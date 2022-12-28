@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -136,7 +137,7 @@
     <section class="container-fluid whiteSectionWrap">
 	    <div class="container">
 	       <h2 class="centerTitle companyLine01">Corporate Philosophy</h2>
-	       <p class="centerTitleP">고객과 함께 성장하고 고민하는 기업으로서 단기적 성과에 연연해 하지 않고,   지속적이고 영속적인 파트너가 될 수 있도록 노력하겠습니다.
+	       <p class="centerTitleP">고객과 함께 성장하고 고민하는 기업으로서 단기적 성과에 연연해 하지 않고,   지속적이고 영속적인 파트너가 될 수 있도록 노력하겠습니다.<br>
 			우리가 만들어내는 제품이 인간의 삶을 더욱 풍요롭고 편리하도록 하고,   자연환경을 보호하는 Green IT를 실현할 수 있도록 하겠습니다.</p>
 	       <div class="col-sm-3 companyIntro" id="company01Ani01">
 	       		<!-- ONMOUSEOVER="this.src='바뀔이미지'" - 마우스 올라가면 이미지 변경 -->
@@ -170,10 +171,6 @@
 	    </div>
 	</section>
     <!-- 본문 끝 -->
-    
-    <!-- 스크롤바 시작 -->
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
 	
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
@@ -200,6 +197,12 @@
        </div>
     </footer>
     <!-- footer 끝-->
+    
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>

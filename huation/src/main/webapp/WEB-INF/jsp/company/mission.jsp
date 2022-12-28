@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -136,7 +137,7 @@
     <section class="container-fluid whiteSectionWrap" id="mission-whiteSectionWrap">
     	<div class="container">
     		<h2 class="centerTitle companyLine01">Mission Statement</h2>
-	        <p class="centerTitleP">휴에이션은 인간중심의 정책, 인간중심의 사고, 인간중심의 경영으로 기본적인 신뢰와 믿음, 
+	        <p class="centerTitleP">휴에이션은 인간중심의 정책, 인간중심의 사고, 인간중심의 경영으로 기본적인 신뢰와 믿음,<br> 
 	       그리고 존중과 배려로 수평적 조직경영을 추구합니다.</p>
     		<div class="companyCi" id="company03Ani01">
     			<img src="../img/company/company_img11.png">
@@ -168,9 +169,6 @@
     </section>
     <!-- 본문 끝 -->
     
-    <!-- 스크롤바 시작 -->
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
 	
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
@@ -197,6 +195,12 @@
        </div>
     </footer>
     <!-- footer 끝-->
+    
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>

@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MISSION</title>
+    <title>조직구성</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media = "screen" href="../css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/animate.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style2.css" />
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="../css/sub.css"/>  -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>  
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sub2.css"/>
+    <link rel="shortcut icon" href="/img/main/favicon.ico" type="image/x-icon">  
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -147,7 +148,7 @@
 	       <ul class="companyTeam">
 	       	 <h4>
 	       	 	<span>01</span>
-	       	 	"Steering Committee"
+	       	 	Steering Committee
 	       	 </h4>
 	      	 <li>GL로 조직된 위원회 운영</li> 
 	      	 <li>TFT 구성 및 지원</li>
@@ -158,7 +159,7 @@
 	       <ul class="companyTeam">
 	       	 <h4>
 	       	 	<span>02</span>
-	       	 	"Group"
+	       	 	Group
 	       	 </h4>
 	      	 <li>GL(Group Leader)-그룹장</li> 
 	      	 <li>사업영역별 또는 전문 분야별</li>
@@ -167,7 +168,7 @@
 	       <ul class="companyTeam">
 	       	 <h4>
 	       	 	<span>03</span>
-	       	 	"Team"
+	       	 	Team
 	       	 </h4>
 	      	 <li>TL(Team Leader) - 팀장</li> 
 	      	 <li>(비)상시 TFT 운영- 신제품(상품) 개발</li>
@@ -177,9 +178,6 @@
     </section>
     <!-- 본문 끝 -->
     
-    <!-- 스크롤바 시작 -->
-    <a style="display:scroll;position:fixed;bottom:30px;right:20px;" href="#"><img src="../img/common/top_btn.png"></a> 
-	<!-- 스크롤바 끝 -->
 	
     <!-- footer 시작-->
     <footer class="container-fluid footerBack">
@@ -206,6 +204,12 @@
        </div>
     </footer>
     <!-- footer 끝-->
+    
+    <!-- Scroll to top -->
+	<div class="scroll-up">
+		<a href="#home"><img src="../img/common/top_btn.png"></span></a>
+	</div>
+	<!-- Scroll to top end-->
      
 <!-- 애니메이션 스크립트 -->
 <script>
