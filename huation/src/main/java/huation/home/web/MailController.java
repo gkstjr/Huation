@@ -1,5 +1,6 @@
 package huation.home.web;
 
+import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 
 import javax.mail.Message;
@@ -9,6 +10,7 @@ import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -35,7 +37,7 @@ public class MailController {
 							 String subject2,
 							 String content,
 							 int type,
-							 Model model) throws AddressException, MessagingException{
+							 Model model) throws AddressException, MessagingException, UnsupportedEncodingException{
 		
 	    // naver smtp server를 사용한다.
 	    String host = "wsmtp.ecounterp.com";
@@ -43,7 +45,7 @@ public class MailController {
 	    // naver smtp port
 	    int port=587;
 	    //입사문의일때
-	    String username;
+	   final String username;
 	    final String password;
 	    String recipient;
 	    if(type ==1) {
@@ -68,7 +70,7 @@ public class MailController {
 	    String subject = subject2; 
 	    
 	    // 수신자에게 보낼 메일 내용
-	    String contents = "이름 : " + name + System.lineSeparator() + "연락처 : " + contact + System.lineSeparator() + "이메일 : " + email + System.lineSeparator() + "내용 : " + content;
+	    String contents = "이름 : "  + name + "<br>" + "연락처 : " + contact + "<br>" + "이메일 : " + email + "<br>" + "내용 : " + content;
 	    
 	    // SMTP 서버 설정 정보 세팅
 	    Properties props = System.getProperties(); 
@@ -105,8 +107,11 @@ public class MailController {
 	    // message.addRecipients(Message.RecipientType.TO, addArray);
 
 
-	    mimeMessage.setSubject(subject); // 제목  
-	    mimeMessage.setText(contents); // 내용  
+//	    mimeMessage.setSubject(subject); // 제목  
+//	    mimeMessage.setText(contents); // 내용  
+	    
+	    mimeMessage.setSubject(MimeUtility.encodeText(subject,"EUC-KR","B"));
+	    mimeMessage.setContent(contents, "text/html; charset=EUC-KR");
 	    
 	    // 평서문이 아닌 html 태그를 보내고 싶다면?
 	    // mimeMessage.setContent("<h1>안녕하세용?</h1>","text/html; charset=UTF-8")
@@ -128,7 +133,7 @@ public class MailController {
 							 String subject2,
 							 String content,
 							 int type,
-							 Model model) throws AddressException, MessagingException{
+							 Model model) throws AddressException, MessagingException, UnsupportedEncodingException{
 		
 	    // naver smtp server를 사용한다.
 	    String host = "wsmtp.ecounterp.com";
@@ -138,7 +143,7 @@ public class MailController {
 	    //입사문의일때
 	   
 	    	// 발신자의 메일 주소
-	    	String username = recruitId;  
+	    	final String username = recruitId;  
 	    	// 발신자의 PASSWORD
 	    	final String password = recruitPw;  
 	    	// 수신자의 메일 주소
@@ -185,8 +190,11 @@ public class MailController {
 	    // message.addRecipients(Message.RecipientType.TO, addArray);
 
 
-	    mimeMessage.setSubject(subject); // 제목  
-	    mimeMessage.setText(contents); // 내용  
+//	    mimeMessage.setSubject(subject); // 제목  
+//	    mimeMessage.setText(contents); // 내용  
+	    
+	    mimeMessage.setSubject(MimeUtility.encodeText(subject,"EUC-KR","B"));
+	    mimeMessage.setContent(contents, "text/html; charset=EUC-KR");  
 	    
 	    // 평서문이 아닌 html 태그를 보내고 싶다면?
 	    // mimeMessage.setContent("<h1>안녕하세용?</h1>","text/html; charset=UTF-8")
