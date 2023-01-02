@@ -72,7 +72,8 @@ section h2 {text-align:center;}
 .mainBanner02 .slick-dots {left:50%; bottom:-30px; margin-left:-36px;}
 .mainBanner02 .slick-dots li {margin:0px 4px;}
 .mainBanner02 .slick-dots li button {width:10px; height:10px; border:solid 1px #fff;}
-.mainBannerButton02 {width:180px; bottom:15%;}
+/* .mainBannerButton02 {width:180px; bottom:15%;} */
+.mainBannerButton02 {position: absolute; width:auto; bottom:-2%;}
 .msubTit em, .msubTit02 em {display:inline}
 }
 /*

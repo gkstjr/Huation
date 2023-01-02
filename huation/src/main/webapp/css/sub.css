@@ -515,3 +515,31 @@ Contact
     text-align: center;
     vertical-align: middle;
 }
+
+  @media (max-width: 767px) {
+	
+	.menu-custom .navbar-brand,
+	.menu-custom .navbar-nav > li > a {
+	padding-left:30px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+		color: #fff !important;
+	}
+	
+	.menu-custom .navbar-brand {
+	margin-left:15px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+	padding-left:40px;
+	}
+	
+	.hueresImg {
+		position: absolute;
+		left: 15px;
+		top: -40px;
+		width:30%;
+		
+	}
+}

@@ -28,6 +28,11 @@ public class MailController {
 	private String salesId;
 	@Value("#{property['sales.pw']}")
 	private String salesPw;
+	@Value("#{property['send.id']}")
+	private String sendId;
+	@Value("#{property['send.pw']}")
+	private String sendPw;
+	
 	
 	//contact 에서 메일 요청
 	@PostMapping("/mail1")
@@ -50,18 +55,18 @@ public class MailController {
 	    String recipient;
 	    if(type ==1) {
 	    	// 발신자의 메일 주소
-	    	username = recruitId;  
+	    	username = sendId;  
 	    	// 발신자의 PASSWORD
-	    	password = recruitPw;  
+	    	password = sendPw;  
 	    	// 수신자의 메일 주소
 	    	recipient = recruitId;
 	    		    }
 	    //제품문의일때
 	    else {
 	    	// 발신자의 메일 주소
-	    	username = salesId;  
+	    	username = sendId;  
 	    	// 발신자의 PASSWORD
-	    	password = salesPw;  	    	
+	    	password = sendPw;  	    	
 	    	// 수신자의 메일 주소
 	    	recipient = salesId;
 	    }
@@ -143,9 +148,9 @@ public class MailController {
 	    //입사문의일때
 	   
 	    	// 발신자의 메일 주소
-	    	final String username = recruitId;  
+	    	final String username = sendId;  
 	    	// 발신자의 PASSWORD
-	    	final String password = recruitPw;  
+	    	final String password = sendPw;  
 	    	// 수신자의 메일 주소
 	    	String recipient = recruitId;
 	    		  

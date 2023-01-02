@@ -135,7 +135,7 @@
 	       <p class="centerTitleP">HUEFAX는 과거 사람의 노동력을 기반으로 실물 종이를 팩스기기 앞에서 송/수신 하던 기존의 방식에서 벗어나 PC를 통하여 
 	       			웹 화면에서 팩스 이미지를<br> 확인 및 송/수신 할 수 있습니다.   
 			       또한 자동차 사고 이미지 전송이나 주민등록증 사본 전달과 같은 간단한 업무는 
-			       SMS/MMS의 문자나 사진 등을 대표번호로 전송하여<br> 이미지팩스와 같이 통합관리가 가능합니다.</p>
+			       SMS/MMS의 문자나 사진 등을 대표번호로 전송하여 이미지팩스와 같이 통합관리가 가능합니다.</p>
 	       <img src="../img/solution/solution_img01.jpg" id="solution01Ani01">
 	       <img class="sectionArrow" src="../img/solution/solution_item02.png" id="sectionArrow">
 	    </div>

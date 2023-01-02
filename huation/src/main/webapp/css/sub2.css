@@ -630,3 +630,24 @@ Contact
 .btn-2 {
 	padding: 7px 14px;
 }
+
+  @media (max-width: 767px) {
+	
+	.menu-custom .navbar-brand,
+	.menu-custom .navbar-nav > li > a {
+	padding-left:30px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+		color: #fff !important;
+	}
+	
+	.menu-custom .navbar-brand {
+	margin-left:15px;
+	}
+
+	.menu-custom .navbar-nav .dropdown-menu > li > a {
+	padding-left:40px;
+	}
+
+}
