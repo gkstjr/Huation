@@ -105,8 +105,8 @@
         </property>
     </bean>
   	
-  	
-
+  	<!-- ai 파일 다운로드 위한 코드 -->
+	<mvc:resources location="/files/download/" mapping="/files/download/**"></mvc:resources>
 	<!-- /For Pagination Tag -->
     <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
 </beans>

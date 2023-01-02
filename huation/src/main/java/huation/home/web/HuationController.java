@@ -169,10 +169,10 @@ public class HuationController {
 	}
 	
 	//BUSINESS>UC 사업
-	@RequestMapping(value = "/business/uc")
-	public String uc() {
-		return "business/uc";		
-	}
+//	@RequestMapping(value = "/business/uc")
+//	public String uc() {
+//		return "business/uc";		
+//	}
 			
 	//BUSINESS>HUEFAX
 	@RequestMapping(value = "/solution/huefax")
