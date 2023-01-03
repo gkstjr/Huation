@@ -36,7 +36,12 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HuationController {
 	
-
+	//에러시 페이지 이동
+	@GetMapping(value = "/error")
+	   public String error(Model model) {
+	      return "template/error";
+	   }
+	
 	//한석
 	@RequestMapping(value = "/solution/pabx")
 	public String pabx() {

@@ -32,6 +32,15 @@
     <script type="text/javascript" src="../js/gnb.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/wow.js"></script>
+    <style>
+    @media(max-width: 462px)  {
+      .subName {
+          padding: 91px 0px;
+          width: 100%;
+          background-size: cover;
+      }
+   }
+    </style>
 </head>
 
 <body>
